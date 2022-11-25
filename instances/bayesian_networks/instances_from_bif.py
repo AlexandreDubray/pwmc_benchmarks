@@ -3,6 +3,7 @@ import re
 import os
 import numpy as np
 
+_script_dir = os.path.dirname(os.path.realpath(__file__))
 random.seed(862453179)
 
 class CPT:
@@ -89,8 +90,8 @@ def parse_network(input_file):
     return variables
 
 def write_network(outdir, variables, prop_evidence):
-    os.makedirs(f'ppidimacs/{outdir}', exist_ok=True)
-    os.makedirs(f'pcnf/{outdir}', exist_ok=True)
+    os.makedirs(os.path.join(_script_dir, 'ppidimacs',outdir), exist_ok=True)
+    os.makedirs(os.path.join(_script_dir, 'pcnf', outdir), exist_ok=True)
     in_evidence = [not v.is_leaf and random.random() <= prop_evidence for v in variables]
     selected_values = [random.randint(0, len(v.values) - 1) for v in variables]
 
@@ -122,8 +123,8 @@ def write_network(outdir, variables, prop_evidence):
     for target_var in [v for v in variables if v.is_leaf]:
         n_clause = n_clause_cpt + len(target_var.values)-1
         for i, value in enumerate(target_var.value_names):
-            fout = open(f'ppidimacs/{outdir}/{target_var.name}_{value}.ppidimacs', 'w')
-            fpcnf = open(f'pcnf/{outdir}/{target_var.name}_{value}.cnf', 'w')
+            fout = open(os.path.join(_script_dir, 'ppidimacs', outdir,  f'{target_var.name}_{value}.ppidimacs'), 'w')
+            fpcnf = open(os.path.join(_script_dir, 'pcnf', outdir, f'{target_var.name}_{value}.cnf'), 'w')
             fout.write(f'p cnf {n_var} {n_clause}\n')
             fpcnf.write(f'p pcnf {n_var} {n_clause + additional_clause_pcnf} {n_probabilistic_var}\n')
             
@@ -183,13 +184,8 @@ def write_network(outdir, variables, prop_evidence):
             fout.close()
             fpcnf.close()
 
-test=False
-if not test:
-    for file in os.listdir('bif'):
-        name = file.split('.')[0]
-        print(f'Processing file {name}')
-        variables = parse_network(f"bif/{file}")
-        write_network(name, variables, 0.3)
-else:
-    variables = parse_network(f"test.bif")
-    write_network("test", variables, 0.0)
+for file in os.listdir(os.path.join(_script_dir, 'bif')):
+    name = file.split('.')[0]
+    print(f'Processing file {name}')
+    variables = parse_network(os.path.join(_script_dir, 'bif', file))
+    write_network(name, variables, 0.3)
