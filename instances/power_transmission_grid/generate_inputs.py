@@ -3,6 +3,8 @@ import random
 
 random.seed(52696698)
 
+_script_dir = os.path.dirname(os.path.realpath(__file__))
+
 class Node:
 
     def __init__(self, node_id):
@@ -26,7 +28,7 @@ class Edge:
 
 def get_nodes(dataset):
     nodes = []
-    with open(f'{dataset}/gridkit_{dataset.split("/")[1]}-highvoltage-vertices.csv') as f:
+    with open(os.path.join(_script_dir, f'{dataset}/gridkit_{dataset.split("/")[1]}-highvoltage-vertices.csv')) as f:
         first = True
         for line in f:
             if first:
@@ -40,7 +42,7 @@ def get_nodes(dataset):
 def get_edges(dataset, nodes):
     edges = []
     map_node_id = {node.node_id: i for i, node in enumerate(nodes)}
-    with open(f'{dataset}/gridkit_{dataset.split("/")[1]}-highvoltage-links.csv') as f:
+    with open(os.path.join(_script_dir, f'{dataset}/gridkit_{dataset.split("/")[1]}-highvoltage-links.csv')) as f:
         first = True
         var_id = 0
         for line in f:
@@ -69,7 +71,7 @@ def write_ppidimacs(dataset, nodes, edges, source, target):
         clauses.append(f'{nodes[edge.n1].var_id} -{nodes[edge.n2].var_id} -{edge.var_id}')
         clauses.append(f'{nodes[edge.n2].var_id} -{nodes[edge.n1].var_id} -{edge.var_id}')
 
-    with open(os.path.join(dataset, 'ppidimacs', f'{source}_{target}.ppidimacs'), 'w') as f:
+    with open(os.path.join(_script_dir, dataset, 'ppidimacs', f'{source}_{target}.ppidimacs'), 'w') as f:
         f.write(f'p cnf {len(nodes)+len(edges)*2} {len(clauses)}\n')
         f.write('\n'.join(distributions))
         f.write('\n')
@@ -85,7 +87,7 @@ def write_pcnf(dataset, nodes, edges, source, target):
         clauses.append(f'{nodes[edge.n1].var_id + 1} -{nodes[edge.n2].var_id +1} -{edge.var_id+1} 0')
         clauses.append(f'{nodes[edge.n2].var_id+1} -{nodes[edge.n1].var_id+1} -{edge.var_id+1} 0')
 
-    with open(os.path.join(dataset, 'pcnf', f'{source}_{target}.cnf'), 'w') as f:
+    with open(os.path.join(_script_dir, dataset, 'pcnf', f'{source}_{target}.cnf'), 'w') as f:
         f.write(f'p pcnf {len(nodes)+len(edges)*2} {len(clauses)+len(distributions_clauses)} {len(edges)*2}\n')
         f.write(f'vp {" ".join([str(x+1) for x in range(len(edges)*2)])} 0\n')
         f.write('\n'.join(distributions_clauses))
@@ -134,12 +136,59 @@ datasets = [
         'europe/Turkey',
         'europe/Ukraine',
         'europe/United Kingdom',
+        'north_america/Alabama',
+        'north_america/Alaska',
+        'north_america/Arizona',
+        'north_america/Arkansas',
+        'north_america/California',
+        'north_america/Connecticut',
+        'north_america/Delaware',
+        'north_america/Florida',
+        'north_america/Georgia',
+        'north_america/Idaho',
+        'north_america/Illinois',
+        'north_america/Iowa',
+        'north_america/Kansas',
+        'north_america/Kentucky',
+        'north_america/Louisiana',
+        'north_america/Maine',
+        'north_america/Maryland',
+        'north_america/Massachusetts',
+        'north_america/Michigan',
+        'north_america/Minnesota',
+        'north_america/Mississippi',
+        'north_america/Missouri',
+        'north_america/Montana',
+        'north_america/Nebraska',
+        'north_america/Nevada',
+        'north_america/New Hampshire',
+        'north_america/New Jersey',
+        'north_america/New Mexico',
+        'north_america/New York',
+        'north_america/North Carolina',
+        'north_america/North Dakota',
+        'north_america/Ohio',
+        'north_america/Oklahoma',
+        'north_america/Oregon',
+        'north_america/Pennsylvania',
+        'north_america/Rhode Island',
+        'north_america/South Carolina',
+        'north_america/South Dakota',
+        'north_america/Tennessee',
+        'north_america/Texas',
+        'north_america/Utah',
+        'north_america/Vermont',
+        'north_america/Virginia',
+        'north_america/Washington',
+        'north_america/West Virginia',
+        'north_america/Wisconsin',
+        'north_america/Wyoming',
         ]
 
 for dataset in datasets:
     print(f'Processing {dataset}')
-    os.makedirs(f'{dataset}/ppidimacs', exist_ok=True)
-    os.makedirs(f'{dataset}/pcnf', exist_ok=True)
+    os.makedirs(os.path.join(_script_dir, f'{dataset}/ppidimacs'), exist_ok=True)
+    os.makedirs(os.path.join(_script_dir, f'{dataset}/pcnf'), exist_ok=True)
     nodes = get_nodes(dataset)
     edges = get_edges(dataset, nodes)
     for i in range(10):
