@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 
+# Installs the solvers if not present in the PATH
 if ! [ -x "$(command -v ganak)" ]
 then
     echo "Ganak binary not found, installing from sources..."
@@ -42,9 +43,43 @@ else
     echo "schlandals binary found"
 fi
 
+if [ $# -ne 1 ]
+then
+    printf "You must pass 1 argument, the number of thread that will be used by parallel\n"
+    exit 1
+fi
+nb_thread=$1
+nb_repeat=5
+
 timestamp=$(date +%Y_%m_%d_%H_%M_%s)
-./bn_benchmarks.sh $timestamp
-./pg_benchmarks.sh $timestamp
+output_dir=results/$timestamp
+mkdir -p $output_dir
+# Time format for the time command. User space time, kernel time
+export TIMEFORMAT=%R_%U_%S
+timeout=120s
+export par_cmd="parallel --bar -j $nb_thread"
+export ganak_cmd="$timeout_cmd ganak -q"
+export projMC_cmd="$timeout_cmd d4 -m projMC -i"
+export schlandals_cmd="$timeoutcmd schlandals --branching articulation -i"
+mkdir $output_dir/ganak
+mkdir $output_dir/projMC
+mkdir $output_dir/schlandals
+
+# First set of benchmarks, bayesian networks
+printf "Benchmarking bayesian networks\n"
+printf "\tLaunching pcnf files (ganak, projMC)\n"
+find instances/bayesian_networks/pcnf -type f -name '*.cnf' | $par_cmd --results $output_dir/ganak/bn.csv "time { timeout  $timeout $ganak_cmd {} >> /dev/null ;" }
+find instances/bayesian_networks/pcnf -type f -name '*.cnf' | $par_cmd --results $output_dir/projMC/bn.csv "time { timeout  $timeout $projMC_cmd {} >> /dev/null ;" }
+printf "\tLaunching ppidimacs files (schlandals)\n"
+find instances/bayesian_networks/pcnf -type f -name '*.ppidimacs' | $par_cmd --results $output_dir/schlandals/bn.csv "time { timeout  $timeout $schlandals_cmd {} >> /dev/null ;" }
+
+printf "Benchmarking power grid transmission\n"
+printf "\tLaunching pcnf files (ganak, projMC)\n"
+find instances/power_transmission_grid/pcnf -type f -name '*.cnf' | $par_cmd --results $output_dir/ganak/pg.csv "time { timeout  $timeout $ganak_cmd {} >> /dev/null ;" }
+find instances/power_transmission_grid/pcnf -type f -name '*.cnf' | $par_cmd --results $output_dir/projMC/pg.csv "time { timeout  $timeout $projMC_cmd {} >> /dev/null ;" }
+printf "\tLaunching ppidimacs files (schlandals)\n"
+find instances/power_transmission_grid/pcnf -type f -name '*.ppidimacs' | $par_cmd --results $output_dir/schlandals/pg.csv "time { timeout  $timeout $schlandals_cmd {} >> /dev/null ;" }
+
 git add results/$timestamp
-git commit -m "auto commit result $timestamp"
+git commit -m "auto commit results $timestamp"
 git push
