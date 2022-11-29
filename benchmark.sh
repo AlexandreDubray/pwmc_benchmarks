@@ -44,4 +44,3 @@ fi
 
 timestamp=$(date +%Y_%m_%d_%H_%M_%s)
 ./bn_benchmarks.sh $timestamp
-./pg_benchmarks.sh $timestamp
