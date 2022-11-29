@@ -35,7 +35,7 @@ schlandals() {
 export -f schlandals
 
 printf "\tBenchmarking on pcnf files...\n"
-find instances/bayesian_networks/pcnf -type d | while read directory
+find instances/bayesian_networks/pcnf -mindepth 1 -type d | while read directory
 do
     IFS='/' read -ra instance_name <<< $directory;
     printf "\t\tRunning ganak on instance ${instance_name[-1]}\n"
@@ -44,7 +44,7 @@ do
     find $directory -type f -name '*.cnf' | $par_cmd projMC {} $outputdir/projMC/bn/${instance_name[-1]}_{/.}.time $timeout
 done
 printf "\tBenchmarking on ppidimacs files...\n"
-find instances/bayesian_networks/ppidimacs -type d | while read directory
+find instances/bayesian_networks/ppidimacs -mindepth 1 -type d | while read directory
 do
     IFS='/' read -ra instance_name <<< $directory;
     printf "\t\tRunning Schlandals on instance ${instance_name[-1]}\n"

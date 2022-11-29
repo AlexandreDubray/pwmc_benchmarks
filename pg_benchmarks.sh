@@ -38,7 +38,7 @@ for region in europe north_america
 do
     printf "Benchmarking on $region data...\n"
     printf "\tBenchmarking on pcnf files...\n"
-    find instances/power_transmission_grid/$region -type d | while read directory
+    find instances/power_transmission_grid/$region -mindepth 1 -type d | while read directory
     do
         IFS='/' read -ra instance_name <<< $directory;
         printf "\t\tRunning ganak on instance ${instance_name[-1]}\n"
@@ -47,7 +47,7 @@ do
         find $directory/pcnf -type f -name '*.cnf' | $par_cmd projMC {} $outputdir/projMC/pg/${instance_name[-1]}_{/.}.time
     done
     printf "\tBenchmarking on ppidimacs files...\n"
-    find instances/power_transmission_grid/$region -type d | while read directory
+    find instances/power_transmission_grid/$region -mindepth 1 -type d | while read directory
     do
         IFS='/' read -ra instance_name <<< $directory;
         printf "\t\tRunning Schlandals on instance ${instance_name[-1]}\n"
