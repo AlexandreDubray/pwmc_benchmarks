@@ -56,7 +56,7 @@ output_dir=results/$timestamp
 mkdir -p $output_dir
 # Time format for the time command. User space time, kernel time
 export TIMEFORMAT=%R_%U_%S
-timeout=120s
+timeout=1s
 export par_cmd="parallel --bar -j $nb_thread"
 export ganak_cmd="$timeout_cmd ganak -q"
 export projMC_cmd="$timeout_cmd d4 -m projMC -i"
@@ -68,17 +68,17 @@ mkdir $output_dir/schlandals
 # First set of benchmarks, bayesian networks
 printf "Benchmarking bayesian networks\n"
 printf "\tLaunching pcnf files (ganak, projMC)\n"
-find instances/bayesian_networks/pcnf -type f -name '*.cnf' | $par_cmd --results $output_dir/ganak/bn.csv "time { timeout  $timeout $ganak_cmd {} >> /dev/null ;" }
-find instances/bayesian_networks/pcnf -type f -name '*.cnf' | $par_cmd --results $output_dir/projMC/bn.csv "time { timeout  $timeout $projMC_cmd {} >> /dev/null ;" }
+find instances/bayesian_networks/pcnf -type f -name '*.cnf' | $par_cmd --results $output_dir/ganak/bn.csv "time { timeout  $timeout $ganak_cmd {} >> /dev/null ; }"
+find instances/bayesian_networks/pcnf -type f -name '*.cnf' | $par_cmd --results $output_dir/projMC/bn.csv "time { timeout  $timeout $projMC_cmd {} >> /dev/null ; }"
 printf "\tLaunching ppidimacs files (schlandals)\n"
-find instances/bayesian_networks/pcnf -type f -name '*.ppidimacs' | $par_cmd --results $output_dir/schlandals/bn.csv "time { timeout  $timeout $schlandals_cmd {} >> /dev/null ;" }
+find instances/bayesian_networks/pcnf -type f -name '*.ppidimacs' | $par_cmd --results $output_dir/schlandals/bn.csv "time { timeout  $timeout $schlandals_cmd {} >> /dev/null ; }"
 
 printf "Benchmarking power grid transmission\n"
 printf "\tLaunching pcnf files (ganak, projMC)\n"
-find instances/power_transmission_grid/pcnf -type f -name '*.cnf' | $par_cmd --results $output_dir/ganak/pg.csv "time { timeout  $timeout $ganak_cmd {} >> /dev/null ;" }
-find instances/power_transmission_grid/pcnf -type f -name '*.cnf' | $par_cmd --results $output_dir/projMC/pg.csv "time { timeout  $timeout $projMC_cmd {} >> /dev/null ;" }
+find instances/power_transmission_grid/pcnf -type f -name '*.cnf' | $par_cmd --results $output_dir/ganak/pg.csv "time { timeout  $timeout $ganak_cmd {} >> /dev/null ; }"
+find instances/power_transmission_grid/pcnf -type f -name '*.cnf' | $par_cmd --results $output_dir/projMC/pg.csv "time { timeout  $timeout $projMC_cmd {} >> /dev/null ; }"
 printf "\tLaunching ppidimacs files (schlandals)\n"
-find instances/power_transmission_grid/pcnf -type f -name '*.ppidimacs' | $par_cmd --results $output_dir/schlandals/pg.csv "time { timeout  $timeout $schlandals_cmd {} >> /dev/null ;" }
+find instances/power_transmission_grid/pcnf -type f -name '*.ppidimacs' | $par_cmd --results $output_dir/schlandals/pg.csv "time { timeout  $timeout $schlandals_cmd {} >> /dev/null ; }"
 
 git add results/$timestamp
 git commit -m "auto commit results $timestamp"
