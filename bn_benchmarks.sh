@@ -17,20 +17,29 @@ mkdir -p $outputdir/schlandals/bn
 ganak() {
     input=$1
     outputfile=$2
-    time ($timeout_cmd ganak -q $input >> /dev/null) &>> $outputfile
+    for i in 1..5
+    do
+        time ($timeout_cmd ganak -q $input >> /dev/null) &>> $outputfile
+    done
 }
 export -f ganak 
 
 projMC() {
     input=$1
     outputfile=$2
-    time ($timeout_cmd d4 -m projMC -i $input >> /dev/null) &>> $outputfile
+    for i in 1..5
+    do
+        time ($timeout_cmd d4 -m projMC -i $input >> /dev/null) &>> $outputfile
+    done
 }
 export -f projMC
 schlandals() {
     input=$1
     outputfile=$2
-    time ($timeout_cmd schlandals --branching articulation -i $input >> /dev/null) &>> $outputfile
+    for i in 1..5
+    do
+        time ($timeout_cmd schlandals --branching articulation -i $input >> /dev/null) &>> $outputfile
+    done
 }
 export -f schlandals
 
