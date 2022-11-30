@@ -1,2 +1,7 @@
-*.ppidimacs
-*.cnf
+**/*.ppidimacs
+**/*.cnf
+instances/power_transmission_grid/north_america/*/*.csv
+**/*.zip
+schlandals
+d4v2
+ganak
