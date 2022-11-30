@@ -68,6 +68,13 @@ mkdir $output_dir/schlandals
 # First set of benchmarks, bayesian networks
 printf "Benchmarking bayesian networks\n"
 printf "\tLaunching pcnf files (ganak, projMC)\n"
+# The parallel command is used to run the solvers on each benchmarks. There are multiple ways to provide input to parralel which then applies the given command on each input.
+# For instance `parallel echo {} ::: $(seq 10)` will print all the numbers from 1 to 10. {} will be replaced by parallel with the input.
+# In our case we want to run the solvers on all instances (.cnf files or .ppidimacs files) a given amount of time (to reduce variances in the run time).
+# This is done by giving two inputs to parallel. In that case, it will run the command for each possible pair of the inputs (in our case {2} is the second input, the instance file).
+# This achieve the wanted effect: for every instance file, we will run $nb_repeat time the command that run the solver on the instance.
+# The command of the solver is run in a new bash shell (bash -c '...') because we use ulimit -t to set the total CPU time allowed to the solver.
+# Finally, the results are saved in a .csv file and the output of time (on stderr) can be retrieved in that file (used later to generate the plots/stats)
 $par_cmd --results $output_dir/ganak/bn.csv "time (bash -c 'ulimit -t $timeout; $ganak_cmd {2} >> /dev/null')" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.cnf') 
 $par_cmd --results $output_dir/projMC/bn.csv "time (bash -c 'ulimit -t $timeout; $projMC_cmd {2} >> /dev/null')" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.cnf')
 printf "\tLaunching ppidimacs files (schlandals)\n"
