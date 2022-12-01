@@ -377,26 +377,11 @@ Seq,Host,Starttime,JobRuntime,Send,Receive,Exitval,Signal,Command,V1,Stdout,Stde
 "
 185,:,1669792485.000,120.000,0,0,124,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/cho_24_4_8mmol_kg.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/cho_24_4_8mmol_kg.ppidimacs,,"120.013_119.286_0.249
 "
-199,:,1669792604.000,1.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_18mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_18mmol_l.ppidimacs,,"
-thread 'main' has overflowed its stack
-fatal runtime error: stack overflow
-timeout: the monitored command dumped core
-/usr/bin/bash: line 1: 243739 Aborted                 timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_18mmol_l.ppidimacs >> /dev/null
-0.992_0.405_0.416
+199,:,1669792604.000,1.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_18mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_18mmol_l.ppidimacs,,"120.0_120.0_0.0
 "
-200,:,1669792604.000,1.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_16mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_16mmol_l.ppidimacs,,"
-thread 'main' has overflowed its stack
-fatal runtime error: stack overflow
-timeout: the monitored command dumped core
-/usr/bin/bash: line 1: 243742 Aborted                 timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_16mmol_l.ppidimacs >> /dev/null
-1.418_0.484_0.463
+200,:,1669792604.000,1.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_16mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_16mmol_l.ppidimacs,,"120.0_120.0_0.0
 "
-198,:,1669792604.000,1.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_20mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_20mmol_l.ppidimacs,,"
-thread 'main' has overflowed its stack
-fatal runtime error: stack overflow
-timeout: the monitored command dumped core
-/usr/bin/bash: line 1: 243736 Aborted                 timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_20mmol_l.ppidimacs >> /dev/null
-1.428_0.476_0.477
+198,:,1669792604.000,1.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_20mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_20mmol_l.ppidimacs,,"120.0_120.0_0.0
 "
 216,:,1669792605.000,1.000,0,0,0,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/hailfinder/Dewpoints_LowEvrywhere.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/hailfinder/Dewpoints_LowEvrywhere.ppidimacs,,"0.095_0.086_0.009
 "
@@ -408,49 +393,19 @@ timeout: the monitored command dumped core
 "
 220,:,1669792606.000,0.000,0,0,0,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/hailfinder/Dewpoints_LowMtsHighPl.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/hailfinder/Dewpoints_LowMtsHighPl.ppidimacs,,"0.205_0.199_0.005
 "
-205,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_6mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_6mmol_l.ppidimacs,,"
-thread 'main' has overflowed its stack
-fatal runtime error: stack overflow
-timeout: the monitored command dumped core
-/usr/bin/bash: line 1: 243755 Aborted                 timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_6mmol_l.ppidimacs >> /dev/null
-1.759_0.485_0.568
+205,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_6mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_6mmol_l.ppidimacs,,"120.0_120.0_0.0
 "
-206,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_4mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_4mmol_l.ppidimacs,,"
-thread 'main' has overflowed its stack
-fatal runtime error: stack overflow
-timeout: the monitored command dumped core
-/usr/bin/bash: line 1: 243759 Aborted                 timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_4mmol_l.ppidimacs >> /dev/null
-1.843_0.478_0.597
+206,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_4mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_4mmol_l.ppidimacs,,"120.0_120.0_0.0
 "
-203,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_10mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_10mmol_l.ppidimacs,,"
-thread 'main' has overflowed its stack
-fatal runtime error: stack overflow
-timeout: the monitored command dumped core
-/usr/bin/bash: line 1: 243751 Aborted                 timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_10mmol_l.ppidimacs >> /dev/null
-1.859_0.467_0.605
+203,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_10mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_10mmol_l.ppidimacs,,"120.0_120.0_0.0
 "
 221,:,1669792606.000,0.000,0,0,0,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/hailfinder/Dewpoints_HighEvrywher.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/hailfinder/Dewpoints_HighEvrywher.ppidimacs,,"0.209_0.204_0.004
 "
-201,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_14mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_14mmol_l.ppidimacs,,"
-thread 'main' has overflowed its stack
-fatal runtime error: stack overflow
-timeout: the monitored command dumped core
-/usr/bin/bash: line 1: 243744 Aborted                 timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_14mmol_l.ppidimacs >> /dev/null
-1.998_0.572_0.620
+201,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_14mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_14mmol_l.ppidimacs,,"120.0_120.0_0.0
 "
-207,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_2mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_2mmol_l.ppidimacs,,"
-thread 'main' has overflowed its stack
-fatal runtime error: stack overflow
-timeout: the monitored command dumped core
-/usr/bin/bash: line 1: 243762 Aborted                 timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_2mmol_l.ppidimacs >> /dev/null
-1.829_0.463_0.613
+207,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_2mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_2mmol_l.ppidimacs,,"120.0_120.0_0.0
 "
-202,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_12mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_12mmol_l.ppidimacs,,"
-thread 'main' has overflowed its stack
-fatal runtime error: stack overflow
-timeout: the monitored command dumped core
-/usr/bin/bash: line 1: 243747 Aborted                 timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_12mmol_l.ppidimacs >> /dev/null
-1.889_0.483_0.610
+202,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_12mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_12mmol_l.ppidimacs,,"120.0_120.0_0.0
 "
 223,:,1669792606.000,0.000,0,0,0,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/hailfinder/LowLLapse_CloseToDryAd.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/hailfinder/LowLLapse_CloseToDryAd.ppidimacs,,"0.157_0.148_0.010
 "
@@ -462,21 +417,11 @@ timeout: the monitored command dumped core
 "
 226,:,1669792606.000,0.000,0,0,0,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/hailfinder/LowLLapse_Stable.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/hailfinder/LowLLapse_Stable.ppidimacs,,"0.107_0.100_0.007
 "
-208,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_1mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_1mmol_l.ppidimacs,,"
-thread 'main' has overflowed its stack
-fatal runtime error: stack overflow
-timeout: the monitored command dumped core
-/usr/bin/bash: line 1: 243765 Aborted                 timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_1mmol_l.ppidimacs >> /dev/null
-1.992_0.479_0.556
+208,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_1mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_1mmol_l.ppidimacs,,"120.0_120.0_0.0
 "
 224,:,1669792606.000,0.000,0,0,0,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/hailfinder/LowLLapse_Steep.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/hailfinder/LowLLapse_Steep.ppidimacs,,"0.187_0.180_0.007
 "
-204,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_8mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_8mmol_l.ppidimacs,,"
-thread 'main' has overflowed its stack
-fatal runtime error: stack overflow
-timeout: the monitored command dumped core
-/usr/bin/bash: line 1: 243754 Aborted                 timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_8mmol_l.ppidimacs >> /dev/null
-2.056_0.483_0.578
+204,:,1669792604.000,2.000,0,0,134,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/diabetes/bg_24_8mmol_l.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/diabetes/bg_24_8mmol_l.ppidimacs,,"120.0_120.0_0.0
 "
 232,:,1669792606.000,0.000,0,0,0,0,"time { timeout 120s schlandals --branching articulation -i instances/bayesian_networks/ppidimacs/hailfinder/MidLLapse_ModerateOrLe.ppidimacs >> /dev/null ; }",instances/bayesian_networks/ppidimacs/hailfinder/MidLLapse_ModerateOrLe.ppidimacs,,"0.074_0.068_0.005
 "
