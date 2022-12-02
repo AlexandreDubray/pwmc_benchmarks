@@ -5,6 +5,9 @@ random.seed(52696698)
 
 _script_dir = os.path.dirname(os.path.realpath(__file__))
 
+def safe_str_bash(s):
+    return re.sub('[\s $\#=!<>|;{}~&', '_', s)
+
 class Node:
 
     def __init__(self, node_id):
@@ -187,15 +190,17 @@ datasets = [
 
 for dataset in datasets:
     print(f'Processing {dataset}')
-    dname = dataset.replace(' ','_')
-    os.makedirs(os.path.join(_script_dir, f'{dname}/ppidimacs'), exist_ok=True)
-    os.makedirs(os.path.join(_script_dir, f'{dname}/pcnf'), exist_ok=True)
+    s = dataset.split('/')
+    continent = s[0]
+    sub_region = safe_str_bash(s[1])
+    os.makedirs(os.path.join(_script_dir, f'{continent}/{sub_region}/ppidimacs'), exist_ok=True)
+    os.makedirs(os.path.join(_script_dir, f'{continent}/{sub_region}/pcnf'), exist_ok=True)
     nodes = get_nodes(dataset)
     edges = get_edges(dataset, nodes)
     for i in range(10):
         source = random.randint(0, len(nodes)-1)
         target = random.randint(0, len(nodes)-1)
         if source != target:
-            write_ppidimacs(dname, nodes, edges, source, target)
-            write_pcnf(dname, nodes, edges, source, target)
+            write_ppidimacs(f'{continent}_{sub_region}', nodes, edges, source, target)
+            write_pcnf(f'{continent}_{sub_region}', nodes, edges, source, target)
 
