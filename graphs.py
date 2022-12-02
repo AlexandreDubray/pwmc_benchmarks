@@ -118,7 +118,7 @@ plt.legend()
 plt.savefig(os.path.join(plots_dir, 'cactus.svg'))
 plt.close()
 
-with open(os.path.join(plots_dir, 'cactus.md'), 'w') as f:
+with open(os.path.join(plots_dir, 'README.md'), 'w') as f:
     f.write(f'# Plots for the results of benchmark {timestamp}\n\n')
     f.write(f'For details about the instances, see file for a query by query comparison\n')
     f.write('## All instances\n')
@@ -126,4 +126,5 @@ with open(os.path.join(plots_dir, 'cactus.md'), 'w') as f:
 
     for problem in problems:
         f.write(f'## {problem}\n')
+        f.write(f'details ![here](./table_{pb}.md')
         f.write(f'![](./cactus_{problem}.svg)\n')
