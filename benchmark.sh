@@ -43,7 +43,7 @@ else
     echo "schlandals binary found"
 fi
 
-if [ $# -lt 1 ]
+if [ $# -lt 2 ]
 then
     printf "You must pass at least 2 arguments: i) the number of threads used by parallel ii) the name of the solvers to benchmarks\n"
     printf "If a solver is not benchmarked, its last benchmarks will be copied"
@@ -82,10 +82,6 @@ mkdir -p $output_dir
 
 # copying the old benchmarks if any, for the solver not benchmarked
 # if no benchmarks present, exit
-echo $run_ganak
-echo $run_projMC
-echo $run_schlandals
-echo $last_bench_dir
 if [ $run_ganak = false ]
 then
     cp -r results/$last_bench_dir/ganak $output_dir/ganak
@@ -123,25 +119,44 @@ printf "\tLaunching pcnf files (ganak, projMC)\n"
 # This achieve the wanted effect: for every instance file, we will run $nb_repeat time the command that run the solver on the instance.
 # The command of the solver is run in a new bash shell (bash -c '...') because we use ulimit -t to set the total CPU time allowed to the solver.
 # Finally, the results are saved in a .csv file and the output of time (on stderr) can be retrieved in that file (used later to generate the plots/stats)
-$par_cmd --results $output_dir/ganak/bn.csv "time (bash -c 'ulimit -t $timeout; $ganak_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.cnf') 
-$par_cmd --results $output_dir/projMC/bn.csv "time (bash -c 'ulimit -t $timeout; $projMC_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.cnf')
+if [ $run_ganak = true ]
+then
+    $par_cmd --results $output_dir/ganak/bn.csv "time (bash -c 'ulimit -t $timeout; $ganak_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.cnf') 
+fi
+if [ $run_projMC = true ]
+then
+    $par_cmd --results $output_dir/projMC/bn.csv "time (bash -c 'ulimit -t $timeout; $projMC_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.cnf')
+fi
 printf "\tLaunching ppidimacs files (schlandals)\n"
-$par_cmd --results $output_dir/schlandals/bn.csv "time (bash -c 'ulimit -t $timeout; $schlandals_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.ppidimacs')
+if [ $run_schlandals = true ]
+then
+    $par_cmd --results $output_dir/schlandals/bn.csv "time (bash -c 'ulimit -t $timeout; $schlandals_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.ppidimacs')
+fi
 
 printf "Benchmarking power grid transmission\n"
 printf "\tLaunching pcnf files (ganak, projMC)\n"
-$par_cmd --results $output_dir/ganak/pg.csv "time (bash -c 'ulimit -t $timeout; $ganak_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
-$par_cmd --results $output_dir/projMC/pg.csv "time (bash -c 'ulimit -t $timeout; $projMC_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
+if [ $run_ganak = true ]
+then
+    $par_cmd --results $output_dir/ganak/pg.csv "time (bash -c 'ulimit -t $timeout; $ganak_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
+fi
+if [ $run_projMC = true ]
+then
+    $par_cmd --results $output_dir/projMC/pg.csv "time (bash -c 'ulimit -t $timeout; $projMC_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
+fi
 printf "\tLaunching ppidimacs files (schlandals)\n"
-$par_cmd --results $output_dir/schlandals/pg.csv "time (bash -c 'ulimit -t $timeout; $schlandals_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.ppidimacs')
+if [ $run_schlandals = true ]
+then
+    $par_cmd --results $output_dir/schlandals/pg.csv "time (bash -c 'ulimit -t $timeout; $schlandals_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.ppidimacs')
+fi
 
+mkdir -p $output_dir/plots
 plot_readme=$output_dir/plots/README.md
 
 # print the config used in the plot file
 # We assume that the solver have been installed from source and are symlinked
-ganak_base_dir=$(readlink -f 'command -v ganak')
-projMC_base_dir=$(readlink -f 'command -v d4')
-schlandals_base_dir=$(readlink -f 'command -v schlandals')
+ganak_base_dir=$(dirname $(readlink -f $(command -v ganak)))
+projMC_base_dir=$(dirname $(readlink -f $(command -v d4)))
+schlandals_base_dir=$(dirname $(readlink -f $(command -v schlandals)))
 cur_dir=$(pwd)
 
 get_git_hash () {
@@ -149,14 +164,14 @@ get_git_hash () {
     if [[ $(git rev-parse --quiet --git-dir) ]]
     then
         hash=$(git rev-parse HEAD)
-        if [ $hash -eq $2 ]
+        if [[ "$hash" == "$2" ]]
         then
-            return "-"
+            echo "-"
         else
-            return $hash
+            echo $hash
         fi
     else
-        return "-"
+        echo "-"
     fi
 }
 
