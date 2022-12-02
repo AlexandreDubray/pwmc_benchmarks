@@ -118,7 +118,7 @@ plt.legend()
 plt.savefig(os.path.join(plots_dir, 'cactus.svg'))
 plt.close()
 
-with open(os.path.join(plots_dir, 'README.md'), 'w') as f:
+with open(os.path.join(plots_dir, 'README.md'), 'a') as f:
     f.write(f'# Plots for the results of benchmark {timestamp}\n\n')
     f.write(f'For details about the instances, see file for a query by query comparison\n')
     f.write('## All instances\n')

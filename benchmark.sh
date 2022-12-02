@@ -43,7 +43,7 @@ else
     echo "schlandals binary found"
 fi
 
-if [ $# -lt 2 ]
+if [ $# -lt 1 ]
 then
     printf "You must pass at least 2 arguments: i) the number of threads used by parallel ii) the name of the solvers to benchmarks\n"
     printf "If a solver is not benchmarked, its last benchmarks will be copied"
@@ -134,6 +134,49 @@ $par_cmd --results $output_dir/ganak/pg.csv "time (bash -c 'ulimit -t $timeout; 
 $par_cmd --results $output_dir/projMC/pg.csv "time (bash -c 'ulimit -t $timeout; $projMC_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
 printf "\tLaunching ppidimacs files (schlandals)\n"
 $par_cmd --results $output_dir/schlandals/pg.csv "time (bash -c 'ulimit -t $timeout; $schlandals_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.ppidimacs')
+
+plot_readme=$output_dir/plots/README.md
+
+# print the config used in the plot file
+# We assume that the solver have been installed from source and are symlinked
+ganak_base_dir=$(readlink -f 'command -v ganak')
+projMC_base_dir=$(readlink -f 'command -v d4')
+schlandals_base_dir=$(readlink -f 'command -v schlandals')
+cur_dir=$(pwd)
+
+get_git_hash () {
+    cd $1
+    if [[ $(git rev-parse --quiet --git-dir) ]]
+    then
+        hash=$(git rev-parse HEAD)
+        if [ $hash -eq $2 ]
+        then
+            return "-"
+        else
+            return $hash
+        fi
+    else
+        return "-"
+    fi
+}
+
+touch $plot_readme
+bench_git_hash=$(git rev-parse HEAD)
+ganak_hash=$(get_git_hash $ganak_base_dir $bench_git_hash)
+projMC_hash=$(get_git_hash $projMC_base_dir $bench_git_hash)
+schlandals_hash=$(get_git_hash $schlandals_base_dir $bench_git_hash)
+cd $cur_dir
+
+echo \# Solvers configurations >> $plot_readme
+echo \#\#\# Ganak >> $plot_readme
+echo Commit hash $ganak_hash >> $plot_readme
+echo Command $ganak_cmd >> $plot_readme
+echo \#\#\# projMC >> $plot_readme
+echo Commit hash $projMC_hash >> $plot_readme
+echo Command $projMC_cmd >> $plot_readme
+echo \#\#\# Schlandals >> $plot_readme
+echo Commit hash $schlandals_hash >> $plot_readme
+echo Command $schlandals_cmd >> $plot_readme
 
 python3 graphs.py $timestamp $timeout ganak projMC schlandals
 
