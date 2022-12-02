@@ -60,13 +60,14 @@ for state in states:
     name = state['properties']['NAME']
     if len(vertices_line_state[name]) > 0 and len(links_line_state[name]) > 0:
         print(f'\t\t{name}')
+        safe_name = name.replace(' ', '_')
         os.makedirs(os.path.join(na_dir, name), exist_ok=True)
-        with open(os.path.join(na_dir, name, f'gridkit_{name}-highvoltage-vertices.csv'), 'w') as f:
+        with open(os.path.join(na_dir, safe_name, f'gridkit_{safe_name}-highvoltage-vertices.csv'), 'w') as f:
             f.write(vertices_header)
             for line in vertices_line_state[name]:
                 f.write(line)
 
-        with open(os.path.join(na_dir, name, f'gridkit_{name}-highvoltage-links.csv'), 'w') as f:
+        with open(os.path.join(na_dir, safe_name, f'gridkit_{safe_name}-highvoltage-links.csv'), 'w') as f:
             f.write(links_header)
             for line in links_line_state[name]:
                 f.write(line)

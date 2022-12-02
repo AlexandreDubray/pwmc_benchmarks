@@ -187,14 +187,15 @@ datasets = [
 
 for dataset in datasets:
     print(f'Processing {dataset}')
-    os.makedirs(os.path.join(_script_dir, f'{dataset}/ppidimacs'), exist_ok=True)
-    os.makedirs(os.path.join(_script_dir, f'{dataset}/pcnf'), exist_ok=True)
+    dname = dataset.replace(' ','_')
+    os.makedirs(os.path.join(_script_dir, f'{dname}/ppidimacs'), exist_ok=True)
+    os.makedirs(os.path.join(_script_dir, f'{dname}/pcnf'), exist_ok=True)
     nodes = get_nodes(dataset)
     edges = get_edges(dataset, nodes)
     for i in range(10):
         source = random.randint(0, len(nodes)-1)
         target = random.randint(0, len(nodes)-1)
         if source != target:
-            write_ppidimacs(dataset, nodes, edges, source, target)
-            write_pcnf(dataset, nodes, edges, source, target)
+            write_ppidimacs(dname, nodes, edges, source, target)
+            write_pcnf(dname, nodes, edges, source, target)
 
