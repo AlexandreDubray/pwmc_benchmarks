@@ -16,7 +16,7 @@ result_dir = os.path.join(_script_dir, 'results', timestamp)
 problems = ['bn', 'pg']
 
 def parse_time_stderr(stderr_out):
-    s = stderr_out.split('_')
+    s = stderr_out.replace('"', '').split('_')
     t = float(s[1]) + float(s[2])
     return t if t < timeout else None
 
@@ -35,7 +35,7 @@ def get_solver_runtimes(solver):
                 s = line.rstrip().split(',')
                 if stderr_index is None:
                     stderr_index = s.index('Stderr')
-                    instance_index = s.index('V1')
+                    instance_index = s.index('V2')
                     continue
                 instance = s[instance_index]
                 instance_s = instance.split('/')

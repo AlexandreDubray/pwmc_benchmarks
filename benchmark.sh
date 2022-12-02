@@ -135,7 +135,7 @@ $par_cmd --results $output_dir/projMC/pg.csv "time (bash -c 'ulimit -t $timeout;
 printf "\tLaunching ppidimacs files (schlandals)\n"
 $par_cmd --results $output_dir/schlandals/pg.csv "time (bash -c 'ulimit -t $timeout; $schlandals_cmd {2} >> /dev/null')" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.ppidimacs')
 
-python3 graphs.py $timestamp ganak projMC schlandals
+python3 graphs.py $timestamp $timeout ganak projMC schlandals
 
 git add results/$timestamp
 git commit -m "auto commit results $timestamp"
