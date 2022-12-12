@@ -105,6 +105,8 @@ fi
 export TIMEFORMAT=%R_%U_%S
 export par_cmd="parallel --bar -j $nb_thread"
 timeout=120
+# 5 seconds buffer for correct timeout
+buf_timeout=$(($timeout + 5))
 export ganak_cmd="$timeout_cmd ganak -q"
 export projMC_cmd="$timeout_cmd d4 -m projMC -i"
 export schlandals_cmd="$timeout_cmd schlandals --branching articulation -i"
@@ -121,32 +123,32 @@ printf "\tLaunching pcnf files (ganak, projMC)\n"
 # Finally, the results are saved in a .csv file and the output of time (on stderr) can be retrieved in that file (used later to generate the plots/stats)
 if [ $run_ganak = true ]
 then
-    $par_cmd --results $output_dir/ganak/bn.csv "time (bash -c 'ulimit -t $timeout; $ganak_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.cnf') 
+    $par_cmd --results $output_dir/ganak/bn.csv "time (bash -c 'ulimit -t $buf_timeout; $ganak_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.cnf') 
 fi
 if [ $run_projMC = true ]
 then
-    $par_cmd --results $output_dir/projMC/bn.csv "time (bash -c 'ulimit -t $timeout; $projMC_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.cnf')
+    $par_cmd --results $output_dir/projMC/bn.csv "time (bash -c 'ulimit -t $buf_timeout; $projMC_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.cnf')
 fi
 printf "\tLaunching ppidimacs files (schlandals)\n"
 if [ $run_schlandals = true ]
 then
-    $par_cmd --results $output_dir/schlandals/bn.csv "time (bash -c 'ulimit -t $timeout; $schlandals_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.ppidimacs')
+    $par_cmd --results $output_dir/schlandals/bn.csv "time (bash -c 'ulimit -t $buf_timeout; $schlandals_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/bayesian_networks/ -type f -name '*.ppidimacs')
 fi
 
 printf "Benchmarking power grid transmission\n"
 printf "\tLaunching pcnf files (ganak, projMC)\n"
 if [ $run_ganak = true ]
 then
-    $par_cmd --results $output_dir/ganak/pg.csv "time (bash -c 'ulimit -t $timeout; $ganak_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
+    $par_cmd --results $output_dir/ganak/pg.csv "time (bash -c 'ulimit -t $buf_timeout; $ganak_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
 fi
 if [ $run_projMC = true ]
 then
-    $par_cmd --results $output_dir/projMC/pg.csv "time (bash -c 'ulimit -t $timeout; $projMC_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
+    $par_cmd --results $output_dir/projMC/pg.csv "time (bash -c 'ulimit -t $buf_timeout; $projMC_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
 fi
 printf "\tLaunching ppidimacs files (schlandals)\n"
 if [ $run_schlandals = true ]
 then
-    $par_cmd --results $output_dir/schlandals/pg.csv "time (bash -c 'ulimit -t $timeout; $schlandals_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.ppidimacs')
+    $par_cmd --results $output_dir/schlandals/pg.csv "time (bash -c 'ulimit -t $buf_timeout; $schlandals_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.ppidimacs')
 fi
 
 mkdir -p $output_dir/plots
