@@ -109,7 +109,7 @@ timeout=120
 buf_timeout=$(($timeout + 5))
 export ganak_cmd="$timeout_cmd ganak -q"
 export projMC_cmd="$timeout_cmd d4 -m projMC -i"
-export schlandals_cmd="$timeout_cmd schlandals --branching articulation -i"
+export schlandals_cmd="$timeout_cmd schlandals -b neighbor-fiedler -i"
 
 # First set of benchmarks, bayesian networks
 printf "Benchmarking bayesian networks\n"
