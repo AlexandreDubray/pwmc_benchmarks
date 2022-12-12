@@ -1,12 +1,13 @@
 import os
 import random
+import re
 
 random.seed(52696698)
 
 _script_dir = os.path.dirname(os.path.realpath(__file__))
 
 def safe_str_bash(s):
-    return re.sub('[\s $\#=!<>|;{}~&', '_', s)
+    return re.sub('[\s $\#=!<>|;{}~&]', '_', s)
 
 class Node:
 
@@ -195,12 +196,12 @@ for dataset in datasets:
     sub_region = safe_str_bash(s[1])
     os.makedirs(os.path.join(_script_dir, f'{continent}/{sub_region}/ppidimacs'), exist_ok=True)
     os.makedirs(os.path.join(_script_dir, f'{continent}/{sub_region}/pcnf'), exist_ok=True)
-    nodes = get_nodes(dataset)
-    edges = get_edges(dataset, nodes)
+    nodes = get_nodes(f'{continent}/{sub_region}')
+    edges = get_edges(f'{continent}/{sub_region}', nodes)
     for i in range(10):
         source = random.randint(0, len(nodes)-1)
         target = random.randint(0, len(nodes)-1)
         if source != target:
-            write_ppidimacs(f'{continent}_{sub_region}', nodes, edges, source, target)
-            write_pcnf(f'{continent}_{sub_region}', nodes, edges, source, target)
+            write_ppidimacs(f'{continent}/{sub_region}', nodes, edges, source, target)
+            write_pcnf(f'{continent}/{sub_region}', nodes, edges, source, target)
 

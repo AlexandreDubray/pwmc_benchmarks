@@ -7,7 +7,7 @@ _script_dir = os.path.dirname(os.path.realpath(__file__))
 random.seed(862453179)
 
 def safe_str_bash(s):
-    return re.sub('[\s $\#=!<>|;{}~&', '_', s)
+    return re.sub('[\s $\#=!<>|;{}~&]', '_', s)
 
 
 class CPT:
