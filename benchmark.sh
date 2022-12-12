@@ -53,6 +53,7 @@ run_ganak=false
 run_projMC=false
 run_schlandals=false
 
+nb_thread=$1
 shift
 while [ $# -ne 0 ]
 do
@@ -72,8 +73,6 @@ do
 done
 
 last_bench_dir=$(ls results/ | sort -i -r | head -n 1)
-
-nb_thread=$1
 nb_repeat=5
 
 timestamp=$(date +%Y_%m_%d_%H_%M_%s)
