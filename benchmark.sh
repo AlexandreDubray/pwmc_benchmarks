@@ -114,7 +114,7 @@ export schlandals_cmd="$timeout_cmd schlandals -b neighbor-fiedler -i"
 printf "Benchmarking bayesian networks\n"
 printf "\tLaunching pcnf files (ganak, projMC)\n"
 # The parallel command is used to run the solvers on each benchmarks. There are multiple ways to provide input to parralel which then applies the given command on each input.
-# For instance `parallel echo {} ::: $(seq 10)` will print all the numbers from 1 to 10. {} will be replaced by parallel with the input.
+# For instance \`parallel echo {} ::: $(seq 10)\` will print all the numbers from 1 to 10. {} will be replaced by parallel with the input.
 # In our case we want to run the solvers on all instances (.cnf files or .ppidimacs files) a given amount of time (to reduce variances in the run time).
 # This is done by giving two inputs to parallel. In that case, it will run the command for each possible pair of the inputs (in our case {2} is the second input, the instance file).
 # This achieve the wanted effect: for every instance file, we will run $nb_repeat time the command that run the solver on the instance.
@@ -183,16 +183,16 @@ projMC_hash=$(get_git_hash $projMC_base_dir $bench_git_hash)
 schlandals_hash=$(get_git_hash $schlandals_base_dir $bench_git_hash)
 cd $cur_dir
 
-echo \# Solvers configurations >> $plot_readme
-echo \#\#\# Ganak >> $plot_readme
-echo Commit hash $ganak_hash >> $plot_readme
-echo Command $ganak_cmd >> $plot_readme
-echo \#\#\# projMC >> $plot_readme
-echo Commit hash $projMC_hash >> $plot_readme
-echo Command $projMC_cmd >> $plot_readme
-echo \#\#\# Schlandals >> $plot_readme
-echo Commit hash $schlandals_hash >> $plot_readme
-echo Command $schlandals_cmd >> $plot_readme
+printf "\# Solvers configurations\n" >> $plot_readme
+printf "\#\#\# Ganak\n" >> $plot_readme
+printf "- Commit hash: $ganak_hash\n" >> $plot_readme
+printf "- Command: \`$ganak_cmd\`\n\n" >> $plot_readme
+printf "\#\#\# projMC" >> $plot_readme
+printf "- Commit hash: $projMC_hash\n" >> $plot_readme
+printf "- Command: \`$projMC_cmd\`\n\n" >> $plot_readme
+printf "\#\#\# Schlandals\n" >> $plot_readme
+printf "- Commit hash: $schlandals_hash\n" >> $plot_readme
+printf "- Command: \`$schlandals_cmd\`\n\n" >> $plot_readme
 
 python3 graphs.py $timestamp $last_bench_dir $timeout ganak projMC schlandals
 

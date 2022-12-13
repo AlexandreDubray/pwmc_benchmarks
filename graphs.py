@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 timestamp = sys.argv[1]
 old_timestamp = sys.argv[2]
-timeout=float(sys.argv[2]) - 0.5
-solvers = [sys.argv[i] for i in range(3, len(sys.argv))]
+timeout=float(sys.argv[3]) - 0.5
+solvers = [sys.argv[i] for i in range(4, len(sys.argv))]
 if len(solvers) == 0:
     print("You must specify at least one solver")
     sys.exit(1)
@@ -23,8 +23,9 @@ def parse_time_stderr(stderr_out):
     return t if t < timeout else None
 
 queries = {problem: {} for problem in problems}
+old_queries = {problem: {} for problem in problems}
 
-def get_solver_runtimes(solver, rdir):
+def get_solver_runtimes(solver, rdir, queries_dict):
     runtimes = {problem: {} for problem in problems}
 
     for problem_type in problems:
@@ -47,10 +48,10 @@ def get_solver_runtimes(solver, rdir):
                     dataset = f'{instance_s[-4]}_{instance_s[-3]}'
                 query = instance_s[-1].split('.')[0]
                 # Adding the query to the set of problems
-                if dataset not in queries[problem_type]:
-                    queries[problem_type][dataset] = set()
-                if query not in queries[problem_type][dataset]:
-                    queries[problem_type][dataset].add(query)
+                if dataset not in queries_dict[problem_type]:
+                    queries_dict[problem_type][dataset] = set()
+                if query not in queries_dict[problem_type][dataset]:
+                    queries_dict[problem_type][dataset].add(query)
 
                 # computing runtime and adding it to the solver run times
                 if dataset not in runtimes[problem_type]:
@@ -62,8 +63,8 @@ def get_solver_runtimes(solver, rdir):
                     runtimes[problem_type][dataset][query].append(time)
     return runtimes
 
-solvers_runtime = {solver: get_solver_runtimes(solver, result_dir) for solver in solvers}
-previous_solvers_runtime = {solver: get_solver_runtimes(solver, previous_result_dir) for solver in solvers}
+solvers_runtime = {solver: get_solver_runtimes(solver, result_dir, queries) for solver in solvers}
+previous_solvers_runtime = {solver: get_solver_runtimes(solver, previous_result_dir, old_queries) for solver in solvers}
 
 plots_dir = os.path.join(result_dir, 'plots')
 os.makedirs(plots_dir, exist_ok=True)
@@ -99,12 +100,12 @@ for problem in problems:
                         if mean_time is None and solvers_mean_time[i] is None:
                             solver_diff_previous[i] = "-"
                         elif mean_time is not None and solvers_mean_time[i] is None:
-                            solver_diff_previous[i] = "newly solved"
-                        elif mean_time is None and solvers_mean_time[i] is not None:
                             solver_diff_previous[i] = "was solved"
+                        elif mean_time is None and solvers_mean_time[i] is not None:
+                            solver_diff_previous[i] = "newly solved"
                         else:
-                            diff = (mean_time / solvers_mean_time[i])*100.0 - 100.0
-                            solver_diff_previous[i] = "{}{:.2f}%".format("-" if diff < 0 else "+", abs(solver_diff_previous))
+                            diff = (solvers_mean_time[i] / mean_time)*100.0 - 100.0
+                            solver_diff_previous[i] = "{}{:.2f}%".format("-" if diff < 0 else "+", abs(diff))
                 f.write(f'|{query}|')
                 f.write('|'.join(['{:.3f}s ({})'.format(x, solver_diff_previous[i]) if x is not None else f'/ ({solver_diff_previous[i]})' for i,x in enumerate(solvers_mean_time)]))
                 f.write('|\n')
@@ -141,16 +142,18 @@ plt.close()
 with open(os.path.join(plots_dir, 'README.md'), 'a') as f:
     f.write(f'# Plots for the results of benchmark {timestamp}\n\n')
     f.write(f'For details about the instances, see file for a query by query comparison\n')
-    f.write('## All instances\n')
+    f.write('## All instances\n\n')
     for solver in solvers:
-        total_instance_solved = sum([solver_times_pb[pb][solver] for pb in problems])
-        f.write(f'{solver} solved {total_instance_solved} in totalw')
-    f.write(f'![](./cactus.svg)\n')
+        total_instance_solved = sum([len(solver_times_pb[pb][solver]) for pb in problems])
+        f.write(f'- {solver} solved {total_instance_solved} in total\n')
+    f.write('\n')
+    f.write(f'![](./cactus.svg)\n\n')
 
     for problem in problems:
-        f.write(f'## {problem}\n')
-        f.write(f'details ![here](./table_{pb}.md')
+        f.write(f'## {problem}\n\n')
+        f.write(f'- details [here](./table_{problem}.md)\n')
         for solver in solvers:
             nb_instance_solved = len(solver_times_pb[problem][solver])
-            f.write(f'{solver} solved {nb_instance_solved} instances in this problem\n')
-        f.write(f'![](./cactus_{problem}.svg)\n')
+            f.write(f'- {solver} solved {nb_instance_solved} instances in this problem\n')
+        f.write('\n')
+        f.write(f'![](./cactus_{problem}.svg)\n\n')
