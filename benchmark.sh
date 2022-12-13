@@ -194,7 +194,7 @@ echo \#\#\# Schlandals >> $plot_readme
 echo Commit hash $schlandals_hash >> $plot_readme
 echo Command $schlandals_cmd >> $plot_readme
 
-python3 graphs.py $timestamp $timeout ganak projMC schlandals
+python3 graphs.py $timestamp $last_bench_dir $timeout ganak projMC schlandals
 
 git add results/$timestamp
 git commit -m "auto commit results $timestamp"
