@@ -46,7 +46,7 @@ fi
 if [ $# -lt 2 ]
 then
     printf "You must pass at least 2 arguments: i) the number of threads used by parallel ii) the name of the solvers to benchmarks\n"
-    printf "If a solver is not benchmarked, its last benchmarks will be copied"
+    printf "If a solver is not benchmarked, its last benchmarks will be copied\n"
     exit 1
 fi
 run_ganak=false
@@ -108,7 +108,7 @@ timeout=120
 buf_timeout=$(($timeout + 5))
 export ganak_cmd="$timeout_cmd ganak -q"
 export projMC_cmd="$timeout_cmd d4 -m projMC -i"
-export schlandals_cmd="$timeout_cmd schlandals -b neighbor-fiedler -i"
+export schlandals_cmd="$timeout_cmd schlandals -b children-fiedler-avg -i"
 
 # First set of benchmarks, bayesian networks
 printf "Benchmarking bayesian networks\n"

@@ -94,18 +94,21 @@ for problem in problems:
                         solver_times_pb[problem][solver].append(solvers_mean_time[i])
                 # Get the mean run times from the previous benchmarks
                 for i, solver in enumerate(solvers):
-                    if query in previous_solvers_runtime[solver][problem][dataset]:
-                        times = previous_solvers_runtime[solver][problem][dataset][query]
-                        mean_time = sum(times)/len(times) if len(times) > 0 else None
-                        if mean_time is None and solvers_mean_time[i] is None:
-                            solver_diff_previous[i] = "-"
-                        elif mean_time is not None and solvers_mean_time[i] is None:
-                            solver_diff_previous[i] = "was solved"
-                        elif mean_time is None and solvers_mean_time[i] is not None:
-                            solver_diff_previous[i] = "newly solved"
-                        else:
-                            diff = (solvers_mean_time[i] / mean_time)*100.0 - 100.0
-                            solver_diff_previous[i] = "{}{:.2f}%".format("-" if diff < 0 else "+", abs(diff))
+                    if dataset not in previous_solvers_runtime[solver][problem]:
+                        solver_diff_previous[i] = "new"
+                    else:
+                        if query in previous_solvers_runtime[solver][problem][dataset]:
+                            times = previous_solvers_runtime[solver][problem][dataset][query]
+                            mean_time = sum(times)/len(times) if len(times) > 0 else None
+                            if mean_time is None and solvers_mean_time[i] is None:
+                                solver_diff_previous[i] = "-"
+                            elif mean_time is not None and solvers_mean_time[i] is None:
+                                solver_diff_previous[i] = "was solved"
+                            elif mean_time is None and solvers_mean_time[i] is not None:
+                                solver_diff_previous[i] = "newly solved"
+                            else:
+                                diff = (solvers_mean_time[i] / mean_time)*100.0 - 100.0
+                                solver_diff_previous[i] = "{}{:.2f}%".format("-" if diff < 0 else "+", abs(diff))
                 f.write(f'|{query}|')
                 f.write('|'.join(['{:.3f}s ({})'.format(x, solver_diff_previous[i]) if x is not None else f'/ ({solver_diff_previous[i]})' for i,x in enumerate(solvers_mean_time)]))
                 f.write('|\n')
