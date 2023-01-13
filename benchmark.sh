@@ -108,7 +108,7 @@ timeout=120
 buf_timeout=$(($timeout + 5))
 export ganak_cmd="$timeout_cmd ganak -q"
 export projMC_cmd="$timeout_cmd d4 -m projMC -i"
-export schlandals_cmd="$timeout_cmd schlandals -b children-fiedler-avg -i"
+export schlandals_cmd="$timeout_cmd schlandals -b cs-children-fiedler-avg -i"
 
 # First set of benchmarks, bayesian networks
 printf "Benchmarking bayesian networks\n"
@@ -150,8 +150,7 @@ then
     $par_cmd --results $output_dir/schlandals/pg.csv "time (bash -c 'ulimit -t $buf_timeout; $schlandals_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.ppidimacs')
 fi
 
-mkdir -p $output_dir/plots
-plot_readme=$output_dir/plots/README.md
+plot_readme=$output_dir/README.md
 
 # print the config used in the plot file
 # We assume that the solver have been installed from source and are symlinked
@@ -183,16 +182,16 @@ projMC_hash=$(get_git_hash $projMC_base_dir $bench_git_hash)
 schlandals_hash=$(get_git_hash $schlandals_base_dir $bench_git_hash)
 cd $cur_dir
 
-printf "\# Solvers configurations\n" >> $plot_readme
-printf "\#\#\# Ganak\n" >> $plot_readme
-printf "- Commit hash: $ganak_hash\n" >> $plot_readme
-printf "- Command: \`$ganak_cmd\`\n\n" >> $plot_readme
-printf "\#\#\# projMC" >> $plot_readme
-printf "- Commit hash: $projMC_hash\n" >> $plot_readme
-printf "- Command: \`$projMC_cmd\`\n\n" >> $plot_readme
-printf "\#\#\# Schlandals\n" >> $plot_readme
-printf "- Commit hash: $schlandals_hash\n" >> $plot_readme
-printf "- Command: \`$schlandals_cmd\`\n\n" >> $plot_readme
+printf "%s\n" "\# Solvers configurations" >> $plot_readme
+printf "%s\n" "\#\#\# Ganak" >> $plot_readme
+printf "%s\n" "- Commit hash: $ganak_hash" >> $plot_readme
+printf "%s\n" "- Command: \`$ganak_cmd\`\n" >> $plot_readme
+printf "%s\n" "\#\#\# projMC" >> $plot_readme
+printf "%s\n" "- Commit hash: $projMC_hash" >> $plot_readme
+printf "%s\n" "- Command: \`$projMC_cmd\`\n" >> $plot_readme
+printf "%s\n" "\#\#\# Schlandals" >> $plot_readme
+printf "%s\n" "- Commit hash: $schlandals_hash" >> $plot_readme
+printf "%s\n" "- Command: \`$schlandals_cmd\`\n" >> $plot_readme
 
 python3 graphs.py $timestamp $last_bench_dir $timeout ganak projMC schlandals
 

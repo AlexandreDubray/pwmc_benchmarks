@@ -82,19 +82,14 @@ def write_ppidimacs(dataset, nodes, edges, source, target):
         f.write('\n'.join(clauses))
 
 def write_pcnf(dataset, nodes, edges, source, target):
-    distributions_clauses = []
+    clauses = [f'{nodes[source].var_id + 1 -len(edges)} 0', f'-{nodes[target].var_id + 1 - len(edges)} 0']
     for edge in edges:
-        distributions_clauses += [f'{edge.var_id + 1} {edge.var_id + 2} 0',
-                                  f'-{edge.var_id + 1} -{edge.var_id + 2} 0']
-    clauses = [f'{nodes[source].var_id + 1} 0', f'-{nodes[target].var_id + 1} 0']
-    for edge in edges:
-        clauses.append(f'{nodes[edge.n1].var_id + 1} -{nodes[edge.n2].var_id +1} -{edge.var_id+1} 0')
-        clauses.append(f'{nodes[edge.n2].var_id+1} -{nodes[edge.n1].var_id+1} -{edge.var_id+1} 0')
+        clauses.append(f'{nodes[edge.n1].var_id + 1 - len(edges)} -{nodes[edge.n2].var_id +1 - len(edges)} -{(edge.var_id/2)+1} 0')
+        clauses.append(f'{nodes[edge.n2].var_id+1-len(edges)} -{nodes[edge.n1].var_id+1-len(edges)} -{(edge.var_id/2)+1-len(edges)} 0')
 
     with open(os.path.join(_script_dir, dataset, 'pcnf', f'{source}_{target}.cnf'), 'w') as f:
-        f.write(f'p pcnf {len(nodes)+len(edges)*2} {len(clauses)+len(distributions_clauses)} {len(edges)*2}\n')
-        f.write(f'vp {" ".join([str(x+1) for x in range(len(edges)*2)])} 0\n')
-        f.write('\n'.join(distributions_clauses))
+        f.write(f'p pcnf {len(nodes)+len(edges)} {len(clauses)} {len(edges)}\n')
+        f.write(f'vp {" ".join([str(x+1) for x in range(len(edges))])} 0\n')
         f.write('\n')
         f.write('\n'.join(clauses))
 

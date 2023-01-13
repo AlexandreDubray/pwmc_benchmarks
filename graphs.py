@@ -66,7 +66,7 @@ def get_solver_runtimes(solver, rdir, queries_dict):
 solvers_runtime = {solver: get_solver_runtimes(solver, result_dir, queries) for solver in solvers}
 previous_solvers_runtime = {solver: get_solver_runtimes(solver, previous_result_dir, old_queries) for solver in solvers}
 
-plots_dir = os.path.join(result_dir, 'plots')
+plots_dir = os.path.join(result_dir)
 os.makedirs(plots_dir, exist_ok=True)
 
 # For each problem, we create one .md file for each dataset, resuming the run time of the solvers
