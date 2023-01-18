@@ -29,38 +29,41 @@ def get_solver_runtimes(solver, rdir, queries_dict):
     runtimes = {problem: {} for problem in problems}
 
     for problem_type in problems:
-        with open(os.path.join(rdir, solver, f'{problem_type}.csv')) as f:
-            stderr_index = None
-            instance_index = None
-            for line in f:
-                if line.rstrip() == '"':
-                    continue
-                s = line.rstrip().split(',')
-                if stderr_index is None:
-                    stderr_index = s.index('Stderr')
-                    instance_index = s.index('V2')
-                    continue
-                instance = s[instance_index]
-                instance_s = instance.split('/')
-                if problem_type == 'bn':
-                    dataset = instance_s[-2]
-                elif problem_type == 'pg':
-                    dataset = f'{instance_s[-4]}_{instance_s[-3]}'
-                query = instance_s[-1].split('.')[0]
-                # Adding the query to the set of problems
-                if dataset not in queries_dict[problem_type]:
-                    queries_dict[problem_type][dataset] = set()
-                if query not in queries_dict[problem_type][dataset]:
-                    queries_dict[problem_type][dataset].add(query)
+        try:
+            with open(os.path.join(rdir, solver, f'{problem_type}.csv')) as f:
+                stderr_index = None
+                instance_index = None
+                for line in f:
+                    if line.rstrip() == '"':
+                        continue
+                    s = line.rstrip().split(',')
+                    if stderr_index is None:
+                        stderr_index = s.index('Stderr')
+                        instance_index = s.index('V2')
+                        continue
+                    instance = s[instance_index]
+                    instance_s = instance.split('/')
+                    if problem_type == 'bn':
+                        dataset = instance_s[-2]
+                    elif problem_type == 'pg':
+                        dataset = f'{instance_s[-4]}_{instance_s[-3]}'
+                    query = instance_s[-1].split('.')[0]
+                    # Adding the query to the set of problems
+                    if dataset not in queries_dict[problem_type]:
+                        queries_dict[problem_type][dataset] = set()
+                    if query not in queries_dict[problem_type][dataset]:
+                        queries_dict[problem_type][dataset].add(query)
 
-                # computing runtime and adding it to the solver run times
-                if dataset not in runtimes[problem_type]:
-                    runtimes[problem_type][dataset] = {query: []}
-                if query not in runtimes[problem_type][dataset]:
-                    runtimes[problem_type][dataset][query] = []
-                time = parse_time_stderr(s[stderr_index])
-                if time is not None:
-                    runtimes[problem_type][dataset][query].append(time)
+                    # computing runtime and adding it to the solver run times
+                    if dataset not in runtimes[problem_type]:
+                        runtimes[problem_type][dataset] = {query: []}
+                    if query not in runtimes[problem_type][dataset]:
+                        runtimes[problem_type][dataset][query] = []
+                    time = parse_time_stderr(s[stderr_index])
+                    if time is not None:
+                        runtimes[problem_type][dataset][query].append(time)
+        except FileNotFoundError:
+            pass
     return runtimes
 
 solvers_runtime = {solver: get_solver_runtimes(solver, result_dir, queries) for solver in solvers}
