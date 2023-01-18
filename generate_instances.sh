@@ -8,3 +8,5 @@ python3 instances/power_transmission_grid/split_usa.py
 python3 instances/power_transmission_grid/generate_inputs.py
 echo "Generating bayesian network data files"
 python3 instances/bayesian_networks/instances_from_bif.py
+echo "Generating water supply network data files"
+python3 instances/water-supply-network/parse_networks.py
