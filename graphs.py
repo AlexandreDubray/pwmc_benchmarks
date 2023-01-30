@@ -15,7 +15,7 @@ _script_dir = os.path.dirname(os.path.realpath(__file__))
 result_dir = os.path.join(_script_dir, 'results', timestamp)
 previous_result_dir = os.path.join(_script_dir, 'results', old_timestamp)
 
-problems = ['bn', 'wn']
+problems = ['bn', 'pg', 'wn']
 
 def parse_time_stderr(stderr_out):
     s = stderr_out.replace('"', '').split('_')

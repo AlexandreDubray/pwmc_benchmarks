@@ -9,6 +9,7 @@ function usage {
     echo '  -S : run the schlandals solver'
     echo '  -b : run the bayesian network benchmarks'
     echo '  -w : run the water supply network benchmarks'
+    echo '  -p : run the power grid network benchmarks'
     exit 1
 }
 
@@ -22,8 +23,9 @@ run_schlandals=false
 
 run_bn=false
 run_wn=false
+run_pg=false
 
-optstring=":ht:GPSbw"
+optstring=":ht:GPSbwp"
 while getopts ${optstring} arg; do
     case ${arg} in
         h)
@@ -47,6 +49,9 @@ while getopts ${optstring} arg; do
         w)
             run_wn=true
             ;;
+	p)
+	   run_pg=true
+	   ;;
         ?)
             echo "Invalid option: -${OPTARG}."
             echo
@@ -152,21 +157,26 @@ else
     cp -r results/$last_bench_dir/schlandals/bn.csv $output_dir/schlandals/bn.csv
 fi
 
-#printf "Benchmarking power grid transmission\n"
-#printf "\tLaunching pcnf files (ganak, projMC)\n"
-#if [ $run_ganak = true ]
-#then
-#    $par_cmd --results $output_dir/ganak/pg.csv "time (bash -c 'ulimit -t $buf_timeout; $ganak_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
-#fi
-#if [ $run_projMC = true ]
-#then
-#    $par_cmd --results $output_dir/projMC/pg.csv "time (bash -c 'ulimit -t $buf_timeout; $projMC_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
-#fi
-#printf "\tLaunching ppidimacs files (schlandals)\n"
-#if [ $run_schlandals = true ]
-#then
-#    $par_cmd --results $output_dir/schlandals/pg.csv "time (bash -c 'ulimit -t $buf_timeout; $schlandals_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.ppidimacs')
-#fi
+if [ $run_pg = true ]
+then
+	printf "Benchmarking power grid transmission\n"
+	if [ $run_ganak = true ]
+	then
+	    $par_cmd --results $output_dir/ganak/pg.csv "time (bash -c 'ulimit -t $buf_timeout; $ganak_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
+	fi
+	if [ $run_projMC = true ]
+	then
+	    $par_cmd --results $output_dir/projMC/pg.csv "time (bash -c 'ulimit -t $buf_timeout; $projMC_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.cnf')
+	fi
+	if [ $run_schlandals = true ]
+	then
+	    $par_cmd --results $output_dir/schlandals/pg.csv "time (bash -c 'ulimit -t $buf_timeout; $schlandals_cmd {2}' &>> /dev/null)" ::: $(seq $nb_repeat) ::: $(find instances/power_transmission_grid/ -type f -name '*.ppidimacs')
+	fi
+else
+    cp -r results/$last_bench_dir/ganak/pg.csv $output_dir/ganak/pg.csv
+    cp -r results/$last_bench_dir/projMC/pg.csv $output_dir/projMC/pg.csv
+    cp -r results/$last_bench_dir/schlandals/pg.csv $output_dir/schlandals/pg.csv
+fi
 
 if [ $run_wn = true ]
 then
