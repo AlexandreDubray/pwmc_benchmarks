@@ -228,16 +228,16 @@ projMC_hash=$(get_git_hash $projMC_base_dir $bench_git_hash)
 schlandals_hash=$(get_git_hash $schlandals_base_dir $bench_git_hash)
 cd $cur_dir
 
-printf "%s\n" "\# Solvers configurations" >> $plot_readme
+printf "%s\n\n" "\# Solvers configurations" >> $plot_readme
 printf "%s\n" "\#\#\# Ganak" >> $plot_readme
 printf "%s\n" "- Commit hash: $ganak_hash" >> $plot_readme
-printf "%s\n" "- Command: \`$ganak_cmd\`\n" >> $plot_readme
+printf "%s\n\n" "- Command: \`$ganak_cmd\`" >> $plot_readme
 printf "%s\n" "\#\#\# projMC" >> $plot_readme
 printf "%s\n" "- Commit hash: $projMC_hash" >> $plot_readme
-printf "%s\n" "- Command: \`$projMC_cmd\`\n" >> $plot_readme
+printf "%s\n\n" "- Command: \`$projMC_cmd\`" >> $plot_readme
 printf "%s\n" "\#\#\# Schlandals" >> $plot_readme
 printf "%s\n" "- Commit hash: $schlandals_hash" >> $plot_readme
-printf "%s\n" "- Command: \`$schlandals_cmd\`\n" >> $plot_readme
+printf "%s\n\n" "- Command: \`$schlandals_cmd\`" >> $plot_readme
 
 python3 graphs.py $timestamp $last_bench_dir $timeout ganak projMC schlandals
 

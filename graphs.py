@@ -25,6 +25,22 @@ def parse_time_stderr(stderr_out):
 queries = {problem: {} for problem in problems}
 old_queries = {problem: {} for problem in problems}
 
+def get_dataset_query_name(instance, problem_type):
+    s = instance.split('/')
+    if problem_type == 'bn':
+        dataset = s[-2]
+        query = s[-1].split('_')[0]
+    elif problem_type == 'pg':
+        dataset = f'{s[-4]}_{s[-3]}'
+        query = s[-1].split('_')[0]
+    elif problem_type == 'wn':
+        ss = s[-1].split('_')
+        dataset = ss[0]
+        query = '_'.join(ss[1:]).split('.')[0]
+    else:
+        raise ValueError(f"Wrong problem type {problem_type}")
+    return (dataset, query)
+
 def get_solver_runtimes(solver, rdir, queries_dict):
     runtimes = {problem: {} for problem in problems}
 
@@ -42,12 +58,7 @@ def get_solver_runtimes(solver, rdir, queries_dict):
                         instance_index = s.index('V2')
                         continue
                     instance = s[instance_index]
-                    instance_s = instance.split('/')
-                    if problem_type == 'bn':
-                        dataset = instance_s[-2]
-                    elif problem_type == 'pg':
-                        dataset = f'{instance_s[-4]}_{instance_s[-3]}'
-                    query = instance_s[-1].split('.')[0]
+                    (dataset, query) = get_dataset_query_name(instance, problem_type)
                     # Adding the query to the set of problems
                     if dataset not in queries_dict[problem_type]:
                         queries_dict[problem_type][dataset] = set()
