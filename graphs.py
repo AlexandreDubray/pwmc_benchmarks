@@ -134,7 +134,7 @@ for pb in problems:
         x = sorted(solver_times_pb[pb][solver])
         for i in range(1, len(x)):
             x[i] += x[i-1]
-        plt.plot(x, [i for i in range(len(x))], label=solver)
+        plt.step(x, [i for i in range(len(x))], label=solver)
 
     plt.semilogx()
     plt.xlabel("Time in second (log-scale)")
