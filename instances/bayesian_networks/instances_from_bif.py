@@ -141,10 +141,13 @@ def write_network(outdir, variables, prop_evidence):
                 for distribution in var.cpt.entries:
                     fout.write('d ' + ' '.join(['{}'.format(x) for x in distribution]) + '\n')
                     var.cpt.ppidimacs_var.append([cpt_var_id + i for i in range(len(var.values))])
+                    for i, w in enumerate(distribution):
+                        fpcnf.write(f'c p weight {cpt_car_id + i} {w} 0\n')
                     cpt_var_id = var.cpt.ppidimacs_var[-1][-1] + 1
             fout.write(f'c --- END DISTRIBUTIONS ---\n')
 
             fpcnf.write(f'vp {" ".join([str(x+1) for x in range(cpt_var_id)])} 0\n')
+            fpcnf.write(f'c p show {" ".join([str(x+1) for x in range(cpt_var_id)])} 0\n')
 
             fout.write(f'c --- Deterministic variables ---\n')
             for var in variables:
