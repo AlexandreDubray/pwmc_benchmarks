@@ -1,0 +1,13 @@
+Seq,Host,Starttime,JobRuntime,Send,Receive,Exitval,Signal,Command,V1,Stdout,Stderr
+1,:,1680698646.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/power_transmission_grid/europe/Albania/pcnf/11_13.cnf.ple' &>> /dev/null)",instances/power_transmission_grid/europe/Albania/pcnf/11_13.cnf.ple,,"0.005_0.004_0.001
+"
+2,:,1680698646.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/power_transmission_grid/europe/Albania/pcnf/7_5.cnf.ple' &>> /dev/null)",instances/power_transmission_grid/europe/Albania/pcnf/7_5.cnf.ple,,"0.005_0.003_0.002
+"
+3,:,1680698646.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/power_transmission_grid/europe/Albania/pcnf/9_8.cnf.ple' &>> /dev/null)",instances/power_transmission_grid/europe/Albania/pcnf/9_8.cnf.ple,,"0.005_0.001_0.004
+"
+4,:,1680698646.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/power_transmission_grid/europe/Albania/pcnf/2_5.cnf.ple' &>> /dev/null)",instances/power_transmission_grid/europe/Albania/pcnf/2_5.cnf.ple,,"0.005_0.001_0.004
+"
+5,:,1680698646.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/power_transmission_grid/europe/Albania/pcnf/13_4.cnf.ple' &>> /dev/null)",instances/power_transmission_grid/europe/Albania/pcnf/13_4.cnf.ple,,"0.005_0.003_0.002
+"
+6,:,1680698646.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/power_transmission_grid/europe/Albania/pcnf/10_3.cnf.ple' &>> /dev/null)",instances/power_transmission_grid/europe/Albania/pcnf/10_3.cnf.ple,,"0.005_0.001_0.004
+"

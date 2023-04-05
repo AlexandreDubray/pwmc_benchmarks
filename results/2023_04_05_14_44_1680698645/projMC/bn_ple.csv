@@ -1,0 +1,25 @@
+Seq,Host,Starttime,JobRuntime,Send,Receive,Exitval,Signal,Command,V1,Stdout,Stderr
+1,:,1680698645.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/bayesian_networks/pcnf/alarm/HISTORY_TRUE.cnf.ple' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/HISTORY_TRUE.cnf.ple,,"0.005_0.004_0.001
+"
+2,:,1680698645.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/bayesian_networks/pcnf/alarm/HISTORY_FALSE.cnf.ple' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/HISTORY_FALSE.cnf.ple,,"0.005_0.001_0.004
+"
+3,:,1680698645.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/bayesian_networks/pcnf/alarm/CVP_LOW.cnf.ple' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/CVP_LOW.cnf.ple,,"0.005_0.003_0.002
+"
+4,:,1680698645.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/bayesian_networks/pcnf/alarm/CVP_NORMAL.cnf.ple' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/CVP_NORMAL.cnf.ple,,"0.005_0.001_0.004
+"
+5,:,1680698645.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/bayesian_networks/pcnf/alarm/CVP_HIGH.cnf.ple' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/CVP_HIGH.cnf.ple,,"0.005_0.004_0.001
+"
+6,:,1680698645.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/bayesian_networks/pcnf/alarm/PCWP_LOW.cnf.ple' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/PCWP_LOW.cnf.ple,,"0.005_0.002_0.002
+"
+7,:,1680698645.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/bayesian_networks/pcnf/alarm/PCWP_NORMAL.cnf.ple' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/PCWP_NORMAL.cnf.ple,,"0.005_0.002_0.003
+"
+8,:,1680698645.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/bayesian_networks/pcnf/alarm/PCWP_HIGH.cnf.ple' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/PCWP_HIGH.cnf.ple,,"0.005_0.001_0.004
+"
+9,:,1680698645.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/bayesian_networks/pcnf/alarm/HRBP_LOW.cnf.ple' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/HRBP_LOW.cnf.ple,,"0.005_0.001_0.004
+"
+10,:,1680698645.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/bayesian_networks/pcnf/alarm/HRBP_NORMAL.cnf.ple' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/HRBP_NORMAL.cnf.ple,,"0.005_0.002_0.003
+"
+11,:,1680698645.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/bayesian_networks/pcnf/alarm/HRBP_HIGH.cnf.ple' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/HRBP_HIGH.cnf.ple,,"0.005_0.003_0.003
+"
+12,:,1680698645.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/bayesian_networks/pcnf/alarm/HREKG_LOW.cnf.ple' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/HREKG_LOW.cnf.ple,,"0.005_0.001_0.004
+"
