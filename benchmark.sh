@@ -126,11 +126,11 @@ export par_cmd="parallel --bar "
 timeout=600
 # 5 seconds buffer for correct timeout
 buf_timeout=$(($timeout + 5))
-export symganak_cmd="symganak -cs 15000 -q {}"
-export projMC_cmd="d4 -m projMC -f 1 -i {}"
-export schlandals_cmd="schlandals -b fiedler -m 15000 -i {}"
+export symganak_cmd="symganak -cs 15000 -q "
+export projMC_cmd="d4 -m projMC -f 1 -i "
+export schlandals_cmd="schlandals -b fiedler -m 15000 -i "
 export dpmc_cmd="htb --cf {} --pc 1 | dmc --cf {} --pc 1"
-export gpmc_cmd="gpmc {} -mode=3 -mem-lim=15000"
+export gpmc_cmd="gpmc -mode=3 -mem-lim=15000 "
 
 
 # The parallel command is used to run the solvers on each benchmarks. There are multiple ways to provide input to parralel which then applies the given command on each input.
@@ -159,7 +159,7 @@ function run_or_copy() {
 if [ $run_bn = true ]
 then
     input_dir="instances/bayesian_networks/"
-    nbthread=20
+    nbthread=40
     run_or_copy $run_symganak $nbthread "symganak/bn.csv" "$symganak_cmd" $input_dir "*.cnf"
     run_or_copy $run_projMC $nbthread "projMC/bn.csv" "$projMC_cmd" $input_dir "*.cnf"
     run_or_copy $run_dpmc $nbthread "dpmc/bn.csv" "$dpmc_cmd" $input_dir "*.cnf"

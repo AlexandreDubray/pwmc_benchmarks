@@ -1,3 +1,0 @@
-Seq,Host,Starttime,JobRuntime,Send,Receive,Exitval,Signal,Command,V1,Stdout,Stderr
-1,:,1680698646.000,0.000,0,0,127,0,"time (bash -c 'ulimit -t 605; projMC_cmd instances/power_transmission_grid/europe/Albania/pcnf/11_13.cnf' &>> /dev/null)",instances/power_transmission_grid/europe/Albania/pcnf/11_13.cnf,,"0.005_0.001_0.004
-"
