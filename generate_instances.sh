@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-python3 -m pip install --user shapely fiona gdal
+python3 -m pip install --user shapely fiona gdal pyyaml
 echo "Generating the input files from the data sets"
 echo "Generating power transmission grid data files"
 python3 instances/power_transmission_grid/split_europe.py
@@ -10,3 +10,6 @@ echo "Generating bayesian network data files"
 python3 instances/bayesian_networks/instances_from_bif.py
 echo "Generating water supply network data files"
 python3 instances/water-supply-network/parse_networks.py
+cd instances
+./make_ple.sh
+cd ..

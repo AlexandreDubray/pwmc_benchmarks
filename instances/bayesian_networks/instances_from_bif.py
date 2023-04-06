@@ -99,100 +99,107 @@ def write_network(outdir, variables, prop_evidence):
     in_evidence = [not v.is_leaf and random.random() <= prop_evidence for v in variables]
     selected_values = [random.randint(0, len(v.values) - 1) for v in variables]
 
-    # normalization of the CPT given the evidences
-    evidences = {}
-    for i, var in enumerate(variables):
-        if in_evidence[i]:
-            selected_value = selected_values[i]
-            evidences[var.name] = selected_value
-            for j in range(len(var.cpt.entries)):
-                var.cpt.entries[j] = [0.0 if x != selected_value else 1.0 for x in range(len(var.value_names))]
+    clauses = []
+    distribution_lines = []
+    clauses_cnf = []
+    cnf_weights = []
+
+    # First we compute the distributions, this also give the var id for the probabilistic variables
+    cpt_var_id = 0
+    for var in variables:
+        for distribution in var.cpt.entries:
+            distribution_lines.append('d ' + ' '.join(['{}'.format(x) for x in distribution]))
+            var.cpt.ppidimacs_var.append([cpt_var_id + i for i in range(len(var.values))])
+            for i, w in enumerate(distribution):
+                cnf_weights.append(f'c p weight {cpt_var_id + i + 1} {w} 0')
+            cpt_var_id = var.cpt.ppidimacs_var[-1][-1] + 1
+
+    for vid, var in enumerate(variables):
+        for didx in range(len(var.cpt.entries)):
+            parent_var_ids = var.cpt.parent_domains[didx]
+
+            # for the CNF files, we have to input the distributions in the clauses
+            # We need to select at least 1 of the variables: v1 OR v2 or ... or vN
+            clauses_cnf.append(" ".join([str(x+1) for x in var.cpt.ppidimacs_var[didx]]) + " 0")
+            for i in range(len(var.cpt.ppidimacs_var[didx])):
+                for j in range(i+1, len(var.cpt.ppidimacs_var[didx])):
+                    # But each is mutually exclusive -> !(v1 and v2) <=> !v1 or !v2
+                    v1 = var.cpt.ppidimacs_var[didx][i]
+                    v2 = var.cpt.ppidimacs_var[didx][j]
+                    clauses_cnf.append(f'-{v1+1} -{v2+1} 0')
+
+            # The actual clauses: Px and pa1 and pa2 and ... and paM =>Vx
+            for vidx in range(len(var.values)):
+                head = var.get_var_from_id(vidx) + cpt_var_id
+                body = [cpt_var_id + x for x in parent_var_ids] + [var.cpt.ppidimacs_var[didx][vidx]]
+                clauses.append(f'{head} ' + ' '.join([f'-{x}' for x in body]))
+                
+                clauses_cnf.append(f'{head+1} ' + ' '.join([f'-{x+1}' for x in body]) + ' 0')
+
+                # If the clause is in evidence:
+                #   - This is the selected value, so we must set head to T
+                #   - This is not the selected value, so we must set head to F
+                if in_evidence[vid]:
+                    if selected_values[vid] == vidx:
+                        clauses.append(f'{head}')
+                        clauses_cnf.append(f'{head+1} 0')
+                    else:
+                        clauses.append(f'-{head}')
+                        clauses.append(f'-{head+1} 0')
 
     n_probabilistic_var = sum([sum([len(x) for x in v.cpt.entries]) for v in variables])
     n_deterministic_var = sum([len(v.values) for v in variables])
     n_var = n_probabilistic_var + n_deterministic_var
 
-    n_clause_cpt = n_probabilistic_var # one clause per entry in a cpt
-
-    additional_clause_pcnf = 0
-    for vid, v in enumerate(variables):
-        additional_clause_pcnf += len(v.cpt.entries)
-        for didx in range(len(v.cpt.entries)):
-            for i in range(len(v.values)):
-                if v.cpt.entries[didx][i] == 0.0:
-                    additional_clause_pcnf += 1
-                for j in range(i+1, len(v.values)):
-                          additional_clause_pcnf += 1
-
     for target_var in [v for v in variables if v.is_leaf]:
-        n_clause = n_clause_cpt + len(target_var.values)-1
+        n_clause = len(clauses) + len(target_var.values)-1
+        n_clause_cnf = len(clauses_cnf) + len(target_var.values)-1
         for i, value in enumerate(target_var.value_names):
-            fout = open(os.path.join(_script_dir, 'ppidimacs', outdir,  f'{safe_str_bash(target_var.name)}_{safe_str_bash(value)}.ppidimacs'), 'w')
+            fppidimacs = open(os.path.join(_script_dir, 'ppidimacs', outdir,  f'{safe_str_bash(target_var.name)}_{safe_str_bash(value)}.ppidimacs'), 'w')
             fpcnf = open(os.path.join(_script_dir, 'pcnf', outdir, f'{safe_str_bash(target_var.name)}_{safe_str_bash(value)}.cnf'), 'w')
-            fout.write(f'p cnf {n_var} {n_clause}\n')
-            fpcnf.write(f'p pcnf {n_var} {n_clause + additional_clause_pcnf} {n_probabilistic_var}\n')
-            
-            deterministic_var_offset = 0
-            fout.write(f'c --- DISTRIBUTIONS ---\n')
-            cpt_var_id = 0
-            for var in variables:
-                fout.write(f'c Distributions of var {var.name}\n')
-                fout.write(f'c {" ".join(var.value_names)}\n')
-                for distribution in var.cpt.entries:
-                    fout.write('d ' + ' '.join(['{}'.format(x) for x in distribution]) + '\n')
-                    var.cpt.ppidimacs_var.append([cpt_var_id + i for i in range(len(var.values))])
-                    for i, w in enumerate(distribution):
-                        fpcnf.write(f'c p weight {cpt_car_id + i} {w} 0\n')
-                    cpt_var_id = var.cpt.ppidimacs_var[-1][-1] + 1
-            fout.write(f'c --- END DISTRIBUTIONS ---\n')
 
-            fpcnf.write(f'vp {" ".join([str(x+1) for x in range(cpt_var_id)])} 0\n')
+            # HEADER
+            fppidimacs.write(f'p cnf {n_var} {n_clause}\n')
+            fpcnf.write(f'p cnf {n_var} {n_clause_cnf}\n')
             fpcnf.write(f'c p show {" ".join([str(x+1) for x in range(cpt_var_id)])} 0\n')
 
-            fout.write(f'c --- Deterministic variables ---\n')
-            for var in variables:
-                var_line = [f'{x} {var.values[x] + cpt_var_id}' for x in var.value_names]
-                fout.write(f'c {var.name} {" ".join(var_line)}\n')
-                
-            fout.write('c --- CLAUSES ---\n')
-            for vid, var in enumerate(variables):
-                for didx in range(len(var.cpt.entries)):
-                    parent_var_ids = var.cpt.parent_domains[didx]
+            # DISTRIBUTIONS
+            fppidimacs.write('\n'.join(distribution_lines) + '\n')
+            fpcnf.write('\n'.join(cnf_weights) + '\n')
 
-                    fpcnf.write(f'{" ".join([str(x+1) for x in var.cpt.ppidimacs_var[didx]])} 0\n')
-                    for i in range(len(var.cpt.ppidimacs_var[didx])):
-                        for j in range(i+1, len(var.cpt.ppidimacs_var[didx])):
-                            v1 = var.cpt.ppidimacs_var[didx][i]
-                            v2 = var.cpt.ppidimacs_var[didx][j]
-                            fpcnf.write(f'-{v1+1} -{v2+1} 0\n')
+            # CLAUSES
+            fppidimacs.write('\n'.join(clauses) + '\n')
+            fpcnf.write('\n'.join(clauses_cnf) + '\n')
 
-                    for vidx in range(len(var.values)):
-                        head = var.get_var_from_id(vidx) + cpt_var_id
-                        body = [cpt_var_id + x for x in parent_var_ids] + [var.cpt.ppidimacs_var[didx][vidx]]
-                        fout.write(f'{head} ')
-                        fout.write(' '.join([f'-{x}' for x in body]))
-                        fout.write('\n')
-                        
-                        fpcnf.write(f'{head+1} ')
-                        fpcnf.write(' '.join([f'-{x+1}' for x in body]))
-                        fpcnf.write(' 0\n')
-
-                        if var.cpt.entries[didx][vidx] == 0.0:
-                            fpcnf.write(f'-{var.cpt.ppidimacs_var[didx][vidx]+1} 0\n')
-
-
-
-            fout.write('c --- TARGET PROBABILITY ---\n')
+            # TARGET PROBA
             for v in target_var.value_names:
                 if v != value:
-                    fout.write(f'-{target_var.values[v] + cpt_var_id}\n')
+                    fppidimacs.write(f'-{target_var.values[v] + cpt_var_id}\n')
                     fpcnf.write(f'-{target_var.values[v] + cpt_var_id + 1} 0\n')
             
-            fout.close()
+            fppidimacs.close()
             fpcnf.close()
 
-for file in os.listdir(os.path.join(_script_dir, 'bif')):
-    name = file.split('.')[0]
+instances = [
+        'alarm',
+        'andes',
+        'asia',
+        'barley',
+        'cancer',
+        'child',
+        'diabetes',
+        'earthquake',
+        'hailfinder',
+        'hepar2',
+        'insurance',
+        'pigs',
+        'sachs',
+        'survey',
+        'water',
+        'win95pts',
+]
+
+for name in instances:
     print(f'Processing file {name}')
-    variables = parse_network(os.path.join(_script_dir, 'bif', file))
+    variables = parse_network(os.path.join(_script_dir, 'bif', name + '.bif'))
     write_network(name, variables, 0.3)

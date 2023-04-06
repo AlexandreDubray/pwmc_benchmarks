@@ -20,7 +20,7 @@ problems = ['bn', 'pg', 'wn']
 def parse_time_stderr(stderr_out):
     s = stderr_out.replace('"', '').split('_')
     t = float(s[1]) + float(s[2])
-    return t if t < timeout else None
+    return t if t < timeout else timeout
 
 queries = {problem: {} for problem in problems}
 old_queries = {problem: {} for problem in problems}
@@ -147,7 +147,7 @@ for solver in solvers:
     x = sorted(solver_times[solver])
     for i in range(1, len(x)):
         x[i] += x[i-1]
-    plt.plot(x, [i for i in range(len(x))], label=solver)
+    plt.step(x, [i for i in range(len(x))], label=solver)
 
 plt.semilogx()
 plt.xlabel("Time in second (log-scale)")

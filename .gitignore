@@ -1,5 +1,6 @@
 **/*.ppidimacs
 **/*.cnf
+**/*.cnf.ple
 instances/power_transmission_grid/north_america/*/*.csv
 instances/power_transmission_grid/europe/*/*.csv
 **/*.zip

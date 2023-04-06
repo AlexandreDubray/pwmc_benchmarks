@@ -71,11 +71,11 @@ def parse_file(filename):
         ppidimacs_str += f'{t} -{s} -{2*i}\n'
     
     #write pcnf input
-    pcnf_str += f'pcnf {len(edges) + len(nodes)} {len(edges)+2}\n'
+    pcnf_str += f'p cnf {len(edges) + len(nodes)} {len(edges)}\n'
     #pcnf_str += f'vp {" ".join([str(x+1) for x in range(len(edges))])} 0\n'
     pcnf_str += f'c p show {" ".join([str(x+1) for x in range(len(edges))])} 0\n'
     for v in range(len(edge)):
-        pcnf_str += f'c p weight {v+1} {p_up} 0\n'
+        pcnf_str += f'c p weight {v+1} {p_up} 0\nc p weight {-(v+1)} {1 - p_up} 0\n'
     pcnf_str += f''
     pcnf_nodes_id = {}
     current_id = len(edges)

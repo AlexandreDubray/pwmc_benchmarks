@@ -91,8 +91,8 @@ def write_pcnf(dataset, nodes, edges, source, target):
         f.write(f'p pcnf {len(nodes)+len(edges)} {len(clauses)} {len(edges)}\n')
         #f.write(f'vp {" ".join([str(x+1) for x in range(len(edges))])} 0\n')
         f.write(f'c p show {" ".join([str(x+1) for x in range(len(edges))])} 0\n')
-        for x in range(len(edge)):
-            f.write(f'c p weight {x+1} {0.875} 0\n')
+        for x in range(len(edges)):
+            f.write(f'c p weight {x+1} {0.875} 0\nc p weight {-(x+1)} 0.125 0\n')
         f.write('\n'.join(clauses))
 
 datasets = [
