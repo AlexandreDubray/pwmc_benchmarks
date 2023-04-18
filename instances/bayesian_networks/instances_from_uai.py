@@ -1,14 +1,13 @@
 import os
 import itertools
-import random
 import re
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
-random.seed(862453179)
 
 def parse_file(dataset):
     with open(os.path.join(script_dir, 'uai', dataset + '.uai')) as f:
-        lines = f.readlines()[1:]
+        all_file = f.read().replace('  ', ' ')
+        lines = all_file.split('\n')[1:]
         idx = 0
         nvar = int(lines[idx])
         idx += 1
@@ -37,13 +36,6 @@ def parse_file(dataset):
             for i in range(len(variables[v])):
                 variables[v][i] = deterministic_index
                 deterministic_index += 1
-                
-        in_evidence = [False for _ in range(nvar)]
-        selected_values = [0 for _ in range(nvar)]
-        for x in range(nvar):
-            if not is_leaf[x] and random.random() < 0.3:
-                in_evidence[x] = True
-                selected_values[x] = random.choice(variables[x])
         
         idx += 1 # blank line
         cpt = []
@@ -51,7 +43,6 @@ def parse_file(dataset):
         for v in range(nvar):
             dom_size = len(variables[v])
             ttt = [variables[x] for x in cpts_def[v]]
-            ttt.reverse()
             body_vars = list(itertools.product(*ttt))
             idx += 1
             probas = [float(x) for x in lines[idx].rstrip().split(' ')]
@@ -59,13 +50,7 @@ def parse_file(dataset):
             c = []
             for i in range(len(probas)):
                 tt = [x for x in body_vars[i]]
-                tt.reverse()
                 p = probas[i]
-                if in_evidence[v]:
-                    if selected_values[v] == tt[-1]:
-                        p = 1.0
-                    else:
-                        p = 0.0
                 try:
                     distributions_m[tuple([v] + tt[:-1])].append((tt[-1], p))
                 except KeyError:
@@ -79,26 +64,20 @@ def parse_file(dataset):
         enc4_header = cnf_enc4[0]
         enc4_clauses = cnf_enc4[1:]
         enc4_weights = []
-        with open(os.path.join(enc4_tpl_dir, dataset + '.weights')) as fw:
-            for line in fw:
-                enc4_weights.append(f'c p weight {line.rstrip()} 0')
         enc4_prob_offset = 0
         for v in variables:
             enc4_prob_offset += len(v)
+        with open(os.path.join(enc4_tpl_dir, dataset + '.weights')) as fw:
+            for line in fw.readlines()[:-1]:
+                s = line.rstrip().split(' ')
+                var = int(s[0])
+                enc4_weights.append(f'c p weight {s[0]} {s[1]} 0')
             
         enc4_mvar = []
         with open(os.path.join(enc4_tpl_dir, dataset + '.map')) as fm:
             for line in fm:
                 enc4_mvar.append([int(x) for x in re.findall(r'\d+', line.split(' ')[2])])
 
-            
-        for vidx in range(len(variables)):
-            if in_evidence[vidx]:
-                sv = selected_values[vidx]
-                for i in range(len(variables[vidx])):
-                    if variables[vidx] == sv:
-                        enc4_clauses.append(f'{enc4_mvar[vidx][i]} 0')
-                
         # Writing ppidimacs-like files
 
         distributions = []
@@ -145,7 +124,7 @@ def parse_file(dataset):
                         fout.write('\n'.join(clauses_cnf) + '\n')
                         for k in range(len(variables[i])):
                             if k != j:
-                                fout.write(f'-{variables[i][k] + 1}\n')
+                                fout.write(f'-{variables[i][k] + 1} 0\n')
                                 
 
                     with open(os.path.join(script_dir, 'enc4', dataset, f'{file_idx}.cnf'), 'w') as fout:
@@ -154,7 +133,7 @@ def parse_file(dataset):
                         fout.write(''.join(enc4_clauses))
                         for k in range(len(variables[i])):
                             if k != j:
-                                fout.write(f'-{enc4_mvar[i][k]}\n')
+                                fout.write(f'-{enc4_mvar[i][k]} 0\n')
                     file_idx += 1
         
             
@@ -176,4 +155,5 @@ instances = [
 ]
 
 for instance in instances:
+    print(instance)
     parse_file(instance)
