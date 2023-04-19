@@ -88,7 +88,7 @@ def write_pcnf(dataset, nodes, edges, source, target):
         clauses.append(f'{nodes[edge.n2].var_id+1-len(edges)} -{nodes[edge.n1].var_id+1-len(edges)} -{int((edge.var_id/2)+1)} 0')
 
     with open(os.path.join(_script_dir, dataset, 'pcnf', f'{source}_{target}.cnf'), 'w') as f:
-        f.write(f'p pcnf {len(nodes)+len(edges)} {len(clauses)} {len(edges)}\n')
+        f.write(f'p cnf {len(nodes)+len(edges)} {len(clauses)}\n')
         #f.write(f'vp {" ".join([str(x+1) for x in range(len(edges))])} 0\n')
         f.write(f'c p show {" ".join([str(x+1) for x in range(len(edges))])} 0\n')
         for x in range(len(edges)):

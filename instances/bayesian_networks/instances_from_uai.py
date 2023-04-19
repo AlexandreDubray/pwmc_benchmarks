@@ -109,6 +109,7 @@ def parse_file(dataset):
             if is_leaf[i]:
                 dom_size = len(variables[i])
                 for j in range(len(variables[i])):
+                    """
                     with open(os.path.join(script_dir, 'ppidimacs', dataset, f'{file_idx}.ppidimacs'), 'w') as fout:
                         fout.write(f'p cnf {deterministic_index} {len(clauses) + dom_size - 1}\n')
                         fout.write('\n'.join(distributions) + '\n')
@@ -155,5 +156,4 @@ instances = [
 ]
 
 for instance in instances:
-    print(instance)
     parse_file(instance)
