@@ -1,0 +1,117 @@
+Seq,Host,Starttime,JobRuntime,Send,Receive,Exitval,Signal,Command,V1,Stdout,Stderr
+17,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/16.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/16.cnf,,"609.624_603.921_1.353
+"
+19,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/18.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/18.cnf,,"609.708_604.082_1.245
+"
+6,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/5.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/5.cnf,,"609.832_603.718_1.727
+"
+46,:,1681971561.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/10.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/10.cnf,,"609.740_604.273_1.046
+"
+20,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/19.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/19.cnf,,"609.839_604.097_0.926
+"
+16,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/15.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/15.cnf,,"609.870_603.901_1.585
+"
+41,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/5.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/5.cnf,,"609.788_604.277_1.055
+"
+45,:,1681971561.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/9.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/9.cnf,,"609.808_604.313_1.026
+"
+18,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/17.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/17.cnf,,"609.906_603.925_1.593
+"
+44,:,1681971561.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/8.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/8.cnf,,"609.859_604.263_1.078
+"
+11,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/10.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/10.cnf,,"609.978_603.737_1.845
+"
+50,:,1681971561.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/14.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/14.cnf,,"609.851_604.238_1.099
+"
+42,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/6.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/6.cnf,,"609.897_604.270_1.063
+"
+10,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/9.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/9.cnf,,"610.058_603.661_1.988
+"
+12,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/11.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/11.cnf,,"610.060_603.729_1.909
+"
+15,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/14.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/14.cnf,,"610.048_603.751_1.889
+"
+38,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/2.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/2.cnf,,"609.973_604.272_1.020
+"
+30,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/29.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/29.cnf,,"610.015_603.804_1.836
+"
+14,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/13.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/13.cnf,,"610.081_603.744_1.895
+"
+28,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/27.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/27.cnf,,"610.036_603.742_1.893
+"
+31,:,1681971560.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/30.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/30.cnf,,"610.031_603.775_1.855
+"
+29,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/28.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/28.cnf,,"610.042_603.721_1.910
+"
+43,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/7.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/7.cnf,,"610.005_604.250_0.905
+"
+27,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/26.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/26.cnf,,"610.062_603.717_1.888
+"
+2,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/1.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/1.cnf,,"610.227_603.676_1.645
+"
+13,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/12.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/12.cnf,,"610.233_603.675_1.677
+"
+1,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/0.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/0.cnf,,"610.311_603.724_1.472
+"
+7,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/6.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/6.cnf,,"610.370_603.568_1.891
+"
+39,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/3.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/3.cnf,,"610.276_604.285_1.033
+"
+8,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/7.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/7.cnf,,"610.404_603.649_1.833
+"
+36,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/0.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/0.cnf,,"610.342_604.283_1.040
+"
+21,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/20.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/20.cnf,,"610.420_604.075_1.339
+"
+40,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/4.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/4.cnf,,"610.390_604.277_1.032
+"
+48,:,1681971561.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/12.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/12.cnf,,"610.371_604.317_0.994
+"
+47,:,1681971561.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/11.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/11.cnf,,"610.383_604.298_1.003
+"
+37,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/1.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/1.cnf,,"610.418_604.448_0.553
+"
+32,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/31.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/31.cnf,,"610.440_603.739_1.821
+"
+25,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/24.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/24.cnf,,"610.478_603.752_1.819
+"
+26,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/25.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/25.cnf,,"610.487_603.662_1.911
+"
+22,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/21.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/21.cnf,,"610.555_603.744_1.856
+"
+4,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/3.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/3.cnf,,"610.618_603.730_1.871
+"
+49,:,1681971561.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/andes/13.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/andes/13.cnf,,"610.471_604.407_0.575
+"
+23,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/22.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/22.cnf,,"610.562_603.701_1.906
+"
+34,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/33.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/33.cnf,,"610.531_603.693_1.900
+"
+24,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/23.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/23.cnf,,"610.572_603.644_1.959
+"
+86,:,1681972171.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/asia/1.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/asia/1.cnf,,"0.106_0.084_0.021
+"
+35,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/34.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/34.cnf,,"610.541_603.707_1.874
+"
+33,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/32.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/32.cnf,,"610.552_603.753_1.807
+"
+87,:,1681972171.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/asia/2.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/asia/2.cnf,,"0.104_0.084_0.020
+"
+90,:,1681972171.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/cancer/0.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/cancer/0.cnf,,"0.040_0.027_0.013
+"
+89,:,1681972171.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/asia/0.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/asia/0.cnf,,"0.109_0.084_0.024
+"
+91,:,1681972171.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/cancer/1.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/cancer/1.cnf,,"0.050_0.028_0.022
+"
+92,:,1681972171.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/cancer/2.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/cancer/2.cnf,,"0.051_0.032_0.018
+"
+93,:,1681972171.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/cancer/3.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/cancer/3.cnf,,"0.050_0.033_0.017
+"
+3,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/2.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/2.cnf,,"610.696_603.902_1.236
+"
+9,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/8.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/8.cnf,,"610.695_603.941_1.159
+"
+88,:,1681972171.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/asia/3.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/asia/3.cnf,,"0.166_0.148_0.017
+"
+5,:,1681971560.000,611.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m projMC -f 1 -i  instances/bayesian_networks/pcnf/alarm/4.cnf' &>> /dev/null)",instances/bayesian_networks/pcnf/alarm/4.cnf,,"610.869_603.690_1.352
+"
