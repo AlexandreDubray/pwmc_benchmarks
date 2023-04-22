@@ -50,31 +50,33 @@ def parse_file(dataset):
             cpt_idx += 1
             dom_size = len(variables[v])
             ds = []
-            sorted_ds = []
             for nd in range(int(len(probas) / dom_size)):
                 ds.append([x for x in probas[nd*dom_size:(nd+1)*dom_size]])
-                sorted_ds.append(sorted(ds[-1]))
             nb_proba_index_needed = 0
             for i in range(len(ds)):
                 d = ds[i]
                 found_idx = None
                 for j in range(max(0, i-1), i):
-                    if set(ds[i]) == set(ds[j]):
+                    if sorted(ds[i]) == sorted(ds[j]):
                         found_idx = j
                         break
-                if found_idx is not None:
-                    m = {}
+                if False and found_idx is not None:
+                    used_idx = set()
+                    dline = []
                     for p in d:
-                        m[p] = proba_vars[v][found_idx][p]
-                    proba_vars[v].append(m)
+                        for lidx in range(len(proba_vars[v][found_idx])):
+                            if i not in used_idx:
+                                if p == map_Weight[proba_vars[v][found_idx][lidx]]:
+                                    used_idx.add(lidx)
+                                    dline.append(proba_vars[v][found_idx][lidx])
+                    proba_vars[v].append(dline)
                 else:
-                    m = {}
+                    dline = []
                     for p in d:
-                        if p not in m:
-                            m[p] = probabilistic_index
-                            map_weight[probabilistic_index] = p
-                            probabilistic_index += 1
-                    proba_vars[v].append(m)
+                        dline.append(probabilistic_index)
+                        map_weight[probabilistic_index] = p
+                        probabilistic_index += 1
+                    proba_vars[v].append(dline)
         
         deterministic_index = probabilistic_index
         for v in range(len(variables)):
@@ -97,9 +99,9 @@ def parse_file(dataset):
                 tt = [x for x in body_vars[i]]
                 p = probas[i]
                 try:
-                    distributions_m[tuple([v] + tt[:-1])].append((tt[-1], proba_vars[v][int(i / dom_size)][p], p))
+                    distributions_m[tuple([v] + tt[:-1])].append((tt[-1], proba_vars[v][int(i / dom_size)][i % dom_size], p))
                 except KeyError:
-                    distributions_m[tuple([v] + tt[:-1])] = [(tt[-1], proba_vars[v][int(i / dom_size)][p], p)]
+                    distributions_m[tuple([v] + tt[:-1])] = [(tt[-1], proba_vars[v][int(i / dom_size)][i % dom_size], p)]
             cpt.append(c)
 
         # Handling enc4 format
@@ -217,6 +219,8 @@ instances = [
         'water',
         'win95pts',
 ]
+
+#instances = ['cancer']
 
 for instance in instances:
     print(instance)
