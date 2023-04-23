@@ -101,7 +101,7 @@ timeout=600
 buf_timeout=$(($timeout + 5))
 export projMC_cmd="d4 -m projMC -f 1 -i "
 export projMC_cmd_enc4="d4 -m counting -f 1 -i "
-export schlandals_cmd="schlandals -b fiedler -m 15000 -i "
+export schlandals_cmd="schlandals -b min-in-degree -m 15000 -i "
 export gpmc_cmd="gpmc -mode=3 -cs=15000 "
 export gpmc_cmd_enc4="gpmc -mode=1 -cs=15000 "
 
