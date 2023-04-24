@@ -13,7 +13,8 @@ def parse_file(dataset):
     with open(os.path.join(script_dir, 'uai', dataset + '.evid')) as f:
         for line in f:
             s = line.rstrip().split(' ')
-            evidence[int(s[0])] = int(s[1])
+            if len(s) > 0:
+                evidence[int(s[0])] = int(s[1])
     with open(os.path.join(script_dir, 'uai', dataset + '.uai')) as f:
         all_file = f.read().replace('  ', ' ')
         lines = all_file.split('\n')[1:]
@@ -43,6 +44,7 @@ def parse_file(dataset):
         map_weight = {}
         proba_vars = [[] for v in range(len(variables))]
         cpt_idx = 0
+        distributions_clauses = []
         for i in range(idx+1, len(lines), 2):
             probas = [float(x) for x in lines[i].split(' ')]
             distributions = []
@@ -60,13 +62,13 @@ def parse_file(dataset):
                     if sorted(ds[i]) == sorted(ds[j]):
                         found_idx = j
                         break
-                if False and found_idx is not None:
+                if found_idx is not None:
                     used_idx = set()
                     dline = []
                     for p in d:
                         for lidx in range(len(proba_vars[v][found_idx])):
-                            if i not in used_idx:
-                                if p == map_Weight[proba_vars[v][found_idx][lidx]]:
+                            if lidx not in used_idx:
+                                if p == map_weight[proba_vars[v][found_idx][lidx]]:
                                     used_idx.add(lidx)
                                     dline.append(proba_vars[v][found_idx][lidx])
                     proba_vars[v].append(dline)
@@ -76,6 +78,7 @@ def parse_file(dataset):
                         dline.append(probabilistic_index)
                         map_weight[probabilistic_index] = p
                         probabilistic_index += 1
+                    distributions_clauses.append(f'd {" ".join([str(x) for x in d])}')
                     proba_vars[v].append(dline)
         
         deterministic_index = probabilistic_index
@@ -120,64 +123,74 @@ def parse_file(dataset):
                 var = int(s[0])
                 enc4_weights.append(f'c p weight {s[0]} {s[1]} 0')
             
-        enc4_mvar = []
+        enc4_mvar = [None for _ in range(nvar)]
         with open(os.path.join(enc4_tpl_dir, dataset + '.map')) as fm:
             for line in fm:
-                enc4_mvar.append([int(x) for x in re.findall(r'\d+', line.split(' ')[2])])
+                s = line.split(' ')
+                enc4_mvar[int(s[0])] = [int(x) for x in re.findall(r'\d+', line.split(' ')[2])]
 
         # Writing ppidimacs-like files
 
-        distributions = []
         clauses = []
         clauses_cnf = []
         cnf_weights = []
-        d_weights = []
+        clauses_enc1 = []
+        enc1_weight = []
         
         for evid in evidence:
             for i in range(len(variables[evid])):
                 if i != evidence[evid]:
+                    clauses.append(f'-{variables[evid][i]}')
                     clauses_cnf.append(f'-{variables[evid][i] + 1} 0')
         
         for vidx in map_weight:
-            #d_weights.append(f'c p weight {vidx} {map_weight[vidx]:.9f}')
             cnf_weights.append(f'c p weight {vidx + 1} {map_weight[vidx]:.9f} 0')
+            enc1_weight.append(f'c p weight {vidx + 1} {map_weight[vidx]:.9f} 0')
             cnf_weights.append(f'c p weight -{vidx + 1} {(1 - map_weight[vidx]):.9f} 0')
+            enc1_weight.append(f'c p weight -{vidx + 1} 1.0 0')
+            
+        for v in variables:
+            for vv in v:
+                enc1_weight.append(f'c p weight {vv + 1} 1.0 0')
+                enc1_weight.append(f'c p weight -{vv + 1} 1.0 0')
         
-        #distributions.append('c p show ' + ' '.join([str(x) for x in range(probabilistic_index)]))
-        seen_distrib = set()
         for sub_body in distributions_m:
             distrib_idx = tuple([y for x,y,z in distributions_m[sub_body]])
-            if tuple not in seen_distrib:
-                distributions.append('d ' + ' '.join(["{:.9f}".format(map_weight[x]) for x in distrib_idx]))
             for end_body, proba_var_idx, proba in distributions_m[sub_body]:
                 clauses.append(f'{end_body} {" ".join([str(-x) for x in sub_body[1:]])} -{proba_var_idx}')
-                clauses_cnf.append(f'{end_body + 1} {" ".join([str(-(x+1)) for x in sub_body[1:]])} -{proba_var_idx} 0')
+                clauses_cnf.append(f'{end_body + 1} {" ".join([str(-(x+1)) for x in sub_body[1:]])} -{proba_var_idx + 1} 0')
+
+                clauses_enc1.append(f'{end_body + 1} {" ".join([str((x+1)) for x in sub_body[1:]])} -{proba_var_idx + 1} 0')
+                clauses_enc1.append(f'-{end_body + 1} {" ".join([str(-(x+1)) for x in sub_body[1:]])} {proba_var_idx + 1} 0')
+                
         
         for vs in variables:
             clauses_cnf.append(f'{" ".join([str(x+1) for x in vs])} 0')
+            clauses_enc1.append(f'{" ".join([str(x+1) for x in vs])} 0')
             for i in range(len(vs)):
                 for j in range(i+1, len(vs)):
                     clauses_cnf.append(f'-{vs[i] + 1} -{vs[j] + 1} 0')
+                    clauses_enc1.append(f'-{vs[i] + 1} -{vs[j] + 1} 0')
             
         os.makedirs(os.path.join(script_dir, 'ppidimacs', dataset), exist_ok=True)
         os.makedirs(os.path.join(script_dir, 'pcnf', dataset), exist_ok=True)
         os.makedirs(os.path.join(script_dir, 'enc4', dataset), exist_ok=True)
+        os.makedirs(os.path.join(script_dir, 'enc1', dataset), exist_ok=True)
         file_idx = 0
-        remove_trailing_space(distributions)
+        remove_trailing_space(distributions_clauses)
         remove_trailing_space(clauses)
         remove_trailing_space(clauses_cnf)
         remove_trailing_space(cnf_weights)
-        remove_trailing_space(d_weights)
         remove_trailing_space(enc4_weights)
         remove_trailing_space(enc4_clauses)
+        remove_trailing_space(clauses_enc1)
         for i in range(nvar):
             if is_leaf[i]:
                 dom_size = len(variables[i])
                 for j in range(len(variables[i])):
                     with open(os.path.join(script_dir, 'ppidimacs', dataset, f'{file_idx}.ppidimacs'), 'w') as fout:
                         fout.write(f'p cnf {deterministic_index} {len(clauses) + dom_size - 1}\n')
-                        fout.write('\n'.join(distributions) + '\n')
-                        #fout.write('\n'.join(d_weights) + '\n')
+                        fout.write('\n'.join(distributions_clauses) + '\n')
                         fout.write('\n'.join(clauses) + '\n')
                         for k in range(len(variables[i])):
                             if k != j:
@@ -191,7 +204,14 @@ def parse_file(dataset):
                         for k in range(len(variables[i])):
                             if k != j:
                                 fout.write(f'-{variables[i][k] + 1} 0\n')
-                                
+                    
+                    with open(os.path.join(script_dir, 'enc1', dataset, f'{file_idx}.cnf'), 'w') as fout:
+                        fout.write(f'p cnf {deterministic_index} {len(clauses_cnf) + dom_size - 1}\n')
+                        fout.write('\n'.join(enc1_weight) + '\n')
+                        fout.write('\n'.join(clauses_enc1) + '\n')
+                        for k in range(len(variables[i])):
+                            if k != j:
+                                fout.write(f'-{variables[i][k] + 1} 0\n')
 
                     with open(os.path.join(script_dir, 'enc4', dataset, f'{file_idx}.cnf'), 'w') as fout:
                         fout.write(f'p cnf {enc4_nb_var} {len(enc4_clauses) + dom_size - 1}\n')
@@ -200,6 +220,10 @@ def parse_file(dataset):
                         for k in range(len(variables[i])):
                             if k != j:
                                 fout.write(f'-{enc4_mvar[i][k]} 0\n')
+                        for evid in evidence:
+                            for k in range(len(variables[evid])):
+                                if k != evidence[evid]:
+                                    fout.write(f'-{enc4_mvar[evid][k] + 1} 0\n')
                     file_idx += 1
         
             
@@ -219,8 +243,6 @@ instances = [
         'water',
         'win95pts',
 ]
-
-#instances = ['cancer']
 
 for instance in instances:
     print(instance)
