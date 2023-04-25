@@ -160,8 +160,10 @@ def parse_file(dataset):
                 clauses.append(f'{end_body} {" ".join([str(-x) for x in sub_body[1:]])} -{proba_var_idx}')
                 clauses_cnf.append(f'{end_body + 1} {" ".join([str(-(x+1)) for x in sub_body[1:]])} -{proba_var_idx + 1} 0')
 
-                clauses_enc1.append(f'{end_body + 1} {" ".join([str((x+1)) for x in sub_body[1:]])} -{proba_var_idx + 1} 0')
                 clauses_enc1.append(f'-{end_body + 1} {" ".join([str(-(x+1)) for x in sub_body[1:]])} {proba_var_idx + 1} 0')
+                clauses_enc1.append(f'{end_body + 1} -{proba_var_idx + 1} 0')
+                for x in sub_body[1:]:
+                    clauses_enc1.append(f'{x + 1} -{proba_var_idx + 1} 0')
                 
         
         for vs in variables:
@@ -206,12 +208,10 @@ def parse_file(dataset):
                                 fout.write(f'-{variables[i][k] + 1} 0\n')
                     
                     with open(os.path.join(script_dir, 'enc1', dataset, f'{file_idx}.cnf'), 'w') as fout:
-                        fout.write(f'p cnf {deterministic_index} {len(clauses_cnf) + dom_size - 1}\n')
+                        fout.write(f'p cnf {deterministic_index} {len(clauses_enc1) + 1}\n')
                         fout.write('\n'.join(enc1_weight) + '\n')
                         fout.write('\n'.join(clauses_enc1) + '\n')
-                        for k in range(len(variables[i])):
-                            if k != j:
-                                fout.write(f'-{variables[i][k] + 1} 0\n')
+                        fout.write(f'{variables[i][j] + 1} 0\n')
 
                     with open(os.path.join(script_dir, 'enc4', dataset, f'{file_idx}.cnf'), 'w') as fout:
                         fout.write(f'p cnf {enc4_nb_var} {len(enc4_clauses) + dom_size - 1}\n')
