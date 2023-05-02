@@ -42,11 +42,15 @@ def parse_file(dataset):
         nvar = int(lines[idx])
         idx += 1
         variables = []
+        enc1_variables = []
+        enc1_indicator_variable = 0
         s = lines[idx].rstrip().split(' ')
         idx += 1
         for i in range(nvar):
             dom_size = int(s[i])
             variables.append([-1 for _ in range(dom_size)])
+            enc1_variables.append([enc1_indicator_variable + i for i in range(dom_size)])
+            enc1_indicator_variable += dom_size
         ncpt = int(lines[idx])
         idx += 1
         cpts_def = []
@@ -63,9 +67,9 @@ def parse_file(dataset):
         probabilistic_index = 0
         map_weight = {}
         proba_vars = [[] for v in range(len(variables))]
+        enc1_proba_vars = [[] for v in range(len(variables))]
         cpt_idx = 0
         distributions_clauses = []
-        pcnf_exlusive = []
         for i in range(idx+1, len(lines), 2):
             probas = [float(x) for x in lines[i].split(' ')]
             distributions = []
@@ -78,8 +82,15 @@ def parse_file(dataset):
             nb_proba_index_needed = 0
             for i in range(len(ds)):
                 d = ds[i]
+                enc1_dline = []
+                for p in d:
+                    enc1_dline.append(enc1_indicator_variable)
+                    map_weight[enc1_indicator_variable] = p
+                    enc1_indicator_variable += 1
+                enc1_proba_vars[v].append(enc1_dline)
+                    
                 found_idx = None
-                for j in range(max(0, i-1), i):
+                for j in range(0, i):
                     if sorted(ds[i]) == sorted(ds[j]):
                         found_idx = j
                         break
@@ -100,7 +111,6 @@ def parse_file(dataset):
                         map_weight[probabilistic_index] = p
                         probabilistic_index += 1
                     distributions_clauses.append(f'd {" ".join([str(x) for x in d])}')
-                    pcnf_exlusive.append([x for x in dline])
                     proba_vars[v].append(dline)
 
         deterministic_index = probabilistic_index
@@ -111,10 +121,13 @@ def parse_file(dataset):
 
         cpt = []
         distributions_m = {}
+        enc1_distributions_m = {}
         for v in range(nvar):
             dom_size = len(variables[v])
             ttt = [variables[x] for x in cpts_def[v]]
+            enc1_ttt = [enc1_variables[x] for x in cpts_def[v]]
             body_vars = list(itertools.product(*ttt))
+            enc1_body_vars = list(itertools.product(*enc1_ttt))
             idx += 1
             probas = [float(x) for x in lines[idx].rstrip().split(' ')]
 
@@ -122,12 +135,37 @@ def parse_file(dataset):
             c = []
             for i in range(len(probas)):
                 tt = [x for x in body_vars[i]]
+                enc1_tt = [x for x in enc1_body_vars[i]]
                 p = probas[i]
                 try:
                     distributions_m[tuple([v] + tt[:-1])].append((tt[-1], proba_vars[v][int(i / dom_size)][i % dom_size], p))
                 except KeyError:
                     distributions_m[tuple([v] + tt[:-1])] = [(tt[-1], proba_vars[v][int(i / dom_size)][i % dom_size], p)]
+                
+                try:
+                    enc1_distributions_m[tuple([v] + enc1_tt[:-1])].append((enc1_tt[-1], enc1_proba_vars[v][int(i / dom_size)][i % dom_size]))
+                except KeyError:
+                    enc1_distributions_m[tuple([v] + enc1_tt[:-1])] = [(enc1_tt[-1], enc1_proba_vars[v][int(i / dom_size)][i % dom_size])]
+
             cpt.append(c)
+            
+        # Handling enc1 format
+        enc1_clauses = []
+        enc1_weights = []
+        # Indicator clauses
+        for v in enc1_variables:
+            enc1_clauses.append(" ".join([str(x+1) for x in v]) + " 0")
+            for i in range(len(v)):
+                enc1_weights.append(f'c p weight {v[i] + 1} 1.0 0')
+                for j in range(i+1, len(v)):
+                    enc1_clauses.append(f'-{v[i] + 1} -{v[j] + 1} 0')
+        # parameter clauses
+        for sub_body in enc1_distributions_m:
+            for end_body, parameter_idx in enc1_distributions_m[sub_body]:
+                enc1_clauses.append(f'{end_body + 1} {" ".join([str(-(x+1)) for x in sub_body[1:]])} -{parameter_idx + 1} 0')
+                enc1_clauses.append(f'-{end_body + 1} {parameter_idx + 1} 0')
+                for x in sub_body[1:]:
+                    enc1_clauses.append(f'-{x + 1} {parameter_idx + 1} 0')
 
         # Handling enc4 format
         enc4 = parse_enc4_template(os.path.join(script_dir, 'enc4_tpl'), dataset, nvar)
@@ -139,13 +177,12 @@ def parse_file(dataset):
         clauses = []
         clauses_cnf = []
         cnf_weights = []
-
+        
         for vidx in map_weight:
             cnf_weights.append(f'c p weight {vidx + 1} {map_weight[vidx]:.9f} 0')
             cnf_weights.append(f'c p weight -{vidx + 1} {(1 - map_weight[vidx]):.9f} 0')
 
         for sub_body in distributions_m:
-            distrib_idx = tuple([y for x,y,z in distributions_m[sub_body]])
             for end_body, proba_var_idx, proba in distributions_m[sub_body]:
                 clauses.append(f'{end_body} {" ".join([str(-x) for x in sub_body[1:]])} -{proba_var_idx}')
                 clauses_cnf.append(f'{end_body + 1} {" ".join([str(-(x+1)) for x in sub_body[1:]])} -{proba_var_idx + 1} 0')
@@ -155,15 +192,10 @@ def parse_file(dataset):
             for i in range(len(vs)):
                 for j in range(i+1, len(vs)):
                     clauses_cnf.append(f'-{vs[i]+1} -{vs[j]+1} 0')
-
-        for excls in pcnf_exlusive:
-            clauses_cnf.append(f'{" ".join([str(x+1) for x in excls])} 0')
-            for i in range(len(excls)):
-                for j in range(i+1, len(excls)):
-                    clauses_cnf.append(f'-{excls[i] + 1} -{excls[j] + 1} 0')
-
+        
         os.makedirs(os.path.join(script_dir, 'ppidimacs', dataset), exist_ok=True)
         os.makedirs(os.path.join(script_dir, 'pcnf', dataset), exist_ok=True)
+        os.makedirs(os.path.join(script_dir, 'enc1', dataset), exist_ok=True)
         os.makedirs(os.path.join(script_dir, 'enc4', dataset), exist_ok=True)
         os.makedirs(os.path.join(script_dir, 'enc3', dataset), exist_ok=True)
         os.makedirs(os.path.join(script_dir, 'enc4_log', dataset), exist_ok=True)
@@ -199,6 +231,12 @@ def parse_file(dataset):
                         fout.write(''.join(enc3["clauses"]))
                         for x in enc3["map_var"][i][j]:
                             fout.write(f'{x} 0')
+                                
+                    with open(os.path.join(script_dir, 'enc1', dataset, f'{file_idx}.cnf'), 'w') as fout:
+                        fout.write(f'p cnf {enc1_indicator_variable} {len(enc1_clauses) + 1}\n')
+                        fout.write('\n'.join(enc1_weights) + '\n')
+                        fout.write('\n'.join(enc1_clauses) + '\n')
+                        fout.write(f'{enc1_variables[i][j]} 0')
                     
                     with open(os.path.join(script_dir, 'enc4', dataset, f'{file_idx}.cnf'), 'w') as fout:
                         fout.write(f'p cnf {enc4["nvar"]} {len(enc4["clauses"]) + len(enc4["map_var"][i][j])}\n')
