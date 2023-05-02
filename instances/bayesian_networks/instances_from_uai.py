@@ -15,7 +15,7 @@ def parse_enc4_template(tpl_dir, dataset, nvar):
         for line in fw.readlines()[:-1]:
             s = line.rstrip().split(' ')
             weights.append(f'c p weight {s[0]} {s[1]} 0')
-            
+
     with open(os.path.join(tpl_dir, dataset + '.map')) as fm:
         for line in fm:
             s = line.rstrip().split('=')
@@ -23,11 +23,11 @@ def parse_enc4_template(tpl_dir, dataset, nvar):
             ss = s[1].split('][')
             map_var[v] = [[int(x) for x in re.findall(r'-?\d+', y)] for y in ss]
     return {
-        'nvar': int(sheader[2]),
-        'clauses': clauses,
-        'weights': weights,
-        'map_var': map_var
-    }
+            'nvar': int(sheader[2]),
+            'clauses': clauses,
+            'weights': weights,
+            'map_var': map_var
+            }
 
 
 def remove_trailing_space(l):
@@ -35,12 +35,6 @@ def remove_trailing_space(l):
         l[i] = l[i].replace('  ', ' ')
 
 def parse_file(dataset):
-    evidence = {}
-    with open(os.path.join(script_dir, 'uai', dataset + '.evid')) as f:
-        for line in f:
-            s = line.rstrip().split(' ')
-            if len(s) > 0:
-                evidence[int(s[0])] = int(s[1])
     with open(os.path.join(script_dir, 'uai', dataset + '.uai')) as f:
         all_file = f.read().replace('  ', ' ')
         lines = all_file.split('\n')[1:]
@@ -108,13 +102,13 @@ def parse_file(dataset):
                     distributions_clauses.append(f'd {" ".join([str(x) for x in d])}')
                     pcnf_exlusive.append([x for x in dline])
                     proba_vars[v].append(dline)
-        
+
         deterministic_index = probabilistic_index
         for v in range(len(variables)):
             for i in range(len(variables[v])):
                 variables[v][i] = deterministic_index
                 deterministic_index += 1
-        
+
         cpt = []
         distributions_m = {}
         for v in range(nvar):
@@ -123,7 +117,7 @@ def parse_file(dataset):
             body_vars = list(itertools.product(*ttt))
             idx += 1
             probas = [float(x) for x in lines[idx].rstrip().split(' ')]
-                       
+
             idx += 1
             c = []
             for i in range(len(probas)):
@@ -138,48 +132,40 @@ def parse_file(dataset):
         # Handling enc4 format
         enc4 = parse_enc4_template(os.path.join(script_dir, 'enc4_tpl'), dataset, nvar)
         enc4log = parse_enc4_template(os.path.join(script_dir, 'enc4_log_tpl'), dataset, nvar)
+        enc3 = parse_enc4_template(os.path.join(script_dir, 'enc3_tpl'), dataset, nvar)
 
         # Writing ppidimacs-like files
 
         clauses = []
         clauses_cnf = []
         cnf_weights = []
-        
-        for evid in evidence:
-            for x in enc4["map_var"][evid][evidence[evid]]:
-                enc4["clauses"].append(f"{x} 0\n")
-            for x in enc4log["map_var"][evid][evidence[evid]]:
-                enc4log["clauses"].append(f"{x} 0\n")
-            for i in range(len(variables[evid])):
-                if i != evidence[evid]:
-                    clauses.append(f'-{variables[evid][i]}')
-                    clauses_cnf.append(f'-{variables[evid][i] + 1} 0')
-        
+
         for vidx in map_weight:
             cnf_weights.append(f'c p weight {vidx + 1} {map_weight[vidx]:.9f} 0')
             cnf_weights.append(f'c p weight -{vidx + 1} {(1 - map_weight[vidx]):.9f} 0')
-            
+
         for sub_body in distributions_m:
             distrib_idx = tuple([y for x,y,z in distributions_m[sub_body]])
             for end_body, proba_var_idx, proba in distributions_m[sub_body]:
                 clauses.append(f'{end_body} {" ".join([str(-x) for x in sub_body[1:]])} -{proba_var_idx}')
                 clauses_cnf.append(f'{end_body + 1} {" ".join([str(-(x+1)) for x in sub_body[1:]])} -{proba_var_idx + 1} 0')
-            
+
         for vs in variables:
             clauses_cnf.append(f'{" ".join([str(x+1) for x in vs])} 0')
             for i in range(len(vs)):
                 for j in range(i+1, len(vs)):
                     clauses_cnf.append(f'-{vs[i]+1} -{vs[j]+1} 0')
-        
+
         for excls in pcnf_exlusive:
             clauses_cnf.append(f'{" ".join([str(x+1) for x in excls])} 0')
             for i in range(len(excls)):
                 for j in range(i+1, len(excls)):
                     clauses_cnf.append(f'-{excls[i] + 1} -{excls[j] + 1} 0')
-            
+
         os.makedirs(os.path.join(script_dir, 'ppidimacs', dataset), exist_ok=True)
         os.makedirs(os.path.join(script_dir, 'pcnf', dataset), exist_ok=True)
         os.makedirs(os.path.join(script_dir, 'enc4', dataset), exist_ok=True)
+        os.makedirs(os.path.join(script_dir, 'enc3', dataset), exist_ok=True)
         os.makedirs(os.path.join(script_dir, 'enc4_log', dataset), exist_ok=True)
         file_idx = 0
         remove_trailing_space(distributions_clauses)
@@ -206,16 +192,23 @@ def parse_file(dataset):
                         for k in range(len(variables[i])):
                             if k != j:
                                 fout.write(f'-{variables[i][k] + 1} 0\n')
+
+                    with open(os.path.join(script_dir, 'enc3', dataset, f'{file_idx}.cnf'), 'w') as fout:
+                        fout.write(f'p cnf {enc3["nvar"]} {len(enc3["clauses"]) + len(enc3["map_var"][i][j])}\n')
+                        fout.write('\n'.join(enc3["weights"]) + '\n')
+                        fout.write(''.join(enc3["clauses"]))
+                        for x in enc3["map_var"][i][j]:
+                            fout.write(f'{x} 0')
                     
                     with open(os.path.join(script_dir, 'enc4', dataset, f'{file_idx}.cnf'), 'w') as fout:
-                        fout.write(f'p cnf {enc4["nvar"]} {len(enc4["clauses"])}\n')
+                        fout.write(f'p cnf {enc4["nvar"]} {len(enc4["clauses"]) + len(enc4["map_var"][i][j])}\n')
                         fout.write('\n'.join(enc4["weights"]) + '\n')
                         fout.write(''.join(enc4["clauses"]))
                         for x in enc4["map_var"][i][j]:
                             fout.write(f'{x} 0')
 
                     with open(os.path.join(script_dir, 'enc4_log', dataset, f'{file_idx}.cnf'), 'w') as fout:
-                        fout.write(f'p cnf {enc4log["nvar"]} {len(enc4log["clauses"])}\n')
+                        fout.write(f'p cnf {enc4log["nvar"]} {len(enc4log["clauses"]) + len(enc4["map_var"][i][j])}\n')
                         fout.write('\n'.join(enc4log["weights"]) + '\n')
                         fout.write(''.join(enc4log["clauses"]))
                         for x in enc4log["map_var"][i][j]:
