@@ -65,6 +65,7 @@ def parse_file(dataset):
         idx += 1 # blank line
 
         probabilistic_index = 0
+        enc1_map_weight = {}
         map_weight = {}
         proba_vars = [[] for v in range(len(variables))]
         enc1_proba_vars = [[] for v in range(len(variables))]
@@ -85,7 +86,7 @@ def parse_file(dataset):
                 enc1_dline = []
                 for p in d:
                     enc1_dline.append(enc1_indicator_variable)
-                    map_weight[enc1_indicator_variable] = p
+                    enc1_map_weight[enc1_indicator_variable] = p
                     enc1_indicator_variable += 1
                 enc1_proba_vars[v].append(enc1_dline)
                     
@@ -159,13 +160,17 @@ def parse_file(dataset):
                 enc1_weights.append(f'c p weight {v[i] + 1} 1.0 0')
                 for j in range(i+1, len(v)):
                     enc1_clauses.append(f'-{v[i] + 1} -{v[j] + 1} 0')
+        for v in enc1_map_weight:
+            enc1_weights.append(f'c p weight {v+1} {enc1_map_weight[v]} 0')
+            enc1_weights.append(f'c p weight -{v+1} 1.0 0')
+
         # parameter clauses
         for sub_body in enc1_distributions_m:
             for end_body, parameter_idx in enc1_distributions_m[sub_body]:
-                enc1_clauses.append(f'{end_body + 1} {" ".join([str(-(x+1)) for x in sub_body[1:]])} -{parameter_idx + 1} 0')
-                enc1_clauses.append(f'-{end_body + 1} {parameter_idx + 1} 0')
+                enc1_clauses.append(f'-{end_body + 1} {" ".join([str(-(x+1)) for x in sub_body[1:]])} {parameter_idx + 1} 0')
+                enc1_clauses.append(f'{end_body + 1} -{parameter_idx + 1} 0')
                 for x in sub_body[1:]:
-                    enc1_clauses.append(f'-{x + 1} {parameter_idx + 1} 0')
+                    enc1_clauses.append(f'{x + 1} -{parameter_idx + 1} 0')
 
         # Handling enc4 format
         enc4 = parse_enc4_template(os.path.join(script_dir, 'enc4_tpl'), dataset, nvar)
@@ -236,7 +241,7 @@ def parse_file(dataset):
                         fout.write(f'p cnf {enc1_indicator_variable} {len(enc1_clauses) + 1}\n')
                         fout.write('\n'.join(enc1_weights) + '\n')
                         fout.write('\n'.join(enc1_clauses) + '\n')
-                        fout.write(f'{enc1_variables[i][j]} 0')
+                        fout.write(f'{enc1_variables[i][j]+1} 0')
                     
                     with open(os.path.join(script_dir, 'enc4', dataset, f'{file_idx}.cnf'), 'w') as fout:
                         fout.write(f'p cnf {enc4["nvar"]} {len(enc4["clauses"]) + len(enc4["map_var"][i][j])}\n')
