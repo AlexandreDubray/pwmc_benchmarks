@@ -1,0 +1,1571 @@
+Seq,Host,Starttime,JobRuntime,Send,Receive,Exitval,Signal,Command,V1,Stdout,Stderr
+2,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/1.cnf,,"0.186_0.175_0.011
+"
+7,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/6.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/6.cnf,,"0.180_0.165_0.014
+"
+3,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/2.cnf,,"0.194_0.179_0.014
+"
+9,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/8.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/8.cnf,,"0.183_0.165_0.017
+"
+8,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/7.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/7.cnf,,"0.188_0.174_0.013
+"
+4,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/3.cnf,,"0.202_0.191_0.010
+"
+10,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/9.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/9.cnf,,"0.186_0.171_0.014
+"
+5,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/4.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/4.cnf,,"0.201_0.186_0.014
+"
+16,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/15.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/15.cnf,,"0.174_0.161_0.012
+"
+17,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/16.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/16.cnf,,"0.173_0.155_0.017
+"
+1,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/0.cnf,,"0.214_0.201_0.012
+"
+34,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/33.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/33.cnf,,"0.125_0.115_0.010
+"
+18,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/17.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/17.cnf,,"0.181_0.167_0.013
+"
+32,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/31.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/31.cnf,,"0.134_0.118_0.015
+"
+33,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/32.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/32.cnf,,"0.131_0.118_0.013
+"
+35,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/34.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/34.cnf,,"0.125_0.113_0.010
+"
+22,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/21.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/21.cnf,,"0.182_0.168_0.013
+"
+24,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/23.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/23.cnf,,"0.183_0.169_0.014
+"
+25,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/24.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/24.cnf,,"0.185_0.167_0.017
+"
+19,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/18.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/18.cnf,,"0.205_0.188_0.016
+"
+15,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/14.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/14.cnf,,"0.222_0.210_0.011
+"
+29,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/28.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/28.cnf,,"0.186_0.171_0.014
+"
+30,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/29.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/29.cnf,,"0.188_0.174_0.013
+"
+11,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/10.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/10.cnf,,"0.247_0.237_0.009
+"
+6,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/5.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/5.cnf,,"0.263_0.250_0.011
+"
+12,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/11.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/11.cnf,,"0.259_0.247_0.011
+"
+26,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/25.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/25.cnf,,"0.218_0.204_0.014
+"
+27,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/26.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/26.cnf,,"0.217_0.201_0.015
+"
+28,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/27.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/27.cnf,,"0.217_0.205_0.011
+"
+13,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/12.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/12.cnf,,"0.270_0.257_0.011
+"
+23,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/22.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/22.cnf,,"0.254_0.238_0.016
+"
+14,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/13.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/13.cnf,,"0.285_0.266_0.018
+"
+21,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/20.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/20.cnf,,"0.274_0.263_0.010
+"
+20,:,1683019425.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/19.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/19.cnf,,"0.279_0.261_0.016
+"
+31,:,1683019425.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/alarm/30.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/alarm/30.cnf,,"0.273_0.262_0.011
+"
+42,:,1683019425.000,391.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/6.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/6.cnf,,"391.037_388.579_0.651
+"
+86,:,1683019816.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/asia/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/asia/0.cnf,,"0.030_0.018_0.012
+"
+87,:,1683019816.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/asia/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/asia/1.cnf,,"0.030_0.022_0.008
+"
+88,:,1683019816.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/asia/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/asia/2.cnf,,"0.030_0.023_0.007
+"
+89,:,1683019816.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/asia/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/asia/3.cnf,,"0.030_0.019_0.011
+"
+90,:,1683019816.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/cancer/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/cancer/0.cnf,,"0.028_0.019_0.009
+"
+91,:,1683019817.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/cancer/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/cancer/1.cnf,,"0.028_0.018_0.010
+"
+92,:,1683019817.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/cancer/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/cancer/2.cnf,,"0.028_0.016_0.012
+"
+93,:,1683019817.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/cancer/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/cancer/3.cnf,,"0.028_0.019_0.009
+"
+94,:,1683019817.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/0.cnf,,"0.088_0.069_0.019
+"
+95,:,1683019817.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/1.cnf,,"0.088_0.076_0.012
+"
+96,:,1683019817.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/2.cnf,,"0.088_0.076_0.012
+"
+97,:,1683019817.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/3.cnf,,"0.099_0.088_0.010
+"
+98,:,1683019817.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/4.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/4.cnf,,"0.098_0.086_0.012
+"
+99,:,1683019817.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/5.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/5.cnf,,"0.100_0.088_0.011
+"
+100,:,1683019817.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/6.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/6.cnf,,"0.100_0.087_0.012
+"
+101,:,1683019817.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/7.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/7.cnf,,"0.106_0.091_0.015
+"
+102,:,1683019817.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/8.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/8.cnf,,"0.106_0.091_0.014
+"
+103,:,1683019818.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/9.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/9.cnf,,"0.095_0.080_0.014
+"
+104,:,1683019818.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/10.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/10.cnf,,"0.095_0.082_0.012
+"
+105,:,1683019818.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/11.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/11.cnf,,"0.094_0.082_0.012
+"
+106,:,1683019818.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/12.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/12.cnf,,"0.102_0.089_0.012
+"
+107,:,1683019818.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/13.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/13.cnf,,"0.102_0.090_0.012
+"
+108,:,1683019818.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/14.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/14.cnf,,"0.103_0.089_0.013
+"
+109,:,1683019818.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/15.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/15.cnf,,"0.087_0.074_0.012
+"
+110,:,1683019818.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/16.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/16.cnf,,"0.088_0.073_0.014
+"
+111,:,1683019818.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/17.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/17.cnf,,"0.087_0.077_0.010
+"
+112,:,1683019819.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/18.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/18.cnf,,"0.088_0.077_0.011
+"
+113,:,1683019819.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/child/19.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/child/19.cnf,,"0.089_0.074_0.014
+"
+114,:,1683019819.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/earthquake/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/earthquake/0.cnf,,"0.029_0.016_0.013
+"
+115,:,1683019819.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/earthquake/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/earthquake/1.cnf,,"0.029_0.019_0.010
+"
+116,:,1683019819.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/earthquake/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/earthquake/2.cnf,,"0.029_0.016_0.013
+"
+117,:,1683019819.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/earthquake/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/earthquake/3.cnf,,"0.029_0.019_0.010
+"
+37,:,1683019425.000,395.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/1.cnf,,"394.395_392.024_0.670
+"
+119,:,1683019820.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/1.cnf,,"1.611_1.583_0.022
+"
+118,:,1683019819.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/0.cnf,,"2.687_2.639_0.033
+"
+57,:,1683019425.000,398.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/21.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/21.cnf,,"397.448_395.108_0.689
+"
+120,:,1683019821.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/2.cnf,,"1.630_1.601_0.022
+"
+36,:,1683019425.000,398.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/0.cnf,,"397.911_395.469_0.702
+"
+48,:,1683019425.000,398.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/12.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/12.cnf,,"398.001_395.670_0.652
+"
+121,:,1683019822.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/3.cnf,,"2.720_2.676_0.030
+"
+122,:,1683019823.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/4.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/4.cnf,,"1.613_1.585_0.022
+"
+123,:,1683019823.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/5.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/5.cnf,,"1.641_1.612_0.023
+"
+124,:,1683019823.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/6.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/6.cnf,,"1.629_1.603_0.020
+"
+125,:,1683019823.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/7.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/7.cnf,,"1.917_1.893_0.017
+"
+49,:,1683019425.000,401.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/13.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/13.cnf,,"400.514_398.075_0.682
+"
+127,:,1683019824.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/9.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/9.cnf,,"1.930_1.896_0.026
+"
+128,:,1683019825.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/10.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/10.cnf,,"1.933_1.905_0.021
+"
+126,:,1683019824.000,4.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/8.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/8.cnf,,"3.199_3.157_0.024
+"
+129,:,1683019825.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/11.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/11.cnf,,"2.987_2.953_0.021
+"
+51,:,1683019425.000,403.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/15.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/15.cnf,,"402.940_400.577_0.691
+"
+130,:,1683019825.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/12.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/12.cnf,,"3.171_3.140_0.018
+"
+50,:,1683019425.000,404.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/14.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/14.cnf,,"403.317_400.891_0.672
+"
+131,:,1683019826.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/13.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/13.cnf,,"3.343_3.310_0.017
+"
+132,:,1683019826.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/14.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/14.cnf,,"2.954_2.921_0.021
+"
+135,:,1683019828.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/17.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/17.cnf,,"1.643_1.616_0.021
+"
+133,:,1683019827.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/15.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/15.cnf,,"2.962_2.927_0.023
+"
+136,:,1683019828.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/18.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/18.cnf,,"1.625_1.597_0.022
+"
+137,:,1683019828.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/19.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/19.cnf,,"1.632_1.601_0.025
+"
+134,:,1683019828.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/16.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/16.cnf,,"3.146_3.116_0.016
+"
+139,:,1683019829.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/21.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/21.cnf,,"1.652_1.624_0.022
+"
+140,:,1683019829.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/22.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/22.cnf,,"1.651_1.628_0.017
+"
+141,:,1683019829.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/23.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/23.cnf,,"1.643_1.621_0.016
+"
+138,:,1683019829.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/20.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/20.cnf,,"2.552_2.500_0.038
+"
+142,:,1683019830.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/24.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/24.cnf,,"3.243_3.210_0.019
+"
+146,:,1683019831.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/28.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/28.cnf,,"1.953_1.927_0.018
+"
+147,:,1683019831.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/29.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/29.cnf,,"1.944_1.913_0.022
+"
+148,:,1683019831.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/30.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/30.cnf,,"1.940_1.912_0.020
+"
+143,:,1683019830.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/25.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/25.cnf,,"3.252_3.219_0.019
+"
+144,:,1683019830.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/26.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/26.cnf,,"3.239_3.209_0.016
+"
+145,:,1683019831.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/27.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/27.cnf,,"2.680_2.614_0.053
+"
+149,:,1683019831.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/31.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/31.cnf,,"2.161_2.131_0.021
+"
+152,:,1683019833.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/34.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/34.cnf,,"1.638_1.612_0.020
+"
+153,:,1683019833.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/35.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/35.cnf,,"1.627_1.603_0.017
+"
+151,:,1683019833.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/33.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/33.cnf,,"1.958_1.939_0.012
+"
+154,:,1683019833.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/36.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/36.cnf,,"1.623_1.596_0.020
+"
+155,:,1683019833.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/37.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/37.cnf,,"1.622_1.594_0.022
+"
+156,:,1683019833.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/38.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/38.cnf,,"1.619_1.595_0.017
+"
+150,:,1683019833.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/32.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/32.cnf,,"2.678_2.617_0.048
+"
+157,:,1683019833.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/39.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/39.cnf,,"2.671_2.629_0.029
+"
+158,:,1683019835.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/40.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/40.cnf,,"2.417_2.382_0.024
+"
+159,:,1683019835.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/41.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/41.cnf,,"2.403_2.375_0.017
+"
+160,:,1683019835.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/42.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/42.cnf,,"2.391_2.365_0.016
+"
+161,:,1683019835.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/43.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/43.cnf,,"2.403_2.373_0.020
+"
+162,:,1683019835.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/44.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/44.cnf,,"2.395_2.368_0.017
+"
+163,:,1683019835.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/45.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/45.cnf,,"2.534_2.501_0.022
+"
+164,:,1683019835.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/46.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/46.cnf,,"2.592_2.556_0.024
+"
+166,:,1683019837.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/48.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/48.cnf,,"1.688_1.664_0.017
+"
+165,:,1683019836.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/47.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/47.cnf,,"2.818_2.775_0.027
+"
+173,:,1683019839.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/0.cnf,,"0.414_0.398_0.014
+"
+174,:,1683019839.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/1.cnf,,"0.630_0.611_0.015
+"
+175,:,1683019839.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/2.cnf,,"0.409_0.384_0.023
+"
+176,:,1683019840.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/3.cnf,,"0.454_0.433_0.019
+"
+177,:,1683019840.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/4.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/4.cnf,,"0.466_0.450_0.015
+"
+167,:,1683019837.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/49.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/49.cnf,,"3.002_2.965_0.024
+"
+168,:,1683019837.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/50.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/50.cnf,,"2.973_2.938_0.023
+"
+169,:,1683019837.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/51.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/51.cnf,,"2.991_2.960_0.018
+"
+170,:,1683019837.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/52.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/52.cnf,,"2.957_2.923_0.021
+"
+178,:,1683019840.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/5.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/5.cnf,,"0.455_0.442_0.012
+"
+179,:,1683019840.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/6.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/6.cnf,,"0.418_0.403_0.014
+"
+171,:,1683019838.000,2.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/53.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/53.cnf,,"2.961_2.931_0.017
+"
+180,:,1683019840.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/7.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/7.cnf,,"0.417_0.402_0.013
+"
+181,:,1683019840.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/8.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/8.cnf,,"0.360_0.349_0.010
+"
+182,:,1683019840.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/9.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/9.cnf,,"0.359_0.348_0.010
+"
+183,:,1683019840.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/10.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/10.cnf,,"0.359_0.341_0.017
+"
+184,:,1683019840.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/11.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/11.cnf,,"0.359_0.339_0.019
+"
+185,:,1683019840.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/12.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/12.cnf,,"0.420_0.407_0.011
+"
+186,:,1683019840.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/13.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/13.cnf,,"0.421_0.406_0.013
+"
+187,:,1683019841.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/14.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/14.cnf,,"0.416_0.403_0.012
+"
+188,:,1683019841.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/15.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/15.cnf,,"0.414_0.394_0.019
+"
+189,:,1683019841.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/16.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/16.cnf,,"0.413_0.400_0.011
+"
+190,:,1683019841.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/17.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/17.cnf,,"0.418_0.407_0.009
+"
+191,:,1683019841.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/18.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/18.cnf,,"0.417_0.403_0.012
+"
+192,:,1683019841.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/19.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/19.cnf,,"0.414_0.398_0.014
+"
+194,:,1683019841.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/21.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/21.cnf,,"0.358_0.347_0.009
+"
+193,:,1683019841.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/20.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/20.cnf,,"0.413_0.398_0.014
+"
+195,:,1683019841.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/22.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/22.cnf,,"0.359_0.343_0.015
+"
+196,:,1683019841.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/23.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/23.cnf,,"0.358_0.343_0.013
+"
+197,:,1683019841.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/24.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/24.cnf,,"0.359_0.342_0.016
+"
+198,:,1683019841.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/25.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/25.cnf,,"0.446_0.432_0.013
+"
+200,:,1683019841.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/27.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/27.cnf,,"0.412_0.396_0.014
+"
+202,:,1683019841.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/29.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/29.cnf,,"0.408_0.391_0.015
+"
+201,:,1683019841.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/28.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/28.cnf,,"0.425_0.412_0.011
+"
+199,:,1683019841.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/26.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/26.cnf,,"0.448_0.431_0.015
+"
+203,:,1683019841.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/30.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/30.cnf,,"0.476_0.459_0.014
+"
+204,:,1683019841.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/31.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/31.cnf,,"0.709_0.691_0.014
+"
+206,:,1683019842.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/33.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/33.cnf,,"0.453_0.438_0.014
+"
+172,:,1683019838.000,4.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hailfinder/54.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hailfinder/54.cnf,,"4.267_4.201_0.044
+"
+205,:,1683019842.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/32.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/32.cnf,,"0.726_0.711_0.012
+"
+207,:,1683019842.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/34.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/34.cnf,,"0.709_0.686_0.019
+"
+208,:,1683019842.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/35.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/35.cnf,,"0.710_0.688_0.018
+"
+209,:,1683019842.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/36.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/36.cnf,,"0.709_0.688_0.018
+"
+210,:,1683019842.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/37.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/37.cnf,,"0.709_0.690_0.016
+"
+211,:,1683019842.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/38.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/38.cnf,,"0.536_0.516_0.018
+"
+216,:,1683019842.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/43.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/43.cnf,,"0.408_0.391_0.016
+"
+212,:,1683019842.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/39.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/39.cnf,,"0.705_0.682_0.019
+"
+218,:,1683019843.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/45.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/45.cnf,,"0.453_0.433_0.019
+"
+219,:,1683019843.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/46.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/46.cnf,,"0.371_0.353_0.017
+"
+213,:,1683019842.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/40.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/40.cnf,,"0.779_0.759_0.016
+"
+215,:,1683019842.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/42.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/42.cnf,,"0.706_0.686_0.016
+"
+214,:,1683019842.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/41.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/41.cnf,,"0.776_0.755_0.018
+"
+217,:,1683019843.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/44.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/44.cnf,,"0.777_0.753_0.020
+"
+220,:,1683019843.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/47.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/47.cnf,,"0.378_0.360_0.017
+"
+221,:,1683019843.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/48.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/48.cnf,,"0.380_0.363_0.016
+"
+222,:,1683019843.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/49.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/49.cnf,,"0.368_0.356_0.011
+"
+223,:,1683019843.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/50.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/50.cnf,,"0.414_0.399_0.014
+"
+224,:,1683019843.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/51.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/51.cnf,,"0.408_0.394_0.013
+"
+225,:,1683019843.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/52.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/52.cnf,,"0.768_0.747_0.017
+"
+226,:,1683019843.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/53.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/53.cnf,,"0.769_0.748_0.017
+"
+227,:,1683019843.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/54.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/54.cnf,,"0.768_0.748_0.016
+"
+231,:,1683019844.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/58.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/58.cnf,,"0.521_0.504_0.015
+"
+228,:,1683019843.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/55.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/55.cnf,,"0.769_0.745_0.021
+"
+229,:,1683019843.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/56.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/56.cnf,,"0.788_0.769_0.016
+"
+230,:,1683019843.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/57.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/57.cnf,,"0.782_0.763_0.015
+"
+232,:,1683019844.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/59.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/59.cnf,,"0.718_0.701_0.014
+"
+238,:,1683019844.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/65.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/65.cnf,,"0.541_0.525_0.015
+"
+233,:,1683019844.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/60.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/60.cnf,,"0.709_0.690_0.015
+"
+234,:,1683019844.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/61.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/61.cnf,,"0.707_0.685_0.018
+"
+235,:,1683019844.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/62.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/62.cnf,,"0.781_0.763_0.014
+"
+236,:,1683019844.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/63.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/63.cnf,,"0.781_0.758_0.019
+"
+237,:,1683019844.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/64.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/64.cnf,,"0.782_0.762_0.016
+"
+239,:,1683019844.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/66.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/66.cnf,,"0.711_0.687_0.020
+"
+240,:,1683019844.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/67.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/67.cnf,,"0.706_0.685_0.017
+"
+241,:,1683019845.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/68.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/68.cnf,,"0.542_0.522_0.018
+"
+242,:,1683019845.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/69.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/69.cnf,,"0.705_0.687_0.015
+"
+243,:,1683019845.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/70.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/70.cnf,,"0.780_0.758_0.018
+"
+247,:,1683019845.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/74.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/74.cnf,,"0.665_0.645_0.017
+"
+244,:,1683019845.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/71.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/71.cnf,,"0.776_0.753_0.019
+"
+245,:,1683019845.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/72.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/72.cnf,,"0.777_0.756_0.017
+"
+246,:,1683019845.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/73.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/73.cnf,,"0.775_0.754_0.018
+"
+248,:,1683019845.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/75.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/75.cnf,,"0.709_0.693_0.012
+"
+250,:,1683019845.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/77.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/77.cnf,,"0.389_0.373_0.015
+"
+249,:,1683019845.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/76.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/76.cnf,,"0.678_0.658_0.016
+"
+252,:,1683019846.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/79.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/79.cnf,,"0.409_0.390_0.018
+"
+256,:,1683019846.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/83.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/83.cnf,,"0.408_0.383_0.024
+"
+251,:,1683019845.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/78.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/78.cnf,,"0.650_0.628_0.018
+"
+253,:,1683019846.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/80.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/80.cnf,,"0.702_0.677_0.021
+"
+254,:,1683019846.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/81.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/81.cnf,,"0.778_0.761_0.013
+"
+255,:,1683019846.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/82.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/82.cnf,,"0.776_0.757_0.015
+"
+257,:,1683019846.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/84.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/84.cnf,,"0.714_0.696_0.014
+"
+258,:,1683019846.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/85.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/85.cnf,,"0.770_0.748_0.017
+"
+259,:,1683019846.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/86.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/86.cnf,,"0.772_0.746_0.022
+"
+260,:,1683019846.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/87.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/87.cnf,,"0.711_0.688_0.020
+"
+261,:,1683019846.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/88.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/88.cnf,,"0.707_0.685_0.018
+"
+264,:,1683019846.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/91.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/91.cnf,,"0.473_0.458_0.014
+"
+262,:,1683019846.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/89.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/89.cnf,,"0.710_0.688_0.018
+"
+263,:,1683019846.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/90.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/90.cnf,,"0.714_0.690_0.021
+"
+265,:,1683019847.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/92.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/92.cnf,,"0.715_0.695_0.016
+"
+267,:,1683019847.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/94.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/94.cnf,,"0.532_0.515_0.014
+"
+266,:,1683019847.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/hepar2/93.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/hepar2/93.cnf,,"0.710_0.692_0.015
+"
+268,:,1683019847.000,4.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/0.cnf,,"3.993_3.954_0.023
+"
+269,:,1683019847.000,4.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/1.cnf,,"4.050_4.015_0.016
+"
+270,:,1683019847.000,4.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/2.cnf,,"4.533_4.490_0.022
+"
+273,:,1683019847.000,5.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/5.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/5.cnf,,"4.858_4.791_0.050
+"
+275,:,1683019847.000,6.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/7.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/7.cnf,,"5.141_5.081_0.041
+"
+272,:,1683019847.000,7.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/4.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/4.cnf,,"6.465_6.409_0.027
+"
+271,:,1683019847.000,7.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/3.cnf,,"6.927_6.865_0.029
+"
+274,:,1683019847.000,7.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/6.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/6.cnf,,"6.749_6.687_0.030
+"
+276,:,1683019851.000,5.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/8.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/8.cnf,,"4.723_4.678_0.027
+"
+282,:,1683019854.000,3.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/14.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/14.cnf,,"2.970_2.939_0.019
+"
+281,:,1683019854.000,4.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/13.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/13.cnf,,"4.725_4.661_0.039
+"
+277,:,1683019851.000,8.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/9.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/9.cnf,,"7.777_7.721_0.027
+"
+278,:,1683019851.000,8.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/10.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/10.cnf,,"7.751_7.664_0.060
+"
+279,:,1683019852.000,8.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/11.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/11.cnf,,"7.898_7.825_0.039
+"
+284,:,1683019856.000,4.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/16.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/16.cnf,,"4.602_4.560_0.021
+"
+285,:,1683019857.000,5.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/17.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/17.cnf,,"4.645_4.603_0.020
+"
+283,:,1683019854.000,8.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/15.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/15.cnf,,"7.918_7.848_0.030
+"
+280,:,1683019853.000,11.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/12.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/12.cnf,,"11.258_11.165_0.040
+"
+286,:,1683019858.000,8.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/insurance/18.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/insurance/18.cnf,,"7.586_7.488_0.055
+"
+40,:,1683019425.000,459.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/4.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/4.cnf,,"458.920_456.090_0.712
+"
+41,:,1683019425.000,460.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/5.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/5.cnf,,"460.057_457.310_0.654
+"
+43,:,1683019425.000,561.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/7.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/7.cnf,,"560.690_557.021_0.791
+"
+56,:,1683019425.000,561.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/20.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/20.cnf,,"560.880_557.393_0.789
+"
+76,:,1683019425.000,568.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/40.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/40.cnf,,"567.835_564.572_0.639
+"
+77,:,1683019425.000,570.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/41.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/41.cnf,,"569.201_565.927_0.659
+"
+38,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/2.cnf,,"607.542_604.275_0.694
+"
+54,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/18.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/18.cnf,,"607.533_604.297_0.674
+"
+46,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/10.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/10.cnf,,"607.619_604.288_0.686
+"
+52,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/16.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/16.cnf,,"607.589_604.294_0.676
+"
+55,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/19.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/19.cnf,,"607.610_604.284_0.690
+"
+69,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/33.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/33.cnf,,"607.555_604.274_0.701
+"
+72,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/36.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/36.cnf,,"607.566_604.342_0.629
+"
+53,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/17.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/17.cnf,,"607.686_604.234_0.760
+"
+58,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/22.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/22.cnf,,"607.670_604.245_0.749
+"
+73,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/37.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/37.cnf,,"607.608_604.307_0.687
+"
+64,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/28.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/28.cnf,,"607.653_603.980_1.029
+"
+65,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/29.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/29.cnf,,"607.669_603.923_1.082
+"
+71,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/35.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/35.cnf,,"607.650_604.339_0.642
+"
+45,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/9.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/9.cnf,,"607.821_604.241_0.740
+"
+84,:,1683019426.000,607.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/48.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/48.cnf,,"607.605_604.248_0.728
+"
+63,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/27.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/27.cnf,,"607.706_604.217_0.758
+"
+39,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/3.cnf,,"607.865_604.272_0.717
+"
+44,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/8.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/8.cnf,,"607.849_604.287_0.696
+"
+75,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/39.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/39.cnf,,"607.738_603.866_1.129
+"
+82,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/46.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/46.cnf,,"607.707_604.288_0.704
+"
+62,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/26.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/26.cnf,,"607.798_604.276_0.706
+"
+67,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/31.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/31.cnf,,"607.791_604.258_0.725
+"
+47,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/11.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/11.cnf,,"607.933_604.285_0.702
+"
+80,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/44.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/44.cnf,,"607.764_604.295_0.695
+"
+68,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/32.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/32.cnf,,"607.817_604.259_0.731
+"
+61,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/25.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/25.cnf,,"607.850_604.321_0.672
+"
+60,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/24.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/24.cnf,,"607.868_604.312_0.683
+"
+59,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/23.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/23.cnf,,"607.877_604.160_0.841
+"
+83,:,1683019426.000,607.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/47.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/47.cnf,,"607.783_604.322_0.655
+"
+79,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/43.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/43.cnf,,"607.841_604.313_0.661
+"
+70,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/34.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/34.cnf,,"607.889_604.156_0.815
+"
+66,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/30.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/30.cnf,,"607.924_604.211_0.715
+"
+85,:,1683019426.000,607.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/49.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/49.cnf,,"607.814_604.261_0.718
+"
+81,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/45.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/45.cnf,,"607.871_604.286_0.701
+"
+74,:,1683019425.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/38.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/38.cnf,,"608.008_603.951_1.018
+"
+78,:,1683019425.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/andes/42.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/andes/42.cnf,,"608.087_604.302_0.670
+"
+287,:,1683019859.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/0.cnf,,"608.906_604.345_0.621
+"
+288,:,1683019859.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/1.cnf,,"608.909_604.309_0.658
+"
+289,:,1683019860.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/2.cnf,,"609.099_604.308_0.661
+"
+290,:,1683019860.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/3.cnf,,"608.932_604.381_0.588
+"
+291,:,1683019862.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/4.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/4.cnf,,"609.037_604.382_0.583
+"
+292,:,1683019862.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/5.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/5.cnf,,"609.235_604.127_0.584
+"
+293,:,1683019864.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/6.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/6.cnf,,"608.957_604.298_0.670
+"
+294,:,1683019866.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/7.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/7.cnf,,"609.116_604.295_0.659
+"
+295,:,1683019884.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/8.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/8.cnf,,"609.013_604.288_0.677
+"
+296,:,1683019885.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/9.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/9.cnf,,"609.215_604.405_0.560
+"
+297,:,1683019986.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/10.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/10.cnf,,"609.281_604.408_0.548
+"
+298,:,1683019986.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/11.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/11.cnf,,"609.272_604.400_0.564
+"
+299,:,1683019993.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/12.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/12.cnf,,"609.356_604.400_0.566
+"
+300,:,1683019995.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/13.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/13.cnf,,"609.122_604.431_0.535
+"
+303,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/16.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/16.cnf,,"609.146_604.220_0.749
+"
+302,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/15.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/15.cnf,,"609.232_604.229_0.740
+"
+304,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/17.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/17.cnf,,"609.203_604.201_0.771
+"
+314,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/27.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/27.cnf,,"609.118_604.220_0.750
+"
+311,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/24.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/24.cnf,,"609.194_604.288_0.680
+"
+306,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/19.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/19.cnf,,"609.307_604.238_0.735
+"
+317,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/30.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/30.cnf,,"609.176_604.311_0.668
+"
+310,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/23.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/23.cnf,,"609.252_604.331_0.641
+"
+321,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/34.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/34.cnf,,"609.109_604.057_0.931
+"
+305,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/18.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/18.cnf,,"609.376_604.281_0.694
+"
+316,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/29.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/29.cnf,,"609.244_604.244_0.739
+"
+301,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/14.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/14.cnf,,"609.554_604.420_0.546
+"
+308,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/21.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/21.cnf,,"609.321_604.267_0.707
+"
+307,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/20.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/20.cnf,,"609.387_604.278_0.691
+"
+309,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/22.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/22.cnf,,"609.360_604.315_0.653
+"
+318,:,1683020033.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/31.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/31.cnf,,"609.323_604.308_0.661
+"
+320,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/33.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/33.cnf,,"609.295_604.082_0.892
+"
+313,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/26.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/26.cnf,,"609.431_604.321_0.647
+"
+312,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/25.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/25.cnf,,"609.446_604.321_0.648
+"
+319,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/32.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/32.cnf,,"609.347_604.326_0.645
+"
+325,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/38.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/38.cnf,,"609.347_604.347_0.619
+"
+324,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/37.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/37.cnf,,"609.367_604.372_0.595
+"
+326,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/39.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/39.cnf,,"609.378_604.303_0.666
+"
+323,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/36.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/36.cnf,,"609.425_604.338_0.627
+"
+329,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/42.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/42.cnf,,"609.402_604.282_0.686
+"
+330,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/43.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/43.cnf,,"609.389_604.293_0.681
+"
+335,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/48.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/48.cnf,,"609.271_604.302_0.665
+"
+334,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/47.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/47.cnf,,"609.403_604.226_0.742
+"
+328,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/41.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/41.cnf,,"609.520_604.318_0.648
+"
+327,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/40.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/40.cnf,,"609.645_604.464_0.500
+"
+322,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/35.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/35.cnf,,"609.702_604.146_0.820
+"
+315,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/28.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/28.cnf,,"609.809_604.461_0.501
+"
+332,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/45.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/45.cnf,,"609.636_604.201_0.770
+"
+336,:,1683020034.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/49.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/49.cnf,,"609.442_604.281_0.687
+"
+331,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/44.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/44.cnf,,"609.834_604.269_0.704
+"
+333,:,1683020033.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/46.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/46.cnf,,"609.851_604.412_0.550
+"
+337,:,1683020468.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/50.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/50.cnf,,"609.085_604.309_0.657
+"
+338,:,1683020468.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/51.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/51.cnf,,"609.053_604.320_0.647
+"
+339,:,1683020469.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/52.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/52.cnf,,"609.144_604.326_0.642
+"
+340,:,1683020469.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/53.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/53.cnf,,"609.155_604.281_0.685
+"
+341,:,1683020471.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/54.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/54.cnf,,"609.095_604.311_0.654
+"
+342,:,1683020471.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/55.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/55.cnf,,"609.266_604.349_0.618
+"
+343,:,1683020473.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/56.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/56.cnf,,"609.145_604.310_0.656
+"
+344,:,1683020475.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/57.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/57.cnf,,"609.321_604.358_0.609
+"
+345,:,1683020493.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/58.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/58.cnf,,"609.220_604.394_0.570
+"
+346,:,1683020495.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/59.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/59.cnf,,"609.278_604.413_0.552
+"
+347,:,1683020595.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/60.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/60.cnf,,"608.909_604.229_0.732
+"
+348,:,1683020596.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/61.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/61.cnf,,"609.182_604.181_0.789
+"
+349,:,1683020603.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/62.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/62.cnf,,"608.837_604.167_0.804
+"
+350,:,1683020604.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/63.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/63.cnf,,"609.109_604.389_0.577
+"
+351,:,1683020642.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/64.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/64.cnf,,"608.882_604.410_0.552
+"
+357,:,1683020642.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/70.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/70.cnf,,"608.800_604.117_0.854
+"
+356,:,1683020642.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/69.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/69.cnf,,"608.835_604.099_0.875
+"
+352,:,1683020642.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/65.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/65.cnf,,"609.060_604.397_0.570
+"
+354,:,1683020642.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/67.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/67.cnf,,"608.991_604.144_0.828
+"
+382,:,1683020643.000,608.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/95.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/95.cnf,,"608.355_603.464_0.774
+"
+363,:,1683020642.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/76.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/76.cnf,,"608.934_604.205_0.767
+"
+353,:,1683020642.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/66.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/66.cnf,,"609.179_604.113_0.859
+"
+368,:,1683020643.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/81.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/81.cnf,,"608.831_604.389_0.579
+"
+359,:,1683020642.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/72.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/72.cnf,,"609.063_604.114_0.860
+"
+361,:,1683020642.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/74.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/74.cnf,,"609.042_604.133_0.840
+"
+360,:,1683020642.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/73.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/73.cnf,,"609.084_604.158_0.819
+"
+358,:,1683020642.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/71.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/71.cnf,,"609.140_604.170_0.807
+"
+362,:,1683020642.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/75.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/75.cnf,,"609.112_604.165_0.807
+"
+371,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/84.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/84.cnf,,"609.034_604.272_0.697
+"
+373,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/86.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/86.cnf,,"609.030_604.207_0.760
+"
+369,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/82.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/82.cnf,,"609.149_604.385_0.585
+"
+366,:,1683020642.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/79.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/79.cnf,,"609.221_604.288_0.686
+"
+374,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/87.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/87.cnf,,"609.057_604.359_0.609
+"
+375,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/88.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/88.cnf,,"609.046_604.324_0.644
+"
+365,:,1683020642.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/78.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/78.cnf,,"609.311_604.258_0.721
+"
+381,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/94.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/94.cnf,,"608.861_604.237_0.733
+"
+355,:,1683020642.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/68.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/68.cnf,,"609.518_604.285_0.682
+"
+378,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/91.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/91.cnf,,"609.050_604.348_0.623
+"
+380,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/93.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/93.cnf,,"608.896_604.278_0.704
+"
+370,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/83.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/83.cnf,,"609.274_604.317_0.657
+"
+372,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/85.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/85.cnf,,"609.247_604.251_0.719
+"
+376,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/89.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/89.cnf,,"609.173_604.353_0.616
+"
+379,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/92.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/92.cnf,,"609.157_604.366_0.600
+"
+377,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/90.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/90.cnf,,"609.292_604.356_0.609
+"
+367,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/80.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/80.cnf,,"609.808_604.437_0.529
+"
+364,:,1683020642.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/77.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/77.cnf,,"609.984_604.290_0.675
+"
+383,:,1683020643.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/96.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/96.cnf,,"609.402_604.385_0.578
+"
+384,:,1683020643.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/97.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/97.cnf,,"609.537_604.323_0.647
+"
+386,:,1683020643.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/99.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/99.cnf,,"609.487_604.266_0.701
+"
+385,:,1683020643.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/98.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/98.cnf,,"609.658_604.271_0.697
+"
+387,:,1683021077.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/100.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/100.cnf,,"608.887_604.293_0.670
+"
+388,:,1683021077.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/101.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/101.cnf,,"608.756_604.272_0.695
+"
+389,:,1683021078.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/102.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/102.cnf,,"608.810_604.295_0.672
+"
+390,:,1683021078.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/103.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/103.cnf,,"608.880_604.316_0.652
+"
+391,:,1683021080.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/104.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/104.cnf,,"608.913_604.300_0.668
+"
+392,:,1683021081.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/105.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/105.cnf,,"608.877_604.285_0.684
+"
+393,:,1683021082.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/106.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/106.cnf,,"608.758_604.249_0.719
+"
+394,:,1683021084.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/107.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/107.cnf,,"608.868_604.230_0.738
+"
+395,:,1683021102.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/108.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/108.cnf,,"608.829_604.299_0.666
+"
+396,:,1683021104.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/109.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/109.cnf,,"608.899_604.276_0.693
+"
+401,:,1683021251.000,486.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/114.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/114.cnf,,"486.000_482.353_0.576
+"
+403,:,1683021251.000,489.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/116.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/116.cnf,,"488.786_485.144_0.576
+"
+402,:,1683021251.000,513.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/115.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/115.cnf,,"512.948_509.203_0.593
+"
+405,:,1683021251.000,555.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/118.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/118.cnf,,"555.164_551.083_0.608
+"
+404,:,1683021251.000,556.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/117.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/117.cnf,,"555.336_551.335_0.617
+"
+406,:,1683021251.000,559.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/119.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/119.cnf,,"558.427_554.266_0.627
+"
+397,:,1683021204.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/110.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/110.cnf,,"608.580_604.267_0.696
+"
+398,:,1683021205.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/111.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/111.cnf,,"608.725_604.195_0.775
+"
+399,:,1683021212.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/112.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/112.cnf,,"608.656_604.229_0.739
+"
+400,:,1683021213.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/113.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/113.cnf,,"608.918_604.253_0.716
+"
+407,:,1683021251.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/120.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/120.cnf,,"608.656_604.384_0.576
+"
+412,:,1683021251.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/125.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/125.cnf,,"608.598_604.221_0.750
+"
+409,:,1683021251.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/122.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/122.cnf,,"608.766_604.395_0.573
+"
+411,:,1683021251.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/124.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/124.cnf,,"608.719_604.222_0.751
+"
+413,:,1683021251.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/126.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/126.cnf,,"608.800_604.262_0.706
+"
+408,:,1683021251.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/121.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/121.cnf,,"608.985_604.414_0.551
+"
+414,:,1683021252.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/127.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/127.cnf,,"608.841_604.238_0.731
+"
+418,:,1683021252.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/131.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/131.cnf,,"608.670_604.295_0.671
+"
+416,:,1683021252.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/129.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/129.cnf,,"608.756_604.182_0.785
+"
+415,:,1683021252.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/128.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/128.cnf,,"608.816_604.255_0.711
+"
+424,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/137.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/137.cnf,,"608.662_604.347_0.627
+"
+419,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/132.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/132.cnf,,"608.757_604.180_0.790
+"
+423,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/136.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/136.cnf,,"608.767_604.349_0.619
+"
+417,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/130.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/130.cnf,,"608.887_604.343_0.629
+"
+425,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/138.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/138.cnf,,"608.782_604.333_0.636
+"
+426,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/139.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/139.cnf,,"608.784_604.291_0.679
+"
+428,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/141.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/141.cnf,,"608.750_604.050_0.921
+"
+422,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/135.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/135.cnf,,"608.909_604.316_0.649
+"
+410,:,1683021251.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/123.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/123.cnf,,"609.320_604.369_0.594
+"
+427,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/140.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/140.cnf,,"608.890_604.327_0.644
+"
+429,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/142.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/142.cnf,,"608.825_604.156_0.821
+"
+430,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/143.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/143.cnf,,"608.817_604.125_0.849
+"
+421,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/134.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/134.cnf,,"609.100_604.329_0.639
+"
+432,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/145.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/145.cnf,,"608.533_604.094_0.875
+"
+420,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/133.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/133.cnf,,"609.325_604.243_0.722
+"
+431,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/144.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/144.cnf,,"608.764_604.110_0.862
+"
+433,:,1683021252.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/146.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/146.cnf,,"608.900_604.208_0.764
+"
+434,:,1683021253.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/147.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/147.cnf,,"608.787_604.237_0.731
+"
+435,:,1683021253.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/148.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/148.cnf,,"608.984_604.191_0.776
+"
+436,:,1683021253.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/149.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/149.cnf,,"609.080_604.241_0.728
+"
+439,:,1683021687.000,479.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/152.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/152.cnf,,"478.682_474.969_0.541
+"
+438,:,1683021686.000,481.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/151.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/151.cnf,,"480.541_476.953_0.539
+"
+437,:,1683021686.000,544.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/150.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/150.cnf,,"544.201_539.507_0.682
+"
+440,:,1683021687.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/153.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/153.cnf,,"608.712_604.220_0.741
+"
+441,:,1683021689.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/154.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/154.cnf,,"609.265_604.346_0.619
+"
+442,:,1683021689.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/155.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/155.cnf,,"608.834_604.240_0.728
+"
+443,:,1683021691.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/156.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/156.cnf,,"608.928_604.276_0.692
+"
+444,:,1683021693.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/157.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/157.cnf,,"608.728_604.220_0.747
+"
+445,:,1683021711.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/158.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/158.cnf,,"608.818_604.221_0.745
+"
+446,:,1683021713.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/159.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/159.cnf,,"608.841_604.109_0.862
+"
+447,:,1683021737.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/160.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/160.cnf,,"608.774_604.082_0.887
+"
+448,:,1683021740.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/161.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/161.cnf,,"608.739_604.089_0.883
+"
+449,:,1683021764.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/162.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/162.cnf,,"608.831_604.226_0.740
+"
+450,:,1683021806.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/163.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/163.cnf,,"608.820_604.220_0.746
+"
+451,:,1683021807.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/164.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/164.cnf,,"608.948_604.159_0.813
+"
+452,:,1683021810.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/165.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/165.cnf,,"608.926_604.328_0.639
+"
+453,:,1683021813.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/166.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/166.cnf,,"609.025_604.359_0.603
+"
+454,:,1683021813.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/167.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/167.cnf,,"608.961_604.321_0.646
+"
+455,:,1683021820.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/168.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/168.cnf,,"608.837_604.196_0.775
+"
+456,:,1683021822.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/169.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/169.cnf,,"609.182_604.183_0.789
+"
+460,:,1683021860.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/173.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/173.cnf,,"608.777_604.201_0.768
+"
+459,:,1683021860.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/172.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/172.cnf,,"608.853_604.215_0.756
+"
+458,:,1683021860.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/171.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/171.cnf,,"609.018_604.285_0.684
+"
+457,:,1683021860.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/170.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/170.cnf,,"609.146_604.214_0.753
+"
+462,:,1683021860.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/175.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/175.cnf,,"608.836_604.188_0.783
+"
+461,:,1683021860.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/174.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/174.cnf,,"608.912_604.218_0.752
+"
+463,:,1683021860.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/176.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/176.cnf,,"608.982_604.228_0.745
+"
+468,:,1683021861.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/181.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/181.cnf,,"608.843_604.255_0.719
+"
+466,:,1683021860.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/179.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/179.cnf,,"608.934_604.371_0.595
+"
+471,:,1683021861.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/184.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/184.cnf,,"608.784_604.237_0.737
+"
+472,:,1683021861.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/185.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/185.cnf,,"608.801_604.206_0.763
+"
+473,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/186.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/186.cnf,,"608.882_604.366_0.605
+"
+467,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/180.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/180.cnf,,"609.048_604.260_0.719
+"
+469,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/182.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/182.cnf,,"608.967_604.265_0.707
+"
+470,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/183.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/183.cnf,,"608.997_604.271_0.696
+"
+475,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/188.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/188.cnf,,"608.879_604.402_0.564
+"
+478,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/191.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/191.cnf,,"608.886_604.244_0.726
+"
+479,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/192.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/192.cnf,,"608.928_604.414_0.550
+"
+481,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/194.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/194.cnf,,"608.801_604.356_0.610
+"
+464,:,1683021860.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/177.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/177.cnf,,"609.500_604.438_0.525
+"
+480,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/193.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/193.cnf,,"608.964_604.373_0.595
+"
+465,:,1683021860.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/178.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/178.cnf,,"609.494_604.480_0.481
+"
+474,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/187.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/187.cnf,,"609.267_604.358_0.611
+"
+482,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/195.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/195.cnf,,"609.024_604.078_0.898
+"
+484,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/197.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/197.cnf,,"608.775_604.143_0.833
+"
+477,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/190.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/190.cnf,,"609.368_604.441_0.524
+"
+476,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/189.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/189.cnf,,"609.460_604.388_0.579
+"
+483,:,1683021861.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/196.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/196.cnf,,"608.997_604.121_0.857
+"
+485,:,1683021862.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/198.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/198.cnf,,"608.757_604.250_0.716
+"
+486,:,1683021862.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/199.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/199.cnf,,"608.868_604.291_0.677
+"
+487,:,1683022166.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/200.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/200.cnf,,"608.947_604.326_0.636
+"
+488,:,1683022167.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/201.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/201.cnf,,"609.091_604.241_0.730
+"
+489,:,1683022230.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/202.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/202.cnf,,"609.174_604.187_0.777
+"
+490,:,1683022296.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/203.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/203.cnf,,"609.016_604.204_0.759
+"
+491,:,1683022298.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/204.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/204.cnf,,"609.299_604.336_0.631
+"
+492,:,1683022298.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/205.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/205.cnf,,"609.231_604.324_0.641
+"
+493,:,1683022300.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/206.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/206.cnf,,"609.981_604.034_0.579
+"
+494,:,1683022302.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/207.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/207.cnf,,"609.168_604.248_0.720
+"
+495,:,1683022320.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/208.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/208.cnf,,"609.439_604.292_0.674
+"
+496,:,1683022322.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/209.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/209.cnf,,"609.144_604.236_0.732
+"
+497,:,1683022346.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/210.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/210.cnf,,"609.169_604.082_0.891
+"
+498,:,1683022349.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/211.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/211.cnf,,"609.003_604.057_0.915
+"
+499,:,1683022373.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/212.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/212.cnf,,"609.279_604.040_0.932
+"
+500,:,1683022415.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/213.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/213.cnf,,"609.229_604.439_0.521
+"
+501,:,1683022416.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/214.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/214.cnf,,"609.346_604.361_0.605
+"
+502,:,1683022419.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/215.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/215.cnf,,"609.321_604.367_0.595
+"
+503,:,1683022422.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/216.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/216.cnf,,"609.337_604.278_0.690
+"
+504,:,1683022422.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/217.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/217.cnf,,"609.364_604.320_0.649
+"
+505,:,1683022429.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/218.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/218.cnf,,"609.293_604.268_0.701
+"
+506,:,1683022431.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/219.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/219.cnf,,"609.680_604.196_0.776
+"
+526,:,1683022470.000,601.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/239.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/239.cnf,,"600.708_595.938_0.681
+"
+525,:,1683022470.000,601.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/238.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/238.cnf,,"601.321_596.696_0.679
+"
+508,:,1683022469.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/221.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/221.cnf,,"609.077_604.150_0.822
+"
+507,:,1683022469.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/220.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/220.cnf,,"609.188_604.130_0.834
+"
+509,:,1683022469.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/222.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/222.cnf,,"609.211_604.207_0.763
+"
+511,:,1683022469.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/224.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/224.cnf,,"609.211_604.224_0.758
+"
+512,:,1683022469.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/225.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/225.cnf,,"609.198_604.169_0.810
+"
+510,:,1683022469.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/223.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/223.cnf,,"609.269_604.184_0.789
+"
+513,:,1683022469.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/226.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/226.cnf,,"609.097_604.146_0.832
+"
+514,:,1683022469.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/227.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/227.cnf,,"609.109_604.185_0.791
+"
+516,:,1683022469.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/229.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/229.cnf,,"609.191_604.211_0.759
+"
+515,:,1683022469.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/228.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/228.cnf,,"609.279_604.093_0.875
+"
+521,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/234.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/234.cnf,,"609.144_604.271_0.701
+"
+518,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/231.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/231.cnf,,"609.294_604.370_0.600
+"
+520,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/233.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/233.cnf,,"609.341_604.264_0.703
+"
+519,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/232.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/232.cnf,,"609.349_604.338_0.632
+"
+530,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/243.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/243.cnf,,"608.798_604.225_0.745
+"
+517,:,1683022469.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/230.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/230.cnf,,"609.481_604.356_0.607
+"
+522,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/235.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/235.cnf,,"609.354_604.267_0.706
+"
+529,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/242.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/242.cnf,,"609.129_604.449_0.518
+"
+528,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/241.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/241.cnf,,"609.189_604.421_0.545
+"
+527,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/240.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/240.cnf,,"609.353_604.339_0.627
+"
+532,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/245.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/245.cnf,,"609.103_604.234_0.736
+"
+523,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/236.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/236.cnf,,"609.566_604.350_0.616
+"
+524,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/237.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/237.cnf,,"609.521_604.280_0.685
+"
+534,:,1683022470.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/247.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/247.cnf,,"609.113_604.243_0.725
+"
+533,:,1683022470.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/246.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/246.cnf,,"609.363_604.235_0.733
+"
+531,:,1683022470.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/244.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/244.cnf,,"609.476_604.175_0.793
+"
+535,:,1683022470.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/248.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/248.cnf,,"609.337_604.220_0.747
+"
+536,:,1683022471.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/249.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/249.cnf,,"609.197_604.150_0.819
+"
+537,:,1683022775.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/250.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/250.cnf,,"609.408_604.219_0.741
+"
+538,:,1683022776.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/251.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/251.cnf,,"609.018_604.065_0.807
+"
+539,:,1683022839.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/252.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/252.cnf,,"609.269_603.990_0.805
+"
+540,:,1683022905.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/253.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/253.cnf,,"608.943_604.173_0.792
+"
+541,:,1683022907.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/254.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/254.cnf,,"608.966_604.192_0.778
+"
+542,:,1683022908.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/255.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/255.cnf,,"609.172_604.232_0.738
+"
+543,:,1683022910.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/256.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/256.cnf,,"609.092_604.313_0.658
+"
+544,:,1683022911.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/257.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/257.cnf,,"609.296_604.307_0.659
+"
+545,:,1683022930.000,601.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/258.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/258.cnf,,"601.489_596.657_0.776
+"
+546,:,1683022931.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/259.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/259.cnf,,"609.311_604.241_0.731
+"
+547,:,1683022955.000,603.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/260.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/260.cnf,,"603.227_598.186_0.790
+"
+548,:,1683022958.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/261.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/261.cnf,,"609.412_604.329_0.640
+"
+549,:,1683022982.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/262.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/262.cnf,,"609.144_604.307_0.655
+"
+550,:,1683023025.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/263.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/263.cnf,,"609.162_604.337_0.622
+"
+551,:,1683023025.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/264.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/264.cnf,,"609.710_604.462_0.499
+"
+552,:,1683023028.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/265.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/265.cnf,,"609.375_604.346_0.621
+"
+553,:,1683023031.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/266.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/266.cnf,,"609.238_604.278_0.688
+"
+554,:,1683023032.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/267.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/267.cnf,,"609.363_604.384_0.579
+"
+555,:,1683023038.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/268.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/268.cnf,,"609.197_604.260_0.711
+"
+556,:,1683023041.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/269.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/269.cnf,,"609.186_604.249_0.719
+"
+557,:,1683023071.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/270.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/270.cnf,,"609.113_604.275_0.691
+"
+558,:,1683023071.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/271.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/271.cnf,,"609.159_604.297_0.671
+"
+560,:,1683023078.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/273.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/273.cnf,,"608.986_604.261_0.710
+"
+559,:,1683023078.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/272.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/272.cnf,,"609.056_604.259_0.708
+"
+565,:,1683023078.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/278.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/278.cnf,,"609.004_604.344_0.623
+"
+563,:,1683023078.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/276.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/276.cnf,,"609.074_604.375_0.592
+"
+561,:,1683023078.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/274.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/274.cnf,,"609.243_604.221_0.755
+"
+562,:,1683023078.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/275.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/275.cnf,,"609.156_604.223_0.749
+"
+567,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/280.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/280.cnf,,"608.975_604.211_0.758
+"
+564,:,1683023078.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/277.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/277.cnf,,"609.216_604.337_0.631
+"
+574,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/287.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/287.cnf,,"608.842_604.106_0.866
+"
+566,:,1683023078.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/279.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/279.cnf,,"609.502_604.346_0.619
+"
+569,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/282.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/282.cnf,,"609.226_604.328_0.640
+"
+571,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/284.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/284.cnf,,"609.095_604.372_0.596
+"
+572,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/285.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/285.cnf,,"609.154_604.065_0.909
+"
+568,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/281.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/281.cnf,,"609.371_604.174_0.800
+"
+570,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/283.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/283.cnf,,"609.266_604.349_0.625
+"
+573,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/286.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/286.cnf,,"609.212_604.154_0.821
+"
+575,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/288.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/288.cnf,,"609.225_604.251_0.712
+"
+580,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/293.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/293.cnf,,"608.922_604.385_0.579
+"
+577,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/290.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/290.cnf,,"609.142_604.334_0.633
+"
+579,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/292.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/292.cnf,,"609.011_604.409_0.557
+"
+576,:,1683023079.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/289.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/289.cnf,,"609.302_604.307_0.662
+"
+582,:,1683023079.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/295.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/295.cnf,,"609.089_604.215_0.753
+"
+578,:,1683023079.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/291.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/291.cnf,,"609.272_604.355_0.615
+"
+583,:,1683023080.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/296.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/296.cnf,,"609.013_604.277_0.688
+"
+584,:,1683023080.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/297.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/297.cnf,,"609.300_604.338_0.627
+"
+581,:,1683023079.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/294.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/294.cnf,,"609.627_604.349_0.616
+"
+585,:,1683023080.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/298.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/298.cnf,,"609.284_604.306_0.660
+"
+586,:,1683023080.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/299.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/299.cnf,,"609.435_604.340_0.627
+"
+587,:,1683023384.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/300.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/300.cnf,,"609.197_604.181_0.776
+"
+588,:,1683023385.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/301.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/301.cnf,,"608.970_604.293_0.675
+"
+589,:,1683023448.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/302.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/302.cnf,,"609.167_604.254_0.667
+"
+590,:,1683023514.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/303.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/303.cnf,,"608.934_604.322_0.636
+"
+591,:,1683023516.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/304.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/304.cnf,,"609.381_604.219_0.717
+"
+592,:,1683023517.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/305.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/305.cnf,,"609.366_604.301_0.665
+"
+593,:,1683023519.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/306.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/306.cnf,,"609.215_604.245_0.722
+"
+594,:,1683023521.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/307.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/307.cnf,,"609.423_604.106_0.657
+"
+595,:,1683023531.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/308.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/308.cnf,,"609.094_604.294_0.672
+"
+596,:,1683023540.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/309.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/309.cnf,,"609.110_604.344_0.621
+"
+597,:,1683023558.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/310.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/310.cnf,,"609.059_604.276_0.689
+"
+598,:,1683023567.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/311.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/311.cnf,,"609.273_604.321_0.643
+"
+599,:,1683023591.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/312.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/312.cnf,,"609.153_604.243_0.722
+"
+600,:,1683023634.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/313.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/313.cnf,,"609.103_604.251_0.712
+"
+601,:,1683023635.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/314.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/314.cnf,,"609.098_604.220_0.751
+"
+602,:,1683023637.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/315.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/315.cnf,,"609.152_604.188_0.782
+"
+603,:,1683023640.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/316.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/316.cnf,,"609.081_604.196_0.774
+"
+604,:,1683023641.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/317.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/317.cnf,,"609.079_604.203_0.768
+"
+605,:,1683023648.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/318.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/318.cnf,,"609.055_604.238_0.730
+"
+606,:,1683023650.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/319.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/319.cnf,,"609.007_604.213_0.757
+"
+620,:,1683023688.000,591.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/333.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/333.cnf,,"590.928_586.237_0.700
+"
+607,:,1683023680.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/320.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/320.cnf,,"609.059_604.247_0.721
+"
+608,:,1683023680.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/321.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/321.cnf,,"609.296_604.339_0.627
+"
+621,:,1683023688.000,605.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/334.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/334.cnf,,"604.897_600.106_0.725
+"
+609,:,1683023687.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/322.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/322.cnf,,"609.145_604.277_0.691
+"
+613,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/326.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/326.cnf,,"609.047_604.363_0.605
+"
+612,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/325.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/325.cnf,,"609.134_604.372_0.597
+"
+611,:,1683023687.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/324.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/324.cnf,,"609.177_604.321_0.646
+"
+610,:,1683023687.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/323.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/323.cnf,,"609.499_604.469_0.498
+"
+615,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/328.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/328.cnf,,"609.124_604.288_0.682
+"
+614,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/327.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/327.cnf,,"609.248_604.307_0.661
+"
+617,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/330.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/330.cnf,,"609.148_604.322_0.646
+"
+618,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/331.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/331.cnf,,"609.197_604.341_0.626
+"
+624,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/337.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/337.cnf,,"609.087_604.247_0.722
+"
+619,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/332.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/332.cnf,,"609.278_604.336_0.630
+"
+616,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/329.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/329.cnf,,"609.618_604.375_0.595
+"
+623,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/336.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/336.cnf,,"609.184_604.207_0.761
+"
+622,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/335.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/335.cnf,,"609.232_604.394_0.572
+"
+627,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/340.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/340.cnf,,"609.073_604.229_0.738
+"
+628,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/341.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/341.cnf,,"609.109_604.231_0.736
+"
+629,:,1683023688.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/342.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/342.cnf,,"609.025_604.355_0.611
+"
+626,:,1683023688.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/339.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/339.cnf,,"609.257_604.234_0.733
+"
+625,:,1683023688.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/338.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/338.cnf,,"609.340_604.310_0.655
+"
+630,:,1683023689.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/343.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/343.cnf,,"609.131_604.397_0.573
+"
+631,:,1683023689.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/344.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/344.cnf,,"609.123_604.383_0.592
+"
+632,:,1683023689.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/345.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/345.cnf,,"609.069_604.195_0.772
+"
+633,:,1683023689.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/346.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/346.cnf,,"609.086_604.145_0.831
+"
+634,:,1683023689.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/347.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/347.cnf,,"609.080_604.191_0.779
+"
+635,:,1683023689.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/348.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/348.cnf,,"609.278_604.400_0.565
+"
+636,:,1683023689.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/349.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/349.cnf,,"609.185_604.376_0.591
+"
+637,:,1683023993.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/350.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/350.cnf,,"609.550_604.337_0.521
+"
+638,:,1683023994.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/351.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/351.cnf,,"609.365_604.275_0.694
+"
+639,:,1683024058.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/352.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/352.cnf,,"609.875_604.120_0.698
+"
+641,:,1683024126.000,592.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/354.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/354.cnf,,"592.410_587.273_0.683
+"
+642,:,1683024126.000,606.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/355.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/355.cnf,,"606.169_600.808_0.737
+"
+640,:,1683024123.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/353.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/353.cnf,,"609.529_604.266_0.692
+"
+643,:,1683024128.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/356.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/356.cnf,,"609.555_604.230_0.738
+"
+644,:,1683024130.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/357.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/357.cnf,,"609.570_604.369_0.596
+"
+645,:,1683024140.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/358.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/358.cnf,,"609.655_604.332_0.633
+"
+646,:,1683024149.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/359.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/359.cnf,,"609.429_604.303_0.660
+"
+647,:,1683024167.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/360.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/360.cnf,,"609.661_604.393_0.570
+"
+648,:,1683024176.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/361.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/361.cnf,,"609.657_604.356_0.610
+"
+649,:,1683024201.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/362.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/362.cnf,,"609.763_604.390_0.572
+"
+650,:,1683024243.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/363.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/363.cnf,,"609.768_604.319_0.645
+"
+651,:,1683024244.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/364.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/364.cnf,,"609.551_604.327_0.641
+"
+652,:,1683024247.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/365.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/365.cnf,,"609.768_604.304_0.664
+"
+653,:,1683024250.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/366.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/366.cnf,,"609.809_604.198_0.771
+"
+654,:,1683024250.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/367.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/367.cnf,,"609.417_604.219_0.751
+"
+655,:,1683024257.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/368.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/368.cnf,,"609.777_604.239_0.732
+"
+656,:,1683024259.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/369.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/369.cnf,,"609.800_604.380_0.585
+"
+667,:,1683024297.000,579.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/380.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/380.cnf,,"579.424_574.561_0.675
+"
+666,:,1683024297.000,580.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/379.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/379.cnf,,"579.985_574.748_0.701
+"
+668,:,1683024297.000,588.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/381.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/381.cnf,,"588.024_582.967_0.686
+"
+669,:,1683024297.000,591.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/382.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/382.cnf,,"590.767_585.627_0.674
+"
+710,:,1683024888.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/sachs/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/sachs/0.cnf,,"0.039_0.035_0.004
+"
+711,:,1683024888.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/sachs/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/sachs/1.cnf,,"0.038_0.026_0.012
+"
+712,:,1683024888.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/sachs/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/sachs/2.cnf,,"0.039_0.022_0.017
+"
+713,:,1683024888.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/sachs/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/sachs/3.cnf,,"0.040_0.023_0.016
+"
+714,:,1683024888.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/sachs/4.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/sachs/4.cnf,,"0.040_0.034_0.005
+"
+715,:,1683024888.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/sachs/5.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/sachs/5.cnf,,"0.039_0.026_0.013
+"
+716,:,1683024888.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/sachs/6.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/sachs/6.cnf,,"0.040_0.030_0.010
+"
+717,:,1683024888.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/sachs/7.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/sachs/7.cnf,,"0.040_0.027_0.013
+"
+718,:,1683024888.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/sachs/8.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/sachs/8.cnf,,"0.040_0.025_0.015
+"
+719,:,1683024888.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/sachs/9.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/sachs/9.cnf,,"0.040_0.023_0.016
+"
+720,:,1683024888.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/sachs/10.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/sachs/10.cnf,,"0.040_0.035_0.004
+"
+657,:,1683024279.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/370.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/370.cnf,,"609.586_604.365_0.601
+"
+721,:,1683024889.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/sachs/11.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/sachs/11.cnf,,"0.041_0.036_0.005
+"
+722,:,1683024889.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/survey/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/survey/0.cnf,,"0.032_0.022_0.009
+"
+723,:,1683024889.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/survey/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/survey/1.cnf,,"0.033_0.020_0.013
+"
+724,:,1683024889.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/survey/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/survey/2.cnf,,"0.033_0.022_0.011
+"
+665,:,1683024297.000,592.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/378.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/378.cnf,,"592.638_587.572_0.729
+"
+658,:,1683024289.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/371.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/371.cnf,,"609.614_604.429_0.534
+"
+659,:,1683024290.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/372.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/372.cnf,,"609.523_604.281_0.685
+"
+660,:,1683024293.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/373.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/373.cnf,,"609.608_604.235_0.729
+"
+661,:,1683024296.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/374.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/374.cnf,,"609.547_604.259_0.709
+"
+664,:,1683024297.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/377.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/377.cnf,,"609.539_604.235_0.734
+"
+663,:,1683024297.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/376.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/376.cnf,,"609.689_604.248_0.721
+"
+662,:,1683024297.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/375.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/375.cnf,,"609.964_604.404_0.563
+"
+674,:,1683024297.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/387.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/387.cnf,,"609.537_604.257_0.714
+"
+671,:,1683024297.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/384.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/384.cnf,,"609.658_604.384_0.583
+"
+677,:,1683024298.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/390.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/390.cnf,,"609.499_604.276_0.695
+"
+673,:,1683024297.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/386.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/386.cnf,,"609.683_604.374_0.593
+"
+675,:,1683024297.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/388.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/388.cnf,,"609.682_604.197_0.774
+"
+682,:,1683024298.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/395.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/395.cnf,,"609.484_604.255_0.719
+"
+676,:,1683024297.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/389.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/389.cnf,,"609.764_604.257_0.717
+"
+670,:,1683024297.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/383.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/383.cnf,,"609.961_604.391_0.573
+"
+678,:,1683024298.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/391.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/391.cnf,,"609.689_604.290_0.684
+"
+680,:,1683024298.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/393.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/393.cnf,,"609.585_604.220_0.753
+"
+681,:,1683024298.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/394.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/394.cnf,,"609.596_604.213_0.761
+"
+672,:,1683024297.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/385.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/385.cnf,,"610.042_604.392_0.577
+"
+683,:,1683024298.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/396.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/396.cnf,,"609.428_604.382_0.586
+"
+684,:,1683024298.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/397.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/397.cnf,,"609.624_604.388_0.577
+"
+679,:,1683024298.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/392.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/392.cnf,,"610.274_604.420_0.552
+"
+685,:,1683024298.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/398.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/398.cnf,,"609.618_604.372_0.597
+"
+686,:,1683024299.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/399.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/399.cnf,,"609.959_604.486_0.479
+"
+687,:,1683024603.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/400.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/400.cnf,,"608.860_604.411_0.551
+"
+688,:,1683024603.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/401.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/401.cnf,,"609.086_604.363_0.602
+"
+689,:,1683024667.000,610.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/402.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/402.cnf,,"609.139_604.324_0.637
+"
+754,:,1683025277.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/0.cnf,,"0.371_0.359_0.010
+"
+755,:,1683025277.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/1.cnf,,"0.372_0.356_0.014
+"
+756,:,1683025277.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/2.cnf,,"0.365_0.350_0.013
+"
+757,:,1683025278.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/3.cnf,,"0.361_0.340_0.019
+"
+758,:,1683025278.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/4.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/4.cnf,,"0.362_0.341_0.018
+"
+759,:,1683025278.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/5.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/5.cnf,,"0.361_0.349_0.010
+"
+760,:,1683025279.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/6.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/6.cnf,,"0.360_0.349_0.009
+"
+761,:,1683025279.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/7.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/7.cnf,,"0.356_0.334_0.020
+"
+762,:,1683025280.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/8.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/8.cnf,,"0.362_0.341_0.019
+"
+763,:,1683025280.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/9.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/9.cnf,,"0.366_0.360_0.005
+"
+764,:,1683025280.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/10.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/10.cnf,,"0.364_0.348_0.014
+"
+765,:,1683025281.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/11.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/11.cnf,,"0.584_0.565_0.015
+"
+766,:,1683025281.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/12.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/12.cnf,,"0.607_0.586_0.016
+"
+767,:,1683025282.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/13.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/13.cnf,,"0.600_0.575_0.022
+"
+768,:,1683025282.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/14.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/14.cnf,,"0.579_0.561_0.014
+"
+769,:,1683025283.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/15.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/15.cnf,,"0.574_0.551_0.019
+"
+770,:,1683025284.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/16.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/16.cnf,,"0.574_0.557_0.014
+"
+771,:,1683025284.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/17.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/17.cnf,,"0.574_0.556_0.014
+"
+772,:,1683025285.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/18.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/18.cnf,,"0.450_0.433_0.015
+"
+773,:,1683025285.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/19.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/19.cnf,,"0.450_0.427_0.021
+"
+774,:,1683025286.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/20.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/20.cnf,,"0.578_0.556_0.019
+"
+775,:,1683025286.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/21.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/21.cnf,,"0.577_0.555_0.019
+"
+776,:,1683025287.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/22.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/22.cnf,,"0.578_0.559_0.016
+"
+777,:,1683025287.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/23.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/23.cnf,,"0.579_0.559_0.016
+"
+778,:,1683025288.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/24.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/24.cnf,,"0.577_0.557_0.016
+"
+779,:,1683025289.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/25.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/25.cnf,,"0.577_0.557_0.017
+"
+780,:,1683025289.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/26.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/26.cnf,,"0.581_0.563_0.015
+"
+781,:,1683025290.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/27.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/27.cnf,,"0.580_0.562_0.015
+"
+782,:,1683025290.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/28.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/28.cnf,,"0.452_0.430_0.019
+"
+783,:,1683025291.000,0.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/29.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/29.cnf,,"0.454_0.433_0.019
+"
+784,:,1683025291.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/30.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/30.cnf,,"0.609_0.586_0.019
+"
+785,:,1683025292.000,1.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/win95pts/31.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/win95pts/31.cnf,,"0.610_0.592_0.015
+"
+690,:,1683024718.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/403.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/403.cnf,,"608.793_604.259_0.704
+"
+691,:,1683024732.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/404.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/404.cnf,,"608.635_604.278_0.687
+"
+692,:,1683024732.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/405.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/405.cnf,,"608.629_604.228_0.739
+"
+693,:,1683024738.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/406.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/406.cnf,,"608.983_603.987_0.720
+"
+694,:,1683024740.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/407.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/407.cnf,,"608.629_604.263_0.704
+"
+695,:,1683024750.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/408.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/408.cnf,,"608.849_604.191_0.777
+"
+696,:,1683024759.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/409.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/409.cnf,,"608.802_604.214_0.755
+"
+707,:,1683024876.000,494.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/420.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/420.cnf,,"493.907_490.395_0.548
+"
+708,:,1683024877.000,497.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/421.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/421.cnf,,"497.295_493.873_0.539
+"
+709,:,1683024885.000,492.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/422.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/422.cnf,,"492.439_489.103_0.496
+"
+697,:,1683024777.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/410.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/410.cnf,,"608.638_603.789_1.174
+"
+698,:,1683024786.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/411.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/411.cnf,,"608.714_604.324_0.642
+"
+699,:,1683024810.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/412.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/412.cnf,,"608.609_604.360_0.603
+"
+704,:,1683024860.000,590.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/417.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/417.cnf,,"590.424_586.800_0.670
+"
+706,:,1683024869.000,584.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/419.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/419.cnf,,"584.077_580.248_0.624
+"
+705,:,1683024866.000,590.000,0,0,0,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/418.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/418.cnf,,"589.747_585.824_0.672
+"
+700,:,1683024853.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/413.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/413.cnf,,"608.420_604.321_0.638
+"
+701,:,1683024853.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/414.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/414.cnf,,"608.256_604.317_0.648
+"
+702,:,1683024856.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/415.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/415.cnf,,"608.296_604.304_0.660
+"
+703,:,1683024859.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/pigs/416.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/pigs/416.cnf,,"608.284_604.333_0.631
+"
+726,:,1683024889.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/1.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/1.cnf,,"608.051_603.580_1.402
+"
+725,:,1683024889.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/0.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/0.cnf,,"608.141_600.943_4.035
+"
+727,:,1683024889.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/2.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/2.cnf,,"608.054_603.836_1.138
+"
+728,:,1683024898.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/3.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/3.cnf,,"607.708_603.689_1.290
+"
+729,:,1683024899.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/4.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/4.cnf,,"608.304_603.573_1.419
+"
+730,:,1683024903.000,607.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/5.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/5.cnf,,"607.495_603.675_1.317
+"
+732,:,1683024906.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/7.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/7.cnf,,"607.581_602.825_2.171
+"
+731,:,1683024906.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/6.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/6.cnf,,"607.981_603.627_1.363
+"
+733,:,1683024906.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/8.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/8.cnf,,"607.805_603.610_1.383
+"
+735,:,1683024907.000,607.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/10.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/10.cnf,,"607.546_603.488_1.504
+"
+734,:,1683024907.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/9.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/9.cnf,,"607.900_603.598_1.398
+"
+737,:,1683024907.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/12.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/12.cnf,,"607.521_603.687_1.306
+"
+738,:,1683024907.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/13.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/13.cnf,,"607.533_603.604_1.392
+"
+739,:,1683024907.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/14.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/14.cnf,,"607.518_603.668_1.327
+"
+743,:,1683024907.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/18.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/18.cnf,,"607.433_603.677_1.317
+"
+740,:,1683024907.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/15.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/15.cnf,,"607.559_602.321_2.679
+"
+742,:,1683024907.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/17.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/17.cnf,,"607.633_603.681_1.319
+"
+744,:,1683024907.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/19.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/19.cnf,,"607.586_602.131_2.875
+"
+746,:,1683024907.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/21.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/21.cnf,,"607.678_603.212_1.787
+"
+741,:,1683024907.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/16.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/16.cnf,,"607.916_603.524_1.470
+"
+747,:,1683024907.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/22.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/22.cnf,,"607.715_601.902_3.103
+"
+736,:,1683024907.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/11.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/11.cnf,,"608.374_603.638_1.349
+"
+750,:,1683024908.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/25.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/25.cnf,,"607.502_603.563_1.432
+"
+745,:,1683024907.000,609.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/20.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/20.cnf,,"608.345_603.724_1.264
+"
+748,:,1683024908.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/23.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/23.cnf,,"608.108_602.041_2.943
+"
+749,:,1683024908.000,608.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/24.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/24.cnf,,"608.034_603.321_1.677
+"
+751,:,1683024909.000,607.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/26.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/26.cnf,,"607.639_603.580_1.415
+"
+752,:,1683025212.000,607.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/27.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/27.cnf,,"606.703_603.746_1.230
+"
+753,:,1683025212.000,607.000,0,0,137,0,"time (bash -c 'ulimit -t 605; d4 -m counting -f 1 -i  instances/bayesian_networks/enc1/water/28.cnf' &>> /dev/null)",instances/bayesian_networks/enc1/water/28.cnf,,"606.866_602.461_2.533
+"
