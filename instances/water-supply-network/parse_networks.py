@@ -5,7 +5,7 @@ import math
 random.seed(7552498)
 
 _script_dir = os.path.dirname(os.path.realpath(__file__))
-ppidimacs_dir = os.path.join(_script_dir, 'ppidimacs')
+ppidimacs_dir = os.path.join(_script_dir, 'schlandals')
 pcnf_dir = os.path.join(_script_dir, 'pcnf')
 os.makedirs(ppidimacs_dir, exist_ok=True)
 os.makedirs(pcnf_dir, exist_ok=True)
@@ -56,9 +56,9 @@ def parse_file(filename):
     
     ppidimacs_str += f'p cnf {len(edges)*2 + len(nodes)} {len(edges)+2}\n'
 
-    p_up = 0.875
     for _ in edges:
-        ppidimacs_str += f'd {p_up} {1 - p_up}\n'
+        p_up = random.random()
+        ppidimacs_str += f'c p distribution {p_up} {1 - p_up}\n'
 
     ppidimacs_nodes_id = {}
     current_id = len(edges)*2
@@ -68,11 +68,10 @@ def parse_file(filename):
     for i, edge in enumerate(edges):
         s = ppidimacs_nodes_id[edge['start_node_name']]
         t = ppidimacs_nodes_id[edge['end_node_name']]
-        ppidimacs_str += f'{t} -{s} -{2*i}\n'
+        ppidimacs_str += f'{t+1} -{s+1} -{2*i+1}\n'
     
     #write pcnf input
     pcnf_str += f'p cnf {len(edges) + len(nodes)} {len(edges)}\n'
-    #pcnf_str += f'vp {" ".join([str(x+1) for x in range(len(edges))])} 0\n'
     pcnf_str += f'c p show {" ".join([str(x+1) for x in range(len(edges))])} 0\n'
     for v in range(len(edge)):
         pcnf_str += f'c p weight {v+1} {p_up} 0\nc p weight {-(v+1)} {1 - p_up} 0\n'
