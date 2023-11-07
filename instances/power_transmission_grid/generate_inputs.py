@@ -32,6 +32,10 @@ class Edge:
         self.n2 = n2
         self.proba_down = random.random()
         self.var_id = var_id
+        
+    def __str__(self):
+        f"[{self.n1}-{self.n2}]"
+
 
 def get_nodes(dataset):
     nodes = []
@@ -188,14 +192,15 @@ datasets = [
         'north_america/Wyoming',
         ]
         
-def has_path(source, target, nodes, edges, visited):
+def has_path(source, target, nodes, edges, visited, path):
     if source == target:
         return True
     visited[source] = True
     for edge in nodes[source].edges:
         from_node = edge.n1
         to_node = edge.n2
-        if from_node == source and not visited[to_node] and has_path(to_node, target, nodes, edges, visited):
+        if from_node == source and not visited[to_node] and has_path(to_node, target, nodes, edges, visited, path):
+            path.append(source)
             return True
     return False
 
@@ -208,10 +213,19 @@ for dataset in datasets:
     os.makedirs(os.path.join(_script_dir, 'pcnf', f'{continent}/{sub_region}'), exist_ok=True)
     nodes = get_nodes(f'{continent}/{sub_region}')
     edges = get_edges(f'{continent}/{sub_region}', nodes)
-    has_extremity = len([x for x in nodes if x.is_extremity()]) != 0
-    count  = 0
+    in_a_query = [False for _ in nodes]
+    targets = [i for i in range(len(nodes))]
     for source in range(len(nodes)):
-        for target in range(source + 1, len(nodes)):
-            if (not has_extremity or nodes[source].is_extremity()) and has_path(source, target, nodes, edges, [False for _ in nodes]):
+        if in_a_query[source]:
+            continue
+        random.shuffle(targets)
+        for target in targets:
+            path = []
+            if source != target and has_path(source, target, nodes, edges, [False for _ in nodes], path):
+                in_a_query[source] = True
+                in_a_query[target] = True
+                for n in path:
+                    in_a_query[n] = True
                 write_ppidimacs(f'{continent}/{sub_region}', nodes, edges, source, target)
                 write_pcnf(f'{continent}/{sub_region}', nodes, edges, source, target)
+                break
