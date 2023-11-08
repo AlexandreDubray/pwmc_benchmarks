@@ -61,14 +61,14 @@ def parse_file(filename):
         ppidimacs_str += f'c p distribution {p_up} {1 - p_up}\n'
 
     ppidimacs_nodes_id = {}
-    current_id = len(edges)*2
+    current_id = len(edges)*2 + 1
     for node in nodes:
         ppidimacs_nodes_id[node['name']] = current_id
         current_id += 1
     for i, edge in enumerate(edges):
         s = ppidimacs_nodes_id[edge['start_node_name']]
         t = ppidimacs_nodes_id[edge['end_node_name']]
-        ppidimacs_str += f'{t+1} -{s+1} -{2*i+1}\n'
+        ppidimacs_str += f'{t} -{s} -{2*i + 1} 0\n'
     
     #write pcnf input
     pcnf_str += f'p cnf {len(edges) + len(nodes)} {len(edges)}\n'
@@ -88,7 +88,7 @@ def parse_file(filename):
 
     print(f"{len(queries)} queries")
     for query in queries:
-        fout = open(os.path.join(ppidimacs_dir, name + f'_{query[0]}_{query[1]}.ppidimacs'), 'w')
+        fout = open(os.path.join(ppidimacs_dir, name + f'_{query[0]}_{query[1]}.cnf'), 'w')
         fout.write(ppidimacs_str)
         fout.write(f'{ppidimacs_nodes_id[query[0]]}\n')
         fout.write(f'-{ppidimacs_nodes_id[query[1]]}\n')
