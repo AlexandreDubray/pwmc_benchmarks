@@ -152,6 +152,7 @@ def pcnf_encoding(dataset):
                             ))
 
     file_idx = 1
+    os.makedirs(os.path.join(script_dir, 'pcnf', dataset), exist_ok=True)
     for nvar in network_variables:
         if network_variables[nvar]['is_leaf']:
             for i in range(network_variables[nvar]['dom_size']):
