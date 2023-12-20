@@ -71,7 +71,7 @@ def make_enc_encoding(dataset, outdir):
                     f.write(f'p cnf {output["nvars"]} {n_clause}\n')
                     for v in output['weights']:
                         f.write(f'c p weight {v} {output["weights"][v]} 0\n')
-                    f.write('\n'.join(output["clauses"]))
+                    f.write(''.join(output["clauses"]))
                     
                     for value_indicator_variables in output['variable_map'][network_var][variable_value]:
                         f.write(f'{value_indicator_variables} 0\n')
@@ -130,11 +130,11 @@ instances = [f.split('.')[0] for f in os.listdir(os.path.join(script_dir, 'uai')
 
 for instance in instances:
     print(instance)
-    """ enc3(instance)
+    enc3(instance)
     enc4(instance)
-    enc4linp(instance) """
+    enc4linp(instance)
     pysdd(instance) #based on enc4linp
 
 os.remove(os.path.join(script_dir, 'tmp.cnf'))
 os.remove(os.path.join(script_dir, 'tmp.weight'))
-os.remove(os.path.join(script_dir, 'tmp.var'))
+os.remove(os.path.join(script_dir, 'tmp.map'))

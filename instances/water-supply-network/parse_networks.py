@@ -20,6 +20,25 @@ def find_reachables(source, node_edges, visited):
     except KeyError:
         pass
 
+def find_used_edges(node, target, node_edges, max, cache, seen_nodes):
+    if node in seen_nodes:
+        return max
+    seen_nodes.add(node)
+    if node == target:
+        return 0
+    if node not in node_edges:
+        return max
+    dist = max
+    for edge in node_edges[node]:
+        if edge['name'] in cache:
+            dist = min(dist, cache[edge['name']])
+        else:
+            to = edge['end_node_name']
+            dist_edge = find_used_edges(to, target, node_edges, max, cache, seen_nodes)
+            dist = min(dist, dist_edge)
+            cache[edge['name']] = dist
+    return dist
+
 def parse_file(filename):
     with open(os.path.join(_script_dir, filename), 'rb') as f:
         network = load(f, Loader=Loader)
@@ -88,10 +107,19 @@ def parse_file(filename):
 
     print(f"{len(queries)} queries")
     for query in queries:
+        cache = {}
+        find_used_edges(query[0], query[1], node_edges, 2*len(edges), cache, set())
+        dist = [cache[edge['name']] if edge['name'] in cache else 2*len(edges) for edge in edges]
+        number_used = len([x for x in dist if x != 2*len(edges)])
+        number_skip = int(0.1*number_used)
+        sorted_id = sorted([i for i in range(len(edges))], key=lambda x: cache[edges[x]['name']] if edges[x]['name'] in cache else len(edges)*2)
+        learn_header = 'c p learn {}'.format(" ".join([str(x+1) for x in sorted_id[number_skip:]]))
+
         fout = open(os.path.join(ppidimacs_dir, name + f'_{query[0]}_{query[1]}.cnf'), 'w')
         fout.write(ppidimacs_str)
         fout.write(f'{ppidimacs_nodes_id[query[0]]}\n')
         fout.write(f'-{ppidimacs_nodes_id[query[1]]}\n')
+        fout.write(learn_header)
         fout.close()
         
         fout = open(os.path.join(pcnf_dir, name + f'_{query[0]}_{query[1]}.cnf'), 'w')

@@ -1,6 +1,7 @@
 import os
 import random
 import re
+import queue
 
 random.seed(52696698)
 
@@ -75,24 +76,53 @@ def get_edges(dataset, nodes):
             var_id += 1
     return edges
 
-def write_ppidimacs(dataset, nodes, edges, source, target):
-    distributions = [f'c p distribution {1.0 - edge.proba_down} {edge.proba_down}' for edge in edges]
-    clauses = [f'{nodes[source].var_id}', f'{-nodes[target].var_id}']
+def find_dist(nodes, edges, source, target):
+    distance = {}
+    q = queue.Queue()
+    q.put((source, 0))
+    seen_nodes = {source}
+    while not q.empty():
+        (node, dist) = q.get()
+        seen_nodes.add(node)
+        for edge in nodes[node].edges:
+            if edge not in distance:
+                distance[edge] = dist
+            for neighbor in [edge.n1, edge.n2]:
+                if neighbor not in seen_nodes:
+                    q.put((neighbor, dist + 1))
     for edge in edges:
-        clauses.append(f'{nodes[edge.n1].var_id} -{nodes[edge.n2].var_id} -{edge.var_id}')
-        clauses.append(f'{nodes[edge.n2].var_id} -{nodes[edge.n1].var_id} -{edge.var_id}')
+        if edge not in distance:
+            distance[edge] = 2*len(edges)
+    return distance
+
+def write_ppidimacs(dataset, nodes, edges, source, target):
+    distances = find_dist(nodes, edges, source, target)
+    edges_sorted = sorted([(i, x) for (i, x) in enumerate(edges)], key=lambda x: distances[x[1]])
+    number_edge_useful = len([x for x in distances if distances[x] != len(edges)*2])
+    start_idx = int(0.1*number_edge_useful)
+    edge_learn = []
+    for i in range(len(edges)-1, start_idx, -1):
+        (idx, e) = edges_sorted[i]
+        edge_learn.append(idx + 1)
+
+    distributions = [f'c p distribution {1.0 - edge.proba_down} {edge.proba_down}' for edge in edges]
+    learn_header = 'c p learn {}'.format(' '.join([str(x) for x in edge_learn]))
+    clauses = [f'{nodes[source].var_id} 0', f'{-nodes[target].var_id} 0']
+    for edge in edges:
+        clauses.append(f'{nodes[edge.n1].var_id} -{nodes[edge.n2].var_id} -{edge.var_id} 0')
+        clauses.append(f'{nodes[edge.n2].var_id} -{nodes[edge.n1].var_id} -{edge.var_id} 0')
 
     with open(os.path.join(_script_dir, 'schlandals', dataset, f'{source}_{target}.cnf'), 'w') as f:
         f.write(f'p cnf {len(nodes)+len(edges)*2} {len(clauses)}\n')
-        f.write('\n'.join(distributions))
-        f.write('\n')
+        f.write('\n'.join(distributions) + '\n')
+        f.write(learn_header + '\n')
         f.write('\n'.join(clauses))
 
 def write_pcnf(dataset, nodes, edges, source, target):
     clauses = [f'{nodes[source].var_id + 1 -len(edges)} 0', f'-{nodes[target].var_id + 1 - len(edges)} 0']
     for edge in edges:
         clauses.append(f'{nodes[edge.n1].var_id + 1 - len(edges)} -{nodes[edge.n2].var_id +1 - len(edges)} -{int((edge.var_id/2)+1)} 0')
-        clauses.append(f'{nodes[edge.n2].var_id+1-len(edges)} -{nodes[edge.n1].var_id+1-len(edges)} -{int((edge.var_id/2)+1)} 0')
+        clauses.append(f'{nodes[edge.n2].var_id+1-len(edges)} -{nodes[edge.n1].var_id+1-len(edges)} -{int((edge.var_id/2)+2)} 0')
 
     with open(os.path.join(_script_dir, 'pcnf', dataset, f'{source}_{target}.cnf'), 'w') as f:
         f.write(f'p cnf {len(nodes)+len(edges)} {len(clauses)}\n')

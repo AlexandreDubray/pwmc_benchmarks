@@ -24,6 +24,7 @@ def parse_variables(dataset):
                         'is_leaf': True,
                         'dom_size': dom_size,
                         'domain': values,
+                        'distribution_index': [],
                         }
                 i += 2
             else:
@@ -77,6 +78,34 @@ def pcnf_encoding(dataset):
     network_variables = parse_variables(dataset)
     get_cpt(dataset, network_variables)
 
+    fixed_variable_per_query = {}
+    for nvar in network_variables:
+        if network_variables[nvar]['is_leaf']:
+            fixed_variable_per_query[nvar] = {nvar}
+            queue = []
+            for parent in network_variables[nvar]['cpt']['parents_var']:
+                queue.append(parent)
+
+            seen = set()
+            while len(queue) > 0:
+                pvar = queue.pop()
+                if pvar not in seen:
+                    fixed_variable_per_query[nvar].add(pvar)
+                    seen.add(pvar)
+                    for parent in network_variables[pvar]['cpt']['parents_var']:
+                        queue.append(parent)
+            number_node_query = len(seen) + 1
+            number_node_known = int(0.1*number_node_query)
+            count_known = 0
+            queue.append(nvar)
+            while count_known < number_node_known:
+                v = queue.pop(0)
+                if v in fixed_variable_per_query[nvar]:
+                    fixed_variable_per_query[nvar].remove(v)
+                    for parent in network_variables[v]['cpt']['parents_var']:
+                        queue.append(parent)
+                    count_known += 1
+
     clauses = []
     distributions = []
 
@@ -112,10 +141,10 @@ def pcnf_encoding(dataset):
                         cache_entry.append((p, variable_index))
                         variable_index += 1
                 distributions.append(f'c p distribution {" ".join([str(x) for x in distribution if x != 0.0])}')
+                network_variables[nvar]['distribution_index'].append(len(distributions))
                 cache[cache_key] = [x for _, x in sorted(cache_entry)]
         network_variables[nvar]['probabilistic_var'] = probabilistic_variables
 
-    print(f"{variable_index - 1} probabilistic variables")
     for nvar in network_variables:
         network_variables[nvar]['deterministic_variables'] = {}
         for nvar_value in network_variables[nvar]['domain']:
@@ -155,14 +184,19 @@ def pcnf_encoding(dataset):
     os.makedirs(os.path.join(script_dir, 'pcnf', dataset), exist_ok=True)
     for nvar in network_variables:
         if network_variables[nvar]['is_leaf']:
+            known_distributions = []
+            for fixed in fixed_variable_per_query[nvar]:
+                for dixd in network_variables[fixed]['distribution_index']:
+                    known_distributions.append(dixd)
+            header_learn = 'c p learn {}'.format(' '.join([str(x) for x in known_distributions]))
             for i in range(network_variables[nvar]['dom_size']):
                 with open(os.path.join(script_dir, 'pcnf', dataset, f'{file_idx}.cnf'), 'w') as f:
                     f.write(f'p cnf {variable_index} {len(clauses) + network_variables[nvar]["dom_size"] - 1}\n')
                     f.write(f'c Querying variable {nvar} with value {network_variables[nvar]["domain"][i]}\n')
-                    f.write('\n'.join(distributions))
-                    f.write('\n')
-                    f.write('\n'.join(clauses))
-                    f.write('\n')
+                    f.write('\n'.join(distributions) + '\n')
+                    if len(known_distributions) > 0:
+                        f.write(header_learn + '\n')
+                    f.write('\n'.join(clauses) + '\n')
                     for j in range(network_variables[nvar]['dom_size']):
                         if i != j:
                             f.write(f'-{network_variables[nvar]["deterministic_variables"][network_variables[nvar]["domain"][j]]} 0\n')
