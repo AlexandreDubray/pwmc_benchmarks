@@ -10,35 +10,7 @@ _script_dir = os.path.dirname(os.path.realpath(__file__))
 def safe_str_bash(s):
     return re.sub('[\s $\#=!<>|;{}~&]', '_', s)
 
-class Node:
-
-    def __init__(self, node_id):
-        self.node_id = node_id
-        self.edges = []
-
-    def add_edge(self, edge):
-        self.edges.append(edge)
-
-    def set_var_id(self, var_id):
-        self.var_id = var_id
-        
-    def is_extremity(self):
-        return len(self.edges) == 1
-
-class Edge:
-
-    def __init__(self, edge_id, n1, n2, var_id):
-        self.edge_id = edge_id
-        self.n1 = n1
-        self.n2 = n2
-        self.proba_down = random.random()
-        self.var_id = var_id
-        
-    def __str__(self):
-        f"[{self.n1}-{self.n2}]"
-
-
-def get_nodes(dataset):
+def parse_dataset(dataset):
     nodes = []
     with open(os.path.join(_script_dir, f'{dataset}/gridkit_{dataset.split("/")[1]}-highvoltage-vertices.csv')) as f:
         first = True
@@ -48,88 +20,108 @@ def get_nodes(dataset):
                 continue
             s = line.split(',')
             node_id = int(s[0])
-            nodes.append(Node(node_id))
-    return nodes
+            nodes.append(node_id)
 
-def get_edges(dataset, nodes):
-    edges = []
-    map_node_id = {node.node_id: i for i, node in enumerate(nodes)}
+    edges = {node: [] for node in nodes}
     with open(os.path.join(_script_dir, f'{dataset}/gridkit_{dataset.split("/")[1]}-highvoltage-links.csv')) as f:
         first = True
-        var_id = 1
         for line in f:
             if first:
                 first = False
                 continue
             s = line.split(',')
             edge_id = int(s[0])
-            n1 = map_node_id[int(s[1])]
-            n2 = map_node_id[int(s[2])]
-            edge = Edge(edge_id, n1, n2, var_id)
-            edges.append(edge)
-            nodes[n1].add_edge(edge)
-            nodes[n2].add_edge(edge)
-            # two variables (up down) per edge
-            var_id += 2
-        for node in nodes:
-            node.set_var_id(var_id)
-            var_id += 1
-    return edges
+            n1 = int(s[1])
+            n2 = int(s[2])
+            proba_up = random.random()
+            edges[n1].append((n2, proba_up))
+            edges[n2].append((n1, proba_up))
+    return (nodes, edges)
 
-def find_dist(nodes, edges, source, target):
-    distance = {}
-    q = queue.Queue()
-    q.put((source, 0))
-    seen_nodes = {source}
-    while not q.empty():
-        (node, dist) = q.get()
-        seen_nodes.add(node)
-        for edge in nodes[node].edges:
-            if edge not in distance:
-                distance[edge] = dist
-            for neighbor in [edge.n1, edge.n2]:
-                if neighbor not in seen_nodes:
-                    q.put((neighbor, dist + 1))
-    for edge in edges:
-        if edge not in distance:
-            distance[edge] = 2*len(edges)
-    return distance
+def sch_encoding(nodes, edges, queries, dataset):
+    distributions = []
+    clauses = []
+    current_id = 1
+    map_edge_id = {}
+    for node in edges:
+        for (to, proba) in edges[node]:
+            if (to, node) not in map_edge_id:
+                distributions.append(f'c p distribution {proba} {1.0 - proba}')
+                map_edge_id[(node, to)] = current_id
+                current_id += 2
+            else:
+                map_edge_id[(node, to)] = map_edge_id[(to, node)]
 
-def write_ppidimacs(dataset, nodes, edges, source, target):
-    distances = find_dist(nodes, edges, source, target)
-    edges_sorted = sorted([(i, x) for (i, x) in enumerate(edges)], key=lambda x: distances[x[1]])
-    number_edge_useful = len([x for x in distances if distances[x] != len(edges)*2])
-    start_idx = int(0.1*number_edge_useful)
-    edge_learn = []
-    for i in range(len(edges)-1, start_idx, -1):
-        (idx, e) = edges_sorted[i]
-        edge_learn.append(idx + 1)
+    map_node_id = {}
+    for node in nodes:
+        map_node_id[node] = current_id
+        current_id += 1
 
-    distributions = [f'c p distribution {1.0 - edge.proba_down} {edge.proba_down}' for edge in edges]
-    learn_header = 'c p learn {}'.format(' '.join([str(x) for x in edge_learn]))
-    clauses = [f'{nodes[source].var_id} 0', f'{-nodes[target].var_id} 0']
-    for edge in edges:
-        clauses.append(f'{nodes[edge.n1].var_id} -{nodes[edge.n2].var_id} -{edge.var_id} 0')
-        clauses.append(f'{nodes[edge.n2].var_id} -{nodes[edge.n1].var_id} -{edge.var_id} 0')
+    for node in edges:
+        for (to, _) in edges[node]:
+            src_id = map_node_id[node]
+            to_id = map_node_id[to]
+            edge_id = map_edge_id[(node, to)]
+            clauses.append(f'-{src_id} -{edge_id} {to_id} 0')
 
-    with open(os.path.join(_script_dir, 'schlandals', dataset, f'{source}_{target}.cnf'), 'w') as f:
-        f.write(f'p cnf {len(nodes)+len(edges)*2} {len(clauses)}\n')
-        f.write('\n'.join(distributions) + '\n')
-        f.write(learn_header + '\n')
-        f.write('\n'.join(clauses))
+    for (source, target) in queries:
+        with open(os.path.join(_script_dir, 'sch', dataset, f'{source}_{target}.cnf'), 'w') as f:
+            f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
+            f.write('\n'.join(distributions) + '\n')
+            f.write('\n'.join(clauses) + '\n')
+            f.write(f'{map_node_id[source]} 0\n')
+            f.write(f'-{map_node_id[target]} 0')
 
-def write_pcnf(dataset, nodes, edges, source, target):
-    clauses = [f'{nodes[source].var_id + 1 -len(edges)} 0', f'-{nodes[target].var_id + 1 - len(edges)} 0']
-    for edge in edges:
-        clauses.append(f'{nodes[edge.n1].var_id + 1 - len(edges)} -{nodes[edge.n2].var_id +1 - len(edges)} -{int((edge.var_id/2)+1)} 0')
-        clauses.append(f'{nodes[edge.n2].var_id+1-len(edges)} -{nodes[edge.n1].var_id+1-len(edges)} -{int((edge.var_id/2)+2)} 0')
+def pcnf_encoding(nodes, edges, queries, dataset):
+    clauses = []
+    weights = []
+    current_id = 1
+    map_edge_id = {}
+    for node in edges:
+        for (to, proba) in edges[node]:
+            if (to, node) not in map_edge_id:
+                weights.append(f'c p weight {current_id} {proba} 0')
+                weights.append(f'c p weight -{current_id} {1.0 - proba} 0')
+                map_edge_id[(node, to)] = current_id
+                current_id += 1
+            else:
+                map_edge_id[(node, to)] = map_edge_id[(to, node)]
 
-    with open(os.path.join(_script_dir, 'pcnf', dataset, f'{source}_{target}.cnf'), 'w') as f:
-        f.write(f'p cnf {len(nodes)+len(edges)} {len(clauses)}\n')
-        f.write(f'c p show {" ".join([str(x+1) for x in range(len(edges))])} 0\n')
-        for x in range(len(edges)):
-            f.write(f'c p weight {x+1} {1.0 - edges[x].proba_down} 0\nc p weight {-(x+1)} {edges[x].proba_down} 0\n')
-        f.write('\n'.join(clauses))
+    projected_header = f'c p show {" ".join([str(x) for x in range(1, current_id)])} 0'
+
+    map_node_id = {}
+    for node in nodes:
+        map_node_id[node] = current_id
+        current_id += 1
+
+    for node in edges:
+        for (to, _) in edges[node]:
+            src_id = map_node_id[node]
+            to_id = map_node_id[to]
+            edge_id = map_edge_id[(node, to)]
+            clauses.append(f'-{src_id} -{edge_id} {to_id} 0')
+
+    for (source, target) in queries:
+        with open(os.path.join(_script_dir, 'pcnf', dataset, f'{source}_{target}.cnf'), 'w') as f:
+            f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
+            f.write(projected_header + '\n')
+            f.write('\n'.join(weights) + '\n')
+            f.write('\n'.join(clauses) + '\n')
+            f.write(f'{map_node_id[source]} 0\n')
+            f.write(f'-{map_node_id[target]} 0')
+
+def pl_encoding(nodes, edges, queries, dataset):
+    clauses = []
+    for node in edges:
+        for (to, proba) in edges[node]:
+            clauses.append(f'{proba}::edge({node},{to}).')
+
+    for (source, target) in queries:
+        with open(os.path.join(_script_dir, 'pl', dataset, f'{source}_{target}.pl'), 'w') as f:
+            f.write('\n'.join(clauses) + '\n')
+            f.write('path(X, Y) :- edge(X, Y).\n')
+            f.write('path(X, Y) :- edge(X, Z), path(Z, Y).\n')
+            f.write(f'query(path({source},{target})).')
 
 datasets = [
         'europe/Albania',
@@ -220,18 +212,18 @@ datasets = [
         'north_america/West Virginia',
         'north_america/Wisconsin',
         'north_america/Wyoming',
-        ]
-        
-def has_path(source, target, nodes, edges, visited, path):
+]
+
+def find_path(source, target, nodes, edges, visited, path):
     if source == target:
+        path.add(target)
         return True
-    visited[source] = True
-    for edge in nodes[source].edges:
-        from_node = edge.n1
-        to_node = edge.n2
-        if from_node == source and not visited[to_node] and has_path(to_node, target, nodes, edges, visited, path):
-            path.append(source)
-            return True
+    visited.add(source)
+    for (node, _) in edges[source]:
+        if node not in visited:
+            if find_path(node, target, nodes, edges, visited, path):
+                path.add(source)
+                return True
     return False
 
 for dataset in datasets:
@@ -239,23 +231,22 @@ for dataset in datasets:
     s = dataset.split('/')
     continent = s[0]
     sub_region = safe_str_bash(s[1])
-    os.makedirs(os.path.join(_script_dir, 'schlandals', f'{continent}/{sub_region}'), exist_ok=True)
-    os.makedirs(os.path.join(_script_dir, 'pcnf', f'{continent}/{sub_region}'), exist_ok=True)
-    nodes = get_nodes(f'{continent}/{sub_region}')
-    edges = get_edges(f'{continent}/{sub_region}', nodes)
-    in_a_query = [False for _ in nodes]
-    targets = [i for i in range(len(nodes))]
-    for source in range(len(nodes)):
-        if in_a_query[source]:
-            continue
-        random.shuffle(targets)
-        for target in targets:
-            path = []
-            if source != target and has_path(source, target, nodes, edges, [False for _ in nodes], path):
-                in_a_query[source] = True
-                in_a_query[target] = True
-                for n in path:
-                    in_a_query[n] = True
-                write_ppidimacs(f'{continent}/{sub_region}', nodes, edges, source, target)
-                write_pcnf(f'{continent}/{sub_region}', nodes, edges, source, target)
-                break
+    dataset_input = f'{continent}/{sub_region}'
+    os.makedirs(os.path.join(_script_dir, 'sch', dataset_input), exist_ok=True)
+    os.makedirs(os.path.join(_script_dir, 'pcnf', dataset_input), exist_ok=True)
+    os.makedirs(os.path.join(_script_dir, 'pl', dataset_input), exist_ok=True)
+    (nodes, edges) = parse_dataset(dataset_input)
+    to_query = [x for x in nodes]
+    queries = set()
+    while len(to_query) > 0:
+        source = random.sample(to_query, 1)[0]
+        target = random.sample(nodes, 1)[0]
+        path = set()
+        if find_path(source, target, nodes, edges, set(), path):
+            queries.add((source, target))
+            to_query = [x for x in to_query if x not in path]
+
+    print(f'\t{len(queries)} queries')
+    sch_encoding(nodes, edges, queries, dataset_input)
+    pcnf_encoding(nodes, edges, queries, dataset_input)
+    pl_encoding(nodes, edges, queries, dataset_input)

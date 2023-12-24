@@ -5,129 +5,141 @@ import math
 random.seed(7552498)
 
 _script_dir = os.path.dirname(os.path.realpath(__file__))
-ppidimacs_dir = os.path.join(_script_dir, 'schlandals')
-pcnf_dir = os.path.join(_script_dir, 'pcnf')
-os.makedirs(ppidimacs_dir, exist_ok=True)
-os.makedirs(pcnf_dir, exist_ok=True)
 
-def find_reachables(source, node_edges, visited):
-    visited.add(source)
-    try:
-        for edge in node_edges[source]:
-            target = edge['end_node_name']
-            if target not in visited:
-                find_reachables(target, node_edges, visited)
-    except KeyError:
-        pass
-
-def find_used_edges(node, target, node_edges, max, cache, seen_nodes):
-    if node in seen_nodes:
-        return max
-    seen_nodes.add(node)
-    if node == target:
-        return 0
-    if node not in node_edges:
-        return max
-    dist = max
-    for edge in node_edges[node]:
-        if edge['name'] in cache:
-            dist = min(dist, cache[edge['name']])
-        else:
-            to = edge['end_node_name']
-            dist_edge = find_used_edges(to, target, node_edges, max, cache, seen_nodes)
-            dist = min(dist, dist_edge)
-            cache[edge['name']] = dist
-    return dist
+def has_path(source, target, edges):
+    visited = set()
+    q = list()
+    q.append(source)
+    while not len(q) == 0:
+        node = q.pop()
+        if node == target:
+            return True
+        visited.add(node)
+        for (to, _) in edges[node]:
+            if to not in visited:
+                q.append(to)
+    return False
 
 def parse_file(filename):
     with open(os.path.join(_script_dir, filename), 'rb') as f:
         network = load(f, Loader=Loader)
-    nodes = network['nodes']
-    edges = network['links']
-    name = network['name'].split('.')[0]
-    print(f'Network {name} with {len(nodes)} nodes and {len(edges)} edges')
-    node_edges = {}
-    for edge in edges:
-        s = edge['start_node_name']
-        try:
-            node_edges[s].append(edge)
-        except KeyError:
-            node_edges[s] = [edge]
-    
-    sources = {node['name'] for node in nodes}
-    targets = {node['name'] for node in nodes}
-    for edge in edges:
-        if edge['end_node_name'] in sources:
-            sources.remove(edge['end_node_name'])
-        if edge['start_node_name'] in targets:
-            targets.remove(edge['start_node_name'])
-    
-    queries = []
-    for source in sources:
-        visited = set()
-        find_reachables(source, node_edges, visited)
-        for target in visited:
-            if target != source and target in targets:
-                queries.append((source, target))
 
-    ppidimacs_str = ""
-    pcnf_str = ""            
-    
-    ppidimacs_str += f'p cnf {len(edges)*2 + len(nodes)} {len(edges)+2}\n'
+    nodes = [x["name"] for x in network['nodes']]
+    edges = {node: [] for node in nodes}
+    sources = {x for x in nodes}
+    targets = {x for x in nodes}
+    for edge in network['links']:
+        source = edge['start_node_name']
+        target = edge['end_node_name']
+        if target in sources:
+            sources.remove(target)
+        if source in targets:
+            targets.remove(source)
+        proba_up = random.random()
+        edges[source].append((target, proba_up))
 
-    for _ in edges:
-        p_up = random.random()
-        ppidimacs_str += f'c p distribution {p_up} {1 - p_up}\n'
-
-    ppidimacs_nodes_id = {}
-    current_id = len(edges)*2 + 1
-    for node in nodes:
-        ppidimacs_nodes_id[node['name']] = current_id
-        current_id += 1
-    for i, edge in enumerate(edges):
-        s = ppidimacs_nodes_id[edge['start_node_name']]
-        t = ppidimacs_nodes_id[edge['end_node_name']]
-        ppidimacs_str += f'{t} -{s} -{2*i + 1} 0\n'
-    
-    #write pcnf input
-    pcnf_str += f'p cnf {len(edges) + len(nodes)} {len(edges)}\n'
-    pcnf_str += f'c p show {" ".join([str(x+1) for x in range(len(edges))])} 0\n'
-    for v in range(len(edge)):
-        pcnf_str += f'c p weight {v+1} {p_up} 0\nc p weight {-(v+1)} {1 - p_up} 0\n'
-    pcnf_str += f''
-    pcnf_nodes_id = {}
-    current_id = len(edges)
-    for node in nodes:
-        pcnf_nodes_id[node['name']] = current_id
-        current_id += 1
-    for i, edge in enumerate(edges):
-        s = pcnf_nodes_id[edge['start_node_name']]
-        t = pcnf_nodes_id[edge['end_node_name']]
-        pcnf_str += f'{t+1} -{s+1} -{i+1} 0\n'
-
-    print(f"{len(queries)} queries")
-    for query in queries:
-        cache = {}
-        find_used_edges(query[0], query[1], node_edges, 2*len(edges), cache, set())
-        dist = [cache[edge['name']] if edge['name'] in cache else 2*len(edges) for edge in edges]
-        number_used = len([x for x in dist if x != 2*len(edges)])
-        number_skip = int(0.1*number_used)
-        sorted_id = sorted([i for i in range(len(edges))], key=lambda x: cache[edges[x]['name']] if edges[x]['name'] in cache else len(edges)*2)
-        learn_header = 'c p learn {}'.format(" ".join([str(x+1) for x in sorted_id[number_skip:]]))
-
-        fout = open(os.path.join(ppidimacs_dir, name + f'_{query[0]}_{query[1]}.cnf'), 'w')
-        fout.write(ppidimacs_str)
-        fout.write(f'{ppidimacs_nodes_id[query[0]]}\n')
-        fout.write(f'-{ppidimacs_nodes_id[query[1]]}\n')
-        fout.write(learn_header)
-        fout.close()
-        
-        fout = open(os.path.join(pcnf_dir, name + f'_{query[0]}_{query[1]}.cnf'), 'w')
-        fout.write(pcnf_str)
-        fout.write(f'{pcnf_nodes_id[query[0]]+1} 0\n')
-        fout.write(f'-{pcnf_nodes_id[query[1]]+1} 0\n')
-        fout.close()
+    return (nodes, edges, sources, targets)
 
 files = ['Net1.json', 'Net2.json', 'Net3.json', 'Net6.json']
+
+def pcnf_encoding(nodes, sources, targets, edges, network):
+    clauses = []
+    weights = []
+    current_id = 1
+    map_edge_id = {}
+    for node in edges:
+        for (to, proba) in edges[node]:
+            weights.append(f'c p weight {current_id} {proba} 0')
+            weights.append(f'c p weight -{current_id} {1.0 - proba} 0')
+            map_edge_id[(node, to)] = current_id
+            current_id += 1
+
+    projected_header = f'c p show {" ".join([str(x) for x in range(1, current_id)])} 0'
+
+    map_node_id = {}
+    for node in nodes:
+        map_node_id[node] = current_id
+        current_id += 1
+
+    for node in edges:
+        for (to, _) in edges[node]:
+            src_id = map_node_id[node]
+            to_id = map_node_id[to]
+            edge_id = map_edge_id[(node, to)]
+            clauses.append(f'-{src_id} -{edge_id} {to_id} 0')
+
+    for source in sources:
+        for target in targets:
+            if has_path(source, target, edges):
+                with open(os.path.join(_script_dir, 'pcnf', network, f'{source}_{target}.cnf'), 'w') as f:
+                    f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
+                    f.write(projected_header + '\n')
+                    f.write('\n'.join(weights) + '\n')
+                    f.write('\n'.join(clauses) + '\n')
+                    f.write(f'{map_node_id[source]} 0\n')
+                    f.write(f'-{map_node_id[target]} 0')
+
+def sch_encoding(nodes, sources, targets, edges, network):
+    distributions = []
+    clauses = []
+    current_id = 1
+    map_edge_id = {}
+    for node in edges:
+        for (to, proba) in edges[node]:
+            distributions.append(f'c p distribution {proba} {1.0 - proba}')
+            map_edge_id[(node, to)] = current_id
+            current_id += 2
+
+    map_node_id = {}
+    for node in nodes:
+        map_node_id[node] = current_id
+        current_id += 1
+
+    for node in edges:
+        for (to, _) in edges[node]:
+            src_id = map_node_id[node]
+            to_id = map_node_id[to]
+            edge_id = map_edge_id[(node, to)]
+            clauses.append(f'-{src_id} -{edge_id} {to_id} 0')
+
+    for source in sources:
+        for target in targets:
+            if has_path(source, target, edges):
+                with open(os.path.join(_script_dir, 'sch', network, f'{source}_{target}.cnf'), 'w') as f:
+                    f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
+                    f.write('\n'.join(distributions) + '\n')
+                    f.write('\n'.join(clauses) + '\n')
+                    f.write(f'{map_node_id[source]} 0\n')
+                    f.write(f'-{map_node_id[target]} 0')
+
+def pl_encoding(nodes, sources, targets, edges, network):
+    clauses = []
+    for node in edges:
+        for (to, proba) in edges[node]:
+            clauses.append(f'{proba}::edge({node},{to}).')
+
+    for source in sources:
+        for target in targets:
+            if has_path(source, target, edges):
+                with open(os.path.join(_script_dir, 'pl', network, f'{source}_{target}.pl'), 'w') as f:
+                    f.write('\n'.join(clauses) + '\n')
+                    f.write('path(X, Y) :- edge(X, Y).\n')
+                    f.write('path(X, Y) :- edge(X, Z), path(Z, Y).\n')
+                    f.write(f'query(path({source},{target})).')
+
 for filename in files:
-    parse_file(filename)
+    print(f"Handling {filename}")
+    network = filename.split('.')[0]
+    ppidimacs_dir = os.path.join(_script_dir, 'sch', network)
+    pcnf_dir = os.path.join(_script_dir, 'pcnf', network)
+    pl_dir = os.path.join(_script_dir, 'pl', network)
+    os.makedirs(ppidimacs_dir, exist_ok=True)
+    os.makedirs(pcnf_dir, exist_ok=True)
+    os.makedirs(pl_dir, exist_ok=True)
+    (nodes, edges, sources, targets) = parse_file(filename)
+    print("\tpcnf")
+    pcnf_encoding(nodes, sources, targets, edges, network)
+    print("\tsch")
+    sch_encoding(nodes, sources, targets, edges, network)
+    print("\tpl")
+    pl_encoding(nodes, sources, targets, edges, network)
