@@ -270,11 +270,12 @@ for dataset in datasets:
     os.makedirs(os.path.join(_script_dir, 'pcnf', dataset_input), exist_ok=True)
     os.makedirs(os.path.join(_script_dir, 'pl', dataset_input), exist_ok=True)
     (nodes, edges) = parse_dataset(dataset_input)
+    nodes = [x for x in nodes if len(edges[x]) > 0]
     to_query = [x for x in nodes]
     queries = set()
     while len(to_query) > 0:
         source = random.sample(to_query, 1)[0]
-        target = random.sample(nodes, 1)[0]
+        target = random.sample([x for x in nodes if x != source], 1)[0]
         path = set()
         if find_path(source, target, nodes, edges, set(), path):
             queries.add((source, target))
