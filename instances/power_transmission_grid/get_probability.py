@@ -30,17 +30,20 @@ def get_graph(filename):
                     target = int(ls[0][1:])
                 else:
                     source = int(ls[0])
-            s = [int(re.sub('-', '', x)) for x in line.rstrip().split(' ')[:-1]]
-            if len(s) != 3:
                 continue
-            d_id = int((s[2] - 1) / 2)
-            nfrom = s[1]
-            nto = s[0]
+            s = [int(re.sub('-', '', x)) for x in line.rstrip().split(' ')[:-1]]
+            d_id = int((s[1] - 1) / 2)
+            nfrom = s[0]
+            nto = s[2]
             p_edge = distributions[d_id][0]
             try:
-                nodes[s[1]].add((s[0], p_edge))
+                nodes[nfrom].add((nto, p_edge))
             except KeyError:
-                nodes[s[1]] = {(s[0], p_edge)}
+                nodes[nfrom] = {(nto, p_edge)}
+            try:
+                nodes[nto].add((nfrom, p_edge))
+            except KeyError:
+                nodes[nto] = {(nfrom, p_edge)}
         return nodes, source, target
 
 def find_all_path_(nodes, source, target, visited, paths_cache):

@@ -147,11 +147,13 @@ def pl_encoding(nodes, edges, queries, dataset):
     clauses = []
     for node in edges:
         for (to, proba) in edges[node]:
-            clauses.append(f'{proba}::edge({node},{to}).')
+            if node < to:
+                clauses.append(f'{proba}::edge({node},{to}).')
 
     for (source, target) in queries:
         with open(os.path.join(_script_dir, 'pl', dataset, f'{source}_{target}.pl'), 'w') as f:
             f.write('\n'.join(clauses) + '\n')
+            f.write('edge(X, Y) :- edge(Y, X).\n')
             f.write('path(X, Y) :- edge(X, Y).\n')
             f.write('path(X, Y) :- edge(X, Z), path(Z, Y).\n')
             f.write(f'query(path({source},{target})).')
