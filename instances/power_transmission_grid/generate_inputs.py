@@ -144,11 +144,23 @@ def pcnf_encoding(nodes, edges, queries, dataset):
             f.write(f'-{map_node_id[target]} 0')
 
 def pl_encoding(nodes, edges, queries, dataset):
+    seen_edges = set()
     clauses = []
+    counter_additional = 1
     for node in edges:
         for (to, proba) in edges[node]:
             if node < to:
-                clauses.append(f'{proba}::edge({node},{to}).')
+                edge = (node, to)
+                if edge not in seen_edges:
+                    clauses.append(f'{proba}::edge({node},{to}).')
+                    seen_edges.add(edge)
+                else:
+                    # We create 2 dummy nodes with probability 1 and then link them with the correct probability
+                    dummy_node = f'dummy_{node}_{to}_{counter_additional}'
+                    dummy_to = f'dummy_{to}_{node}_{counter_additional}'
+                    clauses.append(f'edge({node},{dummy_node}).')
+                    clauses.append(f'edge({to},{dummy_to}).')
+                    clauses.append(f'{proba}::edge({dummy_node},{dummy_to}).')
 
     for (source, target) in queries:
         with open(os.path.join(_script_dir, 'pl', dataset, f'{source}_{target}.pl'), 'w') as f:
