@@ -152,6 +152,7 @@ def pl_encoding(nodes, sources, targets, edges, network):
                 clauses.append(f'edge({node},{dummy_node}).')
                 clauses.append(f'edge({to},{dummy_to}).')
                 clauses.append(f'{proba}::edge({dummy_node},{dummy_to}).')
+                counter_additional += 1
 
     for source in sources:
         for target in targets:

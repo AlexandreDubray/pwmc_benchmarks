@@ -161,6 +161,7 @@ def pl_encoding(nodes, edges, queries, dataset):
                     clauses.append(f'edge({node},{dummy_node}).')
                     clauses.append(f'edge({to},{dummy_to}).')
                     clauses.append(f'{proba}::edge({dummy_node},{dummy_to}).')
+                    counter_additional += 1
 
     for (source, target) in queries:
         with open(os.path.join(_script_dir, 'pl', dataset, f'{source}_{target}.pl'), 'w') as f:
