@@ -100,7 +100,7 @@ def sch_encoding(nodes, sources, targets, edges, network):
                 edge_not_in_query = [edge for edge in map_edge_id if edge not in source_dist or edge not in target_dist]
                 s_edges = sorted([edge for edge in map_edge_id if edge in source_dist and edge in target_dist], key=lambda e: source_dist[e], reverse=True)
                 branch_on = int(len(s_edges)*0.75)
-                branch_ids = [str(map_edge_id[x]) for x in edge_not_in_query] + [str(map_edge_id[x]) for x in s_edges[:branch_on]]
+                branch_ids = [str(int(((map_edge_id[x] - 1) / 2) + 1)) for x in edge_not_in_query] + [str(map_edge_id[x]) for x in s_edges[:branch_on]]
                 with open(os.path.join(_script_dir, 'sch_partial', network, f'{source}_{target}.cnf'), 'w') as f:
                     f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
                     f.write('\n'.join(distributions) + '\n')

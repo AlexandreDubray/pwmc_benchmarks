@@ -47,7 +47,7 @@ def edges_distance_to_target(edges, target):
     seen_node = {target}
     while not q.empty():
         ((source, to), dist) = q.get()
-        if (source, to) in distances:
+        if (source, to) in distances or (to, source):
             continue
         seen_node.add(source)
         distances[(source, to)] = dist
@@ -108,7 +108,13 @@ def sch_encoding(nodes, edges, queries, dataset):
         s_edges = sorted([edge for edge in map_edge_id], key= lambda e: edge_distances[e] if e in edge_distances else 2*len(map_edge_id), reverse=True)
         # We select all the edges that are not part of the query + 75% of the ones that are useful for the query
         branch_on = len(edges) - len(edge_distances) + int(len(edge_distances)*0.75)
-        branch_ids = [str(map_edge_id[edge]) for edge in s_edges[:branch_on]]
+        branch_set = set()
+        for edge in s_edges:
+            if len(branch_set) >= branch_on:
+                break
+            if map_edge_id[edge] not in branch_set:
+                branch_set.add(map_edge_id[edge])
+        branch_ids = [str(int(((x - 1) / 2) + 1)) for x in branch_set]
         with open(os.path.join(_script_dir, 'sch_partial', dataset, f'{source}_{target}.cnf'), 'w') as f:
             f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
             f.write('\n'.join(distributions) + '\n')

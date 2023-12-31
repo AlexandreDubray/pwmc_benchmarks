@@ -4,6 +4,7 @@ from functools import reduce
 import operator
 import re
 import random
+import queue
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 bif_dir = os.path.join(script_dir, 'bif')
@@ -87,30 +88,23 @@ def pcnf_encoding(dataset):
     fixed_variable_per_query = {}
     for nvar in network_variables:
         if network_variables[nvar]['is_leaf']:
-            fixed_variable_per_query[nvar] = {nvar}
-            queue = []
+            distances = [(nvar, 0)]
+            q = queue.Queue()
             for parent in network_variables[nvar]['cpt']['parents_var']:
-                queue.append(parent)
+                q.put((parent, 1))
 
             seen = set()
-            while len(queue) > 0:
-                pvar = queue.pop()
+            while not q.empty():
+                (pvar, dist) = q.get()
                 if pvar not in seen:
-                    fixed_variable_per_query[nvar].add(pvar)
+                    distances.append((pvar, dist))
                     seen.add(pvar)
                     for parent in network_variables[pvar]['cpt']['parents_var']:
-                        queue.append(parent)
-            number_node_query = len(seen) + 1
+                        q.put((parent, dist + 1))
+            distances = sorted(distances, key=lambda x: x[1])
+            number_node_query = len(seen)
             number_node_known = int(0.1*number_node_query)
-            count_known = 0
-            queue.append(nvar)
-            while count_known < number_node_known:
-                v = queue.pop(0)
-                if v in fixed_variable_per_query[nvar]:
-                    fixed_variable_per_query[nvar].remove(v)
-                    for parent in network_variables[v]['cpt']['parents_var']:
-                        queue.append(parent)
-                    count_known += 1
+            fixed_variable_per_query[nvar] = [x[0] for x in distances[:number_node_known]]
 
     clauses = []
     distributions = []
@@ -206,7 +200,7 @@ def pcnf_encoding(dataset):
             learn_distribution = [i for i in range(1, len(distributions)+1) if i not in dsk]
 
             for i in range(len(distributions)):
-                if i in dsk:
+                if i not in dsk:
                     partial_distributions.append(random_distributions[i])
                 else:
                     partial_distributions.append(distributions[i])
