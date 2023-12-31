@@ -61,6 +61,11 @@ def sch_encoding(nodes, sources, targets, edges, network):
             map_edge_id[(node, to)] = current_id
             current_id += 2
 
+    random_distributions = []
+    for _ in random_distributions:
+        p = random.random()
+        random_distributions.append(f'c p distribution {p} {1.0 - p}')
+
     map_node_id = {}
     for node in nodes:
         map_node_id[node] = current_id
@@ -81,6 +86,13 @@ def sch_encoding(nodes, sources, targets, edges, network):
                 with open(os.path.join(_script_dir, 'sch', network, f'{source}_{target}.cnf'), 'w') as f:
                     f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
                     f.write('\n'.join(distributions) + '\n')
+                    f.write('\n'.join(clauses) + '\n')
+                    f.write(f'{map_node_id[source]} 0\n')
+                    f.write(f'-{map_node_id[target]} 0')
+
+                with open(os.path.join(_script_dir, 'sch_learn', network, f'{source}_{target}.cnf'), 'w') as f:
+                    f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
+                    f.write('\n'.join(random_distributions) + '\n')
                     f.write('\n'.join(clauses) + '\n')
                     f.write(f'{map_node_id[source]} 0\n')
                     f.write(f'-{map_node_id[target]} 0')
@@ -189,10 +201,11 @@ for filename in files:
     os.makedirs(pcnf_dir, exist_ok=True)
     os.makedirs(pl_dir, exist_ok=True)
     os.makedirs(os.path.join(_script_dir, 'sch_partial', network), exist_ok=True)
+    os.makedirs(os.path.join(_script_dir, 'sch_learn', network), exist_ok=True)
     (nodes, edges, sources, targets) = parse_file(filename)
     print("\tpcnf")
-    pcnf_encoding(nodes, sources, targets, edges, network)
+    #pcnf_encoding(nodes, sources, targets, edges, network)
     print("\tsch")
     sch_encoding(nodes, sources, targets, edges, network)
     print("\tpl")
-    pl_encoding(nodes, sources, targets, edges, network)
+    #pl_encoding(nodes, sources, targets, edges, network)

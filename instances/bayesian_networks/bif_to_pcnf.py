@@ -3,6 +3,7 @@ import itertools
 from functools import reduce
 import operator
 import re
+import random
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 bif_dir = os.path.join(script_dir, 'bif')
@@ -73,6 +74,11 @@ def get_cpt(dataset, network_variables):
 def get_dvar(network_variables, nvar, value):
     return network_variables[nvar]['deterministic_variables'][value]
 
+
+def get_random_distributions(n):
+    distribution = [random.random() for _ in range(n)]
+    s = sum(distribution)
+    return [x/s for x in distribution]
 
 def pcnf_encoding(dataset):
     network_variables = parse_variables(dataset)
@@ -145,6 +151,11 @@ def pcnf_encoding(dataset):
                 cache[cache_key] = [x for _, x in sorted(cache_entry)]
         network_variables[nvar]['probabilistic_var'] = probabilistic_variables
 
+    random_distributions = []
+    for d in distributions:
+        len_distri = len(d.split(' ')) - 3
+        random_distributions.append(f'c p distribution {" ".join([str(x) for x in get_random_distributions(len_distri)])}')
+
     for nvar in network_variables:
         network_variables[nvar]['deterministic_variables'] = {}
         for nvar_value in network_variables[nvar]['domain']:
@@ -182,25 +193,56 @@ def pcnf_encoding(dataset):
 
     file_idx = 1
     os.makedirs(os.path.join(script_dir, 'pcnf', dataset), exist_ok=True)
+    os.makedirs(os.path.join(script_dir, 'pcnf_learn', dataset), exist_ok=True)
+    os.makedirs(os.path.join(script_dir, 'pcnf_partial', dataset), exist_ok=True)
     for nvar in network_variables:
         if network_variables[nvar]['is_leaf']:
-            known_distributions = []
+            dsk = set()
+            partial_distributions = []
             for fixed in fixed_variable_per_query[nvar]:
                 for dixd in network_variables[fixed]['distribution_index']:
-                    known_distributions.append(dixd)
-            header_learn = 'c p learn {}'.format(' '.join([str(x) for x in known_distributions]))
+                    dsk.add(dixd)
+
+            learn_distribution = [i for i in range(1, len(distributions)+1) if i not in dsk]
+
+            for i in range(len(distributions)):
+                if i in dsk:
+                    partial_distributions.append(random_distributions[i])
+                else:
+                    partial_distributions.append(distributions[i])
+            header_learn = 'c p learn {}'.format(' '.join([str(x) for x in learn_distribution]))
+
             for i in range(network_variables[nvar]['dom_size']):
                 with open(os.path.join(script_dir, 'pcnf', dataset, f'{file_idx}.cnf'), 'w') as f:
                     f.write(f'p cnf {variable_index} {len(clauses) + network_variables[nvar]["dom_size"] - 1}\n')
                     f.write(f'c Querying variable {nvar} with value {network_variables[nvar]["domain"][i]}\n')
                     f.write('\n'.join(distributions) + '\n')
-                    if len(known_distributions) > 0:
-                        f.write(header_learn + '\n')
                     f.write('\n'.join(clauses) + '\n')
                     for j in range(network_variables[nvar]['dom_size']):
                         if i != j:
                             f.write(f'-{network_variables[nvar]["deterministic_variables"][network_variables[nvar]["domain"][j]]} 0\n')
-                    file_idx += 1
+
+                with open(os.path.join(script_dir, 'pcnf_partial', dataset, f'{file_idx}.cnf'), 'w') as f:
+                    f.write(f'p cnf {variable_index} {len(clauses) + network_variables[nvar]["dom_size"] - 1}\n')
+                    f.write(f'c Querying variable {nvar} with value {network_variables[nvar]["domain"][i]}\n')
+                    if len(learn_distribution) > 0:
+                        f.write(header_learn + '\n')
+                    f.write('\n'.join(partial_distributions) + '\n')
+                    f.write('\n'.join(clauses) + '\n')
+                    for j in range(network_variables[nvar]['dom_size']):
+                        if i != j:
+                            f.write(f'-{network_variables[nvar]["deterministic_variables"][network_variables[nvar]["domain"][j]]} 0\n')
+
+                with open(os.path.join(script_dir, 'pcnf_learn', dataset, f'{file_idx}.cnf'), 'w') as f:
+                    f.write(f'p cnf {variable_index} {len(clauses) + network_variables[nvar]["dom_size"] - 1}\n')
+                    f.write(f'c Querying variable {nvar} with value {network_variables[nvar]["domain"][i]}\n')
+                    f.write('\n'.join(random_distributions) + '\n')
+                    f.write('\n'.join(clauses) + '\n')
+                    for j in range(network_variables[nvar]['dom_size']):
+                        if i != j:
+                            f.write(f'-{network_variables[nvar]["deterministic_variables"][network_variables[nvar]["domain"][j]]} 0\n')
+                
+                file_idx += 1
 
 instances = [f.split('.')[0] for f in os.listdir(bif_dir) if os.path.isfile(os.path.join(bif_dir, f))]
 

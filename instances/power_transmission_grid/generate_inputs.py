@@ -71,6 +71,11 @@ def sch_encoding(nodes, edges, queries, dataset):
             else:
                 map_edge_id[(node, to)] = map_edge_id[(to, node)]
 
+    random_distributions = []
+    for _ in distributions:
+        p = random.random()
+        random_distributions.append(f'c p distribution {p} {1.0 - p}')
+
     map_node_id = {}
     for node in nodes:
         map_node_id[node] = current_id
@@ -88,6 +93,13 @@ def sch_encoding(nodes, edges, queries, dataset):
         with open(os.path.join(_script_dir, 'sch', dataset, f'{source}_{target}.cnf'), 'w') as f:
             f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
             f.write('\n'.join(distributions) + '\n')
+            f.write('\n'.join(clauses) + '\n')
+            f.write(f'{map_node_id[source]} 0\n')
+            f.write(f'-{map_node_id[target]} 0')
+
+        with open(os.path.join(_script_dir, 'sch_learn', dataset, f'{source}_{target}.cnf'), 'w') as f:
+            f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
+            f.write('\n'.join(random_distributions) + '\n')
             f.write('\n'.join(clauses) + '\n')
             f.write(f'{map_node_id[source]} 0\n')
             f.write(f'-{map_node_id[target]} 0')
@@ -281,6 +293,7 @@ for dataset in datasets:
     sub_region = safe_str_bash(s[1])
     dataset_input = f'{continent}/{sub_region}'
     os.makedirs(os.path.join(_script_dir, 'sch', dataset_input), exist_ok=True)
+    os.makedirs(os.path.join(_script_dir, 'sch_learn', dataset_input), exist_ok=True)
     os.makedirs(os.path.join(_script_dir, 'sch_partial', dataset_input), exist_ok=True)
     os.makedirs(os.path.join(_script_dir, 'pcnf', dataset_input), exist_ok=True)
     os.makedirs(os.path.join(_script_dir, 'pl', dataset_input), exist_ok=True)
@@ -298,5 +311,5 @@ for dataset in datasets:
 
     print(f'\t{len(queries)} queries')
     sch_encoding(nodes, edges, queries, dataset_input)
-    pcnf_encoding(nodes, edges, queries, dataset_input)
-    pl_encoding(nodes, edges, queries, dataset_input)
+    #pcnf_encoding(nodes, edges, queries, dataset_input)
+    #pl_encoding(nodes, edges, queries, dataset_input)
