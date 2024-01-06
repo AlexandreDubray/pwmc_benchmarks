@@ -62,7 +62,7 @@ def sch_encoding(nodes, sources, targets, edges, network):
             current_id += 2
 
     random_distributions = []
-    for _ in random_distributions:
+    for _ in distributions:
         p = random.random()
         random_distributions.append(f'c p distribution {p} {1.0 - p}')
 
