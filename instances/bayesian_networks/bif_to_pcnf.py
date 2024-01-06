@@ -85,7 +85,7 @@ def pcnf_encoding(dataset):
     network_variables = parse_variables(dataset)
     get_cpt(dataset, network_variables)
 
-    fixed_variable_per_query = {}
+    used_variables_per_query = {}
     for nvar in network_variables:
         if network_variables[nvar]['is_leaf']:
             distances = [(nvar, 0)]
@@ -102,9 +102,7 @@ def pcnf_encoding(dataset):
                     for parent in network_variables[pvar]['cpt']['parents_var']:
                         q.put((parent, dist + 1))
             distances = sorted(distances, key=lambda x: x[1])
-            number_node_query = len(seen)
-            number_node_known = int(0.1*number_node_query)
-            fixed_variable_per_query[nvar] = [x[0] for x in distances[:number_node_known]]
+            used_variables_per_query[nvar] = [x[0] for x in distances]
 
     clauses = []
     distributions = []
@@ -191,14 +189,15 @@ def pcnf_encoding(dataset):
     os.makedirs(os.path.join(script_dir, 'pcnf_partial', dataset), exist_ok=True)
     for nvar in network_variables:
         if network_variables[nvar]['is_leaf']:
-            dsk = set()
-            partial_distributions = []
-            for fixed in fixed_variable_per_query[nvar]:
-                for dixd in network_variables[fixed]['distribution_index']:
-                    dsk.add(dixd)
+            distributions_query = list()
+            for v in used_variables_per_query[nvar]:
+                distributions_query += network_variables[v]['distribution_index']
 
+            random.shuffle(distributions_query)
+            dsk = set(distributions_query[:int(len(distributions_query)*0.02)])
             learn_distribution = [i for i in range(1, len(distributions)+1) if i not in dsk]
 
+            partial_distributions = []
             for i in range(len(distributions)):
                 if i not in dsk:
                     partial_distributions.append(random_distributions[i])
