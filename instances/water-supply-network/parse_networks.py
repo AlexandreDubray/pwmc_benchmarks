@@ -27,13 +27,6 @@ def parse_file(filename):
 
     return (nodes, edges, sources, targets)
 
-def build_reverse_edges(nodes, edges):
-    reverse_edges = {node: [] for node in nodes}
-    for node in nodes:
-        for (to, p) in edges[node]:
-            reverse_edges[to].append((node, p))
-    return reverse_edges
-
 def distances_from_source(edges, source):
     distances = {}
     q = queue.Queue()
@@ -50,7 +43,6 @@ def distances_from_source(edges, source):
             
 
 def sch_encoding(nodes, sources, targets, edges, network):
-    reverse_edges = build_reverse_edges(nodes, edges)
     distributions = []
     clauses = []
     current_id = 1
@@ -65,6 +57,20 @@ def sch_encoding(nodes, sources, targets, edges, network):
     for _ in distributions:
         p = random.random()
         random_distributions.append(f'c p distribution {p} {1.0 - p}')
+
+    ds = [i + 1 for i in range(len(distributions))]
+    ratio_learn = 0.05
+    limit = int(len(ds)*ratio_learn)
+    random.shuffle(ds)
+    dsk = set(ds[:limit])
+    learn_distribution = ds[limit:]
+    partial_distributions = []
+    for i in range(len(distributions)):
+        if i + 1 not in dsk:
+            partial_distributions.append(random_distributions[i])
+        else:
+            partial_distributions.append(distributions[i])
+    header_learn = 'c p learn {}'.format(' '.join([str(x+1) for x in range(len(ds)) if x+1 not in dsk]))
 
     map_node_id = {}
     for node in nodes:
@@ -82,7 +88,6 @@ def sch_encoding(nodes, sources, targets, edges, network):
         source_dist = distances_from_source(edges, source)
         for target in targets:
             if has_path(source, target, edges):
-                target_dist = distances_from_source(reverse_edges, target)
                 with open(os.path.join(_script_dir, 'sch', network, f'{source}_{target}.cnf'), 'w') as f:
                     f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
                     f.write('\n'.join(distributions) + '\n')
@@ -97,14 +102,11 @@ def sch_encoding(nodes, sources, targets, edges, network):
                     f.write(f'{map_node_id[source]} 0\n')
                     f.write(f'-{map_node_id[target]} 0')
 
-                edge_not_in_query = [edge for edge in map_edge_id if edge not in source_dist or edge not in target_dist]
-                s_edges = sorted([edge for edge in map_edge_id if edge in source_dist and edge in target_dist], key=lambda e: source_dist[e], reverse=True)
-                branch_on = int(len(s_edges)*0.75)
-                branch_ids = [str(int(((map_edge_id[x] - 1) / 2) + 1)) for x in edge_not_in_query] + [str(map_edge_id[x]) for x in s_edges[:branch_on]]
                 with open(os.path.join(_script_dir, 'sch_partial', network, f'{source}_{target}.cnf'), 'w') as f:
                     f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
-                    f.write('\n'.join(distributions) + '\n')
-                    f.write(f'c p learn {" ".join(branch_ids)}\n')
+                    if len(dsk) > 0:
+                        f.write(header_learn + '\n')
+                    f.write('\n'.join(partial_distributions) + '\n')
                     f.write('\n'.join(clauses) + '\n')
                     f.write(f'{map_node_id[source]} 0\n')
                     f.write(f'-{map_node_id[target]} 0')

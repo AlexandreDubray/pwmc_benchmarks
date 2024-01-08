@@ -85,25 +85,6 @@ def pcnf_encoding(dataset):
     network_variables = parse_variables(dataset)
     get_cpt(dataset, network_variables)
 
-    used_variables_per_query = {}
-    for nvar in network_variables:
-        if network_variables[nvar]['is_leaf']:
-            distances = [(nvar, 0)]
-            q = queue.Queue()
-            for parent in network_variables[nvar]['cpt']['parents_var']:
-                q.put((parent, 1))
-
-            seen = set()
-            while not q.empty():
-                (pvar, dist) = q.get()
-                if pvar not in seen:
-                    distances.append((pvar, dist))
-                    seen.add(pvar)
-                    for parent in network_variables[pvar]['cpt']['parents_var']:
-                        q.put((parent, dist + 1))
-            distances = sorted(distances, key=lambda x: x[1])
-            used_variables_per_query[nvar] = [x[0] for x in distances]
-
     clauses = []
     distributions = []
 
@@ -183,28 +164,26 @@ def pcnf_encoding(dataset):
                             f'{target_value}',
                             ))
 
+    distribution_learned = [i+1 for i in range(len(distributions))]
+    random.shuffle(distribution_learned)
+    ratio_fix = 0.05
+    limit = int(len(distribution_learned)*ratio_fix)
+    dsk = set(distribution_learned[:limit])
+    learn_distribution = distribution_learned[limit:]
+    partial_distributions = []
+    for i in range(len(distributions)):
+        if i+1 not in dsk:
+            partial_distributions.append(random_distributions[i])
+        else:
+            partial_distributions.append(distributions[i])
+    header_learn = 'c p learn {}'.format(' '.join([str(x+1) for x in range(len(distributions)) if x+1 not in dsk]))
+
     file_idx = 1
     os.makedirs(os.path.join(script_dir, 'pcnf', dataset), exist_ok=True)
     os.makedirs(os.path.join(script_dir, 'pcnf_learn', dataset), exist_ok=True)
     os.makedirs(os.path.join(script_dir, 'pcnf_partial', dataset), exist_ok=True)
     for nvar in network_variables:
         if network_variables[nvar]['is_leaf']:
-            distributions_query = list()
-            for v in used_variables_per_query[nvar]:
-                distributions_query += network_variables[v]['distribution_index']
-
-            random.shuffle(distributions_query)
-            dsk = set(distributions_query[:int(len(distributions_query)*0.02)])
-            learn_distribution = [i for i in range(1, len(distributions)+1) if i not in dsk]
-
-            partial_distributions = []
-            for i in range(len(distributions)):
-                if i not in dsk:
-                    partial_distributions.append(random_distributions[i])
-                else:
-                    partial_distributions.append(distributions[i])
-            header_learn = 'c p learn {}'.format(' '.join([str(x) for x in learn_distribution]))
-
             for i in range(network_variables[nvar]['dom_size']):
                 with open(os.path.join(script_dir, 'pcnf', dataset, f'{file_idx}.cnf'), 'w') as f:
                     f.write(f'p cnf {variable_index} {len(clauses) + network_variables[nvar]["dom_size"] - 1}\n')

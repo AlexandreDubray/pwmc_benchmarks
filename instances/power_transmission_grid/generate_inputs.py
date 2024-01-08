@@ -38,25 +38,6 @@ def parse_dataset(dataset):
             edges[n2].append((n1, proba_up))
     return (nodes, edges)
 
-def edges_distance_to_target(edges, target):
-    distances = {}
-    q = queue.Queue()
-    for (node, _) in edges[target]:
-        q.put(((node, target), 0))
-
-    seen_node = {target}
-    while not q.empty():
-        ((source, to), dist) = q.get()
-        if (source, to) in distances or (to, source):
-            continue
-        seen_node.add(source)
-        distances[(source, to)] = dist
-        distances[(to, source)] = dist
-        for node, _ in edges[source]:
-            if node not in seen_node:
-                q.put(((node, source), dist + 1))
-    return distances
-
 def sch_encoding(nodes, edges, queries, dataset):
     distributions = []
     clauses = []
@@ -75,6 +56,20 @@ def sch_encoding(nodes, edges, queries, dataset):
     for _ in distributions:
         p = random.random()
         random_distributions.append(f'c p distribution {p} {1.0 - p}')
+
+    ds = [i + 1 for i in range(len(distributions))]
+    ratio_learn = 0.05
+    limit = int(len(ds)*ratio_learn)
+    random.shuffle(ds)
+    dsk = set(ds[:limit])
+    learn_distribution = ds[limit:]
+    partial_distributions = []
+    for i in range(len(distributions)):
+        if i + 1 not in dsk:
+            partial_distributions.append(random_distributions[i])
+        else:
+            partial_distributions.append(distributions[i])
+    header_learn = 'c p learn {}'.format(' '.join([str(x+1) for x in range(len(ds)) if x+1 not in dsk]))
 
     map_node_id = {}
     for node in nodes:
@@ -104,21 +99,11 @@ def sch_encoding(nodes, edges, queries, dataset):
             f.write(f'{map_node_id[source]} 0\n')
             f.write(f'-{map_node_id[target]} 0')
 
-        edge_distances = edges_distance_to_target(edges, target)
-        s_edges = sorted([edge for edge in map_edge_id], key= lambda e: edge_distances[e] if e in edge_distances else 2*len(map_edge_id), reverse=True)
-        # We select all the edges that are not part of the query + 75% of the ones that are useful for the query
-        branch_on = len(edges) - len(edge_distances) + int(len(edge_distances)*0.75)
-        branch_set = set()
-        for edge in s_edges:
-            if len(branch_set) >= branch_on:
-                break
-            if map_edge_id[edge] not in branch_set:
-                branch_set.add(map_edge_id[edge])
-        branch_ids = [str(int(((x - 1) / 2) + 1)) for x in branch_set]
         with open(os.path.join(_script_dir, 'sch_partial', dataset, f'{source}_{target}.cnf'), 'w') as f:
             f.write(f'p cnf {current_id} {len(clauses) + 2}\n')
-            f.write('\n'.join(distributions) + '\n')
-            f.write(f'c p learn {" ".join(branch_ids)}\n')
+            if len(dsk) > 0:
+                f.write(f'{header_learn}\n')
+            f.write('\n'.join(partial_distributions) + '\n')
             f.write('\n'.join(clauses) + '\n')
             f.write(f'{map_node_id[source]} 0\n')
             f.write(f'-{map_node_id[target]} 0')
