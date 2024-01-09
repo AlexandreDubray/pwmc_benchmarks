@@ -34,28 +34,26 @@ def parse_dataset(dataset):
             n1 = int(s[1])
             n2 = int(s[2])
             proba_up = random.random()
-            edges[n1].append((n2, proba_up))
-            edges[n2].append((n1, proba_up))
+            proba_learning = random.random()
+            edges[n1].append((n2, proba_up, proba_learning))
+            edges[n2].append((n1, proba_up, proba_learning))
     return (nodes, edges)
 
 def sch_encoding(nodes, edges, queries, dataset):
     distributions = []
+    random_distributions = []
     clauses = []
     current_id = 1
     map_edge_id = {}
     for node in edges:
-        for (to, proba) in edges[node]:
-            if (to, node) not in map_edge_id:
-                distributions.append(f'c p distribution {proba} {1.0 - proba}')
-                map_edge_id[(node, to)] = current_id
-                current_id += 2
-            else:
-                map_edge_id[(node, to)] = map_edge_id[(to, node)]
-
-    random_distributions = []
-    for _ in distributions:
-        p = random.random()
-        random_distributions.append(f'c p distribution {p} {1.0 - p}')
+        for (to, proba, random_proba) in edges[node]:
+            if node < to:
+                if (to, node) not in map_edge_id:
+                    distributions.append(f'c p distribution {proba} {1.0 - proba}')
+                    random_distributions.append(f'c p distribution {random_proba} {1.0 - random_proba}')
+                    map_edge_id[(node, to)] = current_id
+                    map_edge_id[(to, node)] = current_id
+                    current_id += 2
 
     ds = [i + 1 for i in range(len(distributions))]
     ratio_learn = 0.05
@@ -77,7 +75,7 @@ def sch_encoding(nodes, edges, queries, dataset):
         current_id += 1
 
     for node in edges:
-        for (to, _) in edges[node]:
+        for (to, _, _) in edges[node]:
             src_id = map_node_id[node]
             to_id = map_node_id[to]
             edge_id = map_edge_id[(node, to)]
@@ -114,7 +112,7 @@ def pcnf_encoding(nodes, edges, queries, dataset):
     current_id = 1
     map_edge_id = {}
     for node in edges:
-        for (to, proba) in edges[node]:
+        for (to, proba, _) in edges[node]:
             if (to, node) not in map_edge_id:
                 weights.append(f'c p weight {current_id} {proba} 0')
                 weights.append(f'c p weight -{current_id} {1.0 - proba} 0')
@@ -131,7 +129,7 @@ def pcnf_encoding(nodes, edges, queries, dataset):
         current_id += 1
 
     for node in edges:
-        for (to, _) in edges[node]:
+        for (to, _, _) in edges[node]:
             src_id = map_node_id[node]
             to_id = map_node_id[to]
             edge_id = map_edge_id[(node, to)]
@@ -149,26 +147,28 @@ def pcnf_encoding(nodes, edges, queries, dataset):
 def pl_encoding(nodes, edges, queries, dataset):
     seen_edges = set()
     clauses = []
+    clauses_learn = []
     counter_additional = 1
     for node in edges:
-        for (to, proba) in edges[node]:
+        for (to, proba, random_proba) in edges[node]:
             if node < to:
                 edge = (node, to)
                 if edge not in seen_edges:
                     clauses.append(f'{proba}::edge({node},{to}).')
+                    clauses_learn.append(f'{random_proba}::edge({node},{to}).')
                     seen_edges.add(edge)
-                else:
-                    # We create 2 dummy nodes with probability 1 and then link them with the correct probability
-                    dummy_node = f'dummy_{node}_{to}_{counter_additional}'
-                    dummy_to = f'dummy_{to}_{node}_{counter_additional}'
-                    clauses.append(f'edge({node},{dummy_node}).')
-                    clauses.append(f'edge({to},{dummy_to}).')
-                    clauses.append(f'{proba}::edge({dummy_node},{dummy_to}).')
-                    counter_additional += 1
 
     for (source, target) in queries:
+
         with open(os.path.join(_script_dir, 'pl', dataset, f'{source}_{target}.pl'), 'w') as f:
             f.write('\n'.join(clauses) + '\n')
+            f.write('edge(X, Y) :- edge(Y, X).\n')
+            f.write('path(X, Y) :- edge(X, Y).\n')
+            f.write('path(X, Y) :- edge(X, Z), path(Z, Y).\n')
+            f.write(f'query(path({source},{target})).')
+
+        with open(os.path.join(_script_dir, 'pl_learn', dataset, f'{source}_{target}.pl'), 'w') as f:
+            f.write('\n'.join(clauses_learn) + '\n')
             f.write('edge(X, Y) :- edge(Y, X).\n')
             f.write('path(X, Y) :- edge(X, Y).\n')
             f.write('path(X, Y) :- edge(X, Z), path(Z, Y).\n')
@@ -270,7 +270,7 @@ def find_path(source, target, nodes, edges, visited, path):
         path.add(target)
         return True
     visited.add(source)
-    for (node, _) in edges[source]:
+    for (node, _, _) in edges[source]:
         if node not in visited:
             if find_path(node, target, nodes, edges, visited, path):
                 path.add(source)
@@ -288,6 +288,7 @@ for dataset in datasets:
     os.makedirs(os.path.join(_script_dir, 'sch_partial', dataset_input), exist_ok=True)
     os.makedirs(os.path.join(_script_dir, 'pcnf', dataset_input), exist_ok=True)
     os.makedirs(os.path.join(_script_dir, 'pl', dataset_input), exist_ok=True)
+    os.makedirs(os.path.join(_script_dir, 'pl_learn', dataset_input), exist_ok=True)
     (nodes, edges) = parse_dataset(dataset_input)
     nodes = [x for x in nodes if len(edges[x]) > 0]
     to_query = [x for x in nodes]
@@ -302,5 +303,5 @@ for dataset in datasets:
 
     print(f'\t{len(queries)} queries')
     sch_encoding(nodes, edges, queries, dataset_input)
-    #pcnf_encoding(nodes, edges, queries, dataset_input)
-    #pl_encoding(nodes, edges, queries, dataset_input)
+    pcnf_encoding(nodes, edges, queries, dataset_input)
+    pl_encoding(nodes, edges, queries, dataset_input)

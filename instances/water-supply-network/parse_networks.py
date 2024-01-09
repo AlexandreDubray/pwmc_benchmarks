@@ -23,7 +23,8 @@ def parse_file(filename):
         if source in targets:
             targets.remove(source)
         proba_up = random.random()
-        edges[source].append((target, proba_up))
+        random_proba = random.random()
+        edges[source].append((target, proba_up, random_proba))
 
     return (nodes, edges, sources, targets)
 
@@ -36,7 +37,7 @@ def distances_from_source(edges, source):
         if node in distances:
             continue
         distances[node] = dist
-        for to, _ in edges[node]:
+        for to, _, _ in edges[node]:
             if to not in distances:
                 q.put((to, dist + 1))
     return distances
@@ -44,19 +45,16 @@ def distances_from_source(edges, source):
 
 def sch_encoding(nodes, sources, targets, edges, network):
     distributions = []
+    random_distributions = []
     clauses = []
     current_id = 1
     map_edge_id = {}
     for node in edges:
-        for (to, proba) in edges[node]:
+        for (to, proba, random_proba) in edges[node]:
             distributions.append(f'c p distribution {proba} {1.0 - proba}')
+            random_distributions.append(f'c p distribution {random_proba} {1.0 - random_proba}')
             map_edge_id[(node, to)] = current_id
             current_id += 2
-
-    random_distributions = []
-    for _ in distributions:
-        p = random.random()
-        random_distributions.append(f'c p distribution {p} {1.0 - p}')
 
     ds = [i + 1 for i in range(len(distributions))]
     ratio_learn = 0.05
@@ -78,7 +76,7 @@ def sch_encoding(nodes, sources, targets, edges, network):
         current_id += 1
 
     for node in edges:
-        for (to, _) in edges[node]:
+        for (to, _, _) in edges[node]:
             src_id = map_node_id[node]
             to_id = map_node_id[to]
             edge_id = map_edge_id[(node, to)]
@@ -118,7 +116,7 @@ def pcnf_encoding(nodes, sources, targets, edges, network):
     current_id = 1
     map_edge_id = {}
     for node in edges:
-        for (to, proba) in edges[node]:
+        for (to, proba, _) in edges[node]:
             weights.append(f'c p weight {current_id} {proba} 0')
             weights.append(f'c p weight -{current_id} {1.0 - proba} 0')
             map_edge_id[(node, to)] = current_id
@@ -132,7 +130,7 @@ def pcnf_encoding(nodes, sources, targets, edges, network):
         current_id += 1
 
     for node in edges:
-        for (to, _) in edges[node]:
+        for (to, _, _) in edges[node]:
             src_id = map_node_id[node]
             to_id = map_node_id[to]
             edge_id = map_edge_id[(node, to)]
@@ -148,24 +146,31 @@ def pcnf_encoding(nodes, sources, targets, edges, network):
                     f.write('\n'.join(clauses) + '\n')
                     f.write(f'{map_node_id[source]} 0\n')
                     f.write(f'-{map_node_id[target]} 0')
-
 def pl_encoding(nodes, sources, targets, edges, network):
     seen_edges = set()
     clauses = []
+    clauses_learn = []
     counter_additional = 1
+    map_node_id = {nodes[i]: i+1 for i in range(len(nodes))}
     for node in edges:
-        for (to, proba) in edges[node]:
+        for (to, proba, random_proba) in edges[node]:
             edge = (node, to)
+            n = map_node_id[node]
+            t = map_node_id[to]
             if edge not in seen_edges:
-                clauses.append(f'{proba}::edge({node},{to}).')
+                clauses.append(f'{proba}::edge({n},{t}).')
+                clauses_learn.append(f'{random_proba}::edge({n},{t}).')
                 seen_edges.add(edge)
             else:
                 # We create 2 dummy nodes with probability 1 and then link them with the correct probability
-                dummy_node = f'dummy_{node}_{to}_{counter_additional}'
-                dummy_to = f'dummy_{to}_{node}_{counter_additional}'
-                clauses.append(f'edge({node},{dummy_node}).')
-                clauses.append(f'edge({to},{dummy_to}).')
+                dummy_node = f'dummy_{n}_{t}_{counter_additional}'
+                dummy_to = f'dummy_{t}_{n}_{counter_additional}'
+                clauses.append(f'edge({n},{dummy_node}).')
+                clauses.append(f'edge({t},{dummy_to}).')
                 clauses.append(f'{proba}::edge({dummy_node},{dummy_to}).')
+                clauses_learn.append(f'edge({n},{dummy_node}).')
+                clauses_learn.append(f'edge({t},{dummy_to}).')
+                clauses_learn.append(f'{random_proba}::edge({dummy_node},{dummy_to}).')
                 counter_additional += 1
 
     for source in sources:
@@ -175,7 +180,13 @@ def pl_encoding(nodes, sources, targets, edges, network):
                     f.write('\n'.join(clauses) + '\n')
                     f.write('path(X, Y) :- edge(X, Y).\n')
                     f.write('path(X, Y) :- edge(X, Z), path(Z, Y).\n')
-                    f.write(f'query(path({source},{target})).')
+                    f.write(f'query(path({map_node_id[source]},{map_node_id[target]})).')
+
+                with open(os.path.join(_script_dir, 'pl_learn', network, f'{source}_{target}.pl'), 'w') as f:
+                    f.write('\n'.join(clauses_learn) + '\n')
+                    f.write('path(X, Y) :- edge(X, Y).\n')
+                    f.write('path(X, Y) :- edge(X, Z), path(Z, Y).\n')
+                    f.write(f'query(path({map_node_id[source]},{map_node_id[target]})).')
 
 def has_path(source, target, edges):
     visited = set()
@@ -186,7 +197,7 @@ def has_path(source, target, edges):
         if node == target:
             return True
         visited.add(node)
-        for (to, _) in edges[node]:
+        for (to, _, _) in edges[node]:
             if to not in visited:
                 q.append(to)
     return False
@@ -204,10 +215,11 @@ for filename in files:
     os.makedirs(pl_dir, exist_ok=True)
     os.makedirs(os.path.join(_script_dir, 'sch_partial', network), exist_ok=True)
     os.makedirs(os.path.join(_script_dir, 'sch_learn', network), exist_ok=True)
+    os.makedirs(os.path.join(_script_dir, 'pl_learn', network), exist_ok=True)
     (nodes, edges, sources, targets) = parse_file(filename)
     print("\tpcnf")
-    #pcnf_encoding(nodes, sources, targets, edges, network)
+    pcnf_encoding(nodes, sources, targets, edges, network)
     print("\tsch")
     sch_encoding(nodes, sources, targets, edges, network)
     print("\tpl")
-    #pl_encoding(nodes, sources, targets, edges, network)
+    pl_encoding(nodes, sources, targets, edges, network)
