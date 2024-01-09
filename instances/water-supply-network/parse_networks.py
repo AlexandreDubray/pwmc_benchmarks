@@ -57,7 +57,7 @@ def sch_encoding(nodes, sources, targets, edges, network):
             current_id += 2
 
     ds = [i + 1 for i in range(len(distributions))]
-    ratio_learn = 0.05
+    ratio_learn = 0.7
     limit = int(len(ds)*ratio_learn)
     random.shuffle(ds)
     dsk = set(ds[:limit])

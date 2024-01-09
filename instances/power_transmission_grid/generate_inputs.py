@@ -56,7 +56,7 @@ def sch_encoding(nodes, edges, queries, dataset):
                     current_id += 2
 
     ds = [i + 1 for i in range(len(distributions))]
-    ratio_learn = 0.05
+    ratio_learn = 0.7
     limit = int(len(ds)*ratio_learn)
     random.shuffle(ds)
     dsk = set(ds[:limit])
@@ -148,7 +148,6 @@ def pl_encoding(nodes, edges, queries, dataset):
     seen_edges = set()
     clauses = []
     clauses_learn = []
-    counter_additional = 1
     for node in edges:
         for (to, proba, random_proba) in edges[node]:
             if node < to:
