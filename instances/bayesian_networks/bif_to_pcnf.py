@@ -164,12 +164,31 @@ def pcnf_encoding(dataset):
                             f'{target_value}',
                             ))
 
-    distribution_learned = [i+1 for i in range(len(distributions))]
-    random.shuffle(distribution_learned)
-    ratio_fix = 0.05
-    limit = int(len(distribution_learned)*ratio_fix)
-    dsk = set(distribution_learned[:limit])
-    learn_distribution = distribution_learned[limit:]
+    variable_rank = {}
+    q = queue.Queue()
+    nleaves = 0
+    for v in network_variables:
+        if network_variables[v]['is_leaf']:
+            nleaves += 1
+            q.put((v, 0))
+
+    while not q.empty():
+        (v, dist) = q.get()
+        if v not in variable_rank:
+            variable_rank[v] = dist
+            for parent in network_variables[v]['cpt']['parents_var']:
+                q.put((parent, dist+1))
+
+    ratio_fix = 0.7
+    v_not_learned = int(ratio_fix * len(network_variables))
+    print(len(network_variables), nleaves, v_not_learned)
+    x = sorted([v for v in network_variables], key=lambda x: variable_rank[x])[:v_not_learned]
+    dsk = set()
+    for v in x:
+        for didx in network_variables[v]['distribution_index']:
+            if random.random() < 1.0:
+                dsk.add(didx)
+    print(len(distributions), len(dsk), len(dsk)/len(distributions))
     partial_distributions = []
     for i in range(len(distributions)):
         if i+1 not in dsk:
@@ -197,7 +216,7 @@ def pcnf_encoding(dataset):
                 with open(os.path.join(script_dir, 'pcnf_partial', dataset, f'{file_idx}.cnf'), 'w') as f:
                     f.write(f'p cnf {variable_index} {len(clauses) + network_variables[nvar]["dom_size"] - 1}\n')
                     f.write(f'c Querying variable {nvar} with value {network_variables[nvar]["domain"][i]}\n')
-                    if len(learn_distribution) > 0:
+                    if len(dsk) > 0:
                         f.write(header_learn + '\n')
                     f.write('\n'.join(partial_distributions) + '\n')
                     f.write('\n'.join(clauses) + '\n')
