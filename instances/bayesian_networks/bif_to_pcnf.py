@@ -255,8 +255,10 @@ def pcnf_encoding(dataset):
         for i in range(network_variables[variable]['dom_size']):
             indicators.append(variable_index)
             indicator_variables[variable][network_variables[variable]['domain'][i]] = variable_index
-            enc1_weights.append(f'c p weight {variable_index} 1.0 0')
-            enc1_weights.append(f'c p weight -{variable_index} 1.0 0')
+            enc1_weights.append(f'1.0')
+            enc1_weights.append(f'1.0')
+            enc1_random_weights.append(f'1.0')
+            enc1_random_weights.append(f'1.0')
             variable_index += 1
         
         enc1_clauses.append(' '.join([f'{x}' for x in indicators]) + ' 0')
@@ -265,6 +267,10 @@ def pcnf_encoding(dataset):
             for j in range(i+1, len(indicators)):
                 enc1_clauses.append(f'-{indicators[i]} -{indicators[j]} 0')
 
+    os.makedirs(os.path.join(script_dir, 'enc1', dataset), exist_ok= True)
+    os.makedirs(os.path.join(script_dir, 'enc1_learn', dataset), exist_ok= True)
+
+    fdist_file = open(os.path.join(script_dir, 'enc1', f'{dataset}.dist'), 'w')
     for variable in network_variables:
         parent_variables = network_variables[variable]['cpt']['parents_var']
         n_distributions = len(network_variables[variable]['cpt']['distributions'])
@@ -279,16 +285,23 @@ def pcnf_encoding(dataset):
             pvs = [indicator_variables[parent_variables[j]][parent_domain[j]] for j in range(len(parent_domain))]
 
             probabilistic_vars = [0 for _ in distribution]
-            for i, p in enumerate(distribution):
+            sch_ptr_idx = 0
+            for sub_i, p in enumerate(distribution):
                 if p != 0.0:
-                    probabilistic_vars[i] = variable_index
-                    enc1_weights.append(f'c p weight {variable_index} {p} 0')
-                    enc1_weights.append(f'c p weight -{variable_index} 1.0 0')
-                    enc1_random_weights.append(f'c p weight {variable_index} {sch_random_distribution[i]} 0')
-                    enc1_random_weights.append(f'c p weight -{variable_index} 1.0 0')
+                    probabilistic_vars[sub_i] = variable_index
+                    enc1_weights.append(f'{p}')
+                    enc1_weights.append(f'1.0')
+                    enc1_random_weights.append(f'{sch_random_distribution[sch_ptr_idx]}')
+                    enc1_random_weights.append(f'1.0')
                     variable_index += 1
+                    sch_ptr_idx += 1
                 else:
-                    probabilistic_vars[i] = None
+                    if enc_1_distribution_pointer[variable][i] is None:
+                        sch_ptr_idx += 1
+                    probabilistic_vars[sub_i] = None
+
+            fdist_file.write(' '.join([str(x) for x in probabilistic_vars if x is not None]) + '\n')
+            fdist_file.write(' '.join([str(x) for i, x in enumerate(distribution) if probabilistic_vars[i] is not None]) + '\n')
 
             for j, p in enumerate(distribution):
                 if p != 0.0:
@@ -312,22 +325,20 @@ def pcnf_encoding(dataset):
 
 
     file_idx = 1
-    os.makedirs(os.path.join(script_dir, 'enc1', dataset), exist_ok= True)
-    os.makedirs(os.path.join(script_dir, 'enc1_learn', dataset), exist_ok= True)
     for nvar in network_variables:
             if network_variables[nvar]['is_leaf']:
                 for i in range(network_variables[nvar]['dom_size']):
                     with open(os.path.join(script_dir, 'enc1', dataset, f'{file_idx}.cnf'), 'w') as f:
                         f.write(f'p cnf {variable_index - 1} {len(enc1_clauses) + 1}\n')
                         f.write(f'c Querying variable {nvar} with value {network_variables[nvar]["domain"][i]}\n')
-                        f.write('\n'.join(enc1_weights) + '\n')
+                        f.write('c weights ' + ' '.join(enc1_weights) + '\n')
                         f.write('\n'.join(enc1_clauses) + '\n')
                         f.write(f'{indicator_variables[nvar][network_variables[nvar]["domain"][i]]} 0\n')
 
                     with open(os.path.join(script_dir, 'enc1_learn', dataset, f'{file_idx}.cnf'), 'w') as f:
                         f.write(f'p cnf {variable_index - 1} {len(enc1_clauses) + 1}\n')
                         f.write(f'c Querying variable {nvar} with value {network_variables[nvar]["domain"][i]}\n')
-                        f.write('\n'.join(enc1_random_weights) + '\n')
+                        f.write('c weights ' + ' '.join(enc1_random_weights) + '\n')
                         f.write('\n'.join(enc1_clauses) + '\n')
                         f.write(f'{indicator_variables[nvar][network_variables[nvar]["domain"][i]]} 0\n')
                     file_idx += 1
@@ -336,6 +347,5 @@ def pcnf_encoding(dataset):
 instances = [f.split('.')[0] for f in os.listdir(bif_dir) if os.path.isfile(os.path.join(bif_dir, f))]
 
 for instance in instances:
-    if instance == 'asia':
-        print(instance)
-        pcnf_encoding(instance)
+    print(instance)
+    pcnf_encoding(instance)
