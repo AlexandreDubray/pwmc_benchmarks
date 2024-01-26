@@ -1,0 +1,5 @@
+Variable,Value,Proba
+JohnCalls,True,0.06369707000000001
+JohnCalls,False,0.93630293
+MaryCalls,True,0.021118798
+MaryCalls,False,0.978881202

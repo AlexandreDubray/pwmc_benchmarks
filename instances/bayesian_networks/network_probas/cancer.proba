@@ -1,0 +1,5 @@
+Variable,Value,Proba
+Xray,positive,0.20814100000000002
+Xray,negative,0.7918590000000001
+Dyspnoea,True,0.3040705
+Dyspnoea,False,0.6959295
