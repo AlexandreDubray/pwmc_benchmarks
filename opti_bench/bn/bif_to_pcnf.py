@@ -9,6 +9,8 @@ import queue
 script_dir = os.path.dirname(os.path.realpath(__file__))
 bif_dir = os.path.join(script_dir, '..', '..', 'instances', 'bayesian_networks', 'bif')
 
+test_file = open('true_probas.csv', 'w')
+
 def parse_variables(dataset):
     variables = {}
     with open(os.path.join(bif_dir, dataset + '.bif')) as f:
@@ -75,7 +77,26 @@ def get_cpt(dataset, network_variables):
 def get_dvar(network_variables, nvar, value):
     return network_variables[nvar]['deterministic_variables'][value]
 
+def get_true_probas(dataset):
+    probas = {}
+    with open(os.path.join('..', '..', 'instances', 'bayesian_networks', 'network_probas', f'{dataset}.proba')) as f:
+        first = True
+        for line in f:
+            if first:
+                first = False
+                continue
+            s = line.split(',')
+            variable = s[0]
+            value = s[1]
+            proba = float(s[2])
+            if variable not in probas:
+                probas[variable] = {}
+            probas[variable][value] = proba
+        return probas
+
 def pcnf_encoding(dataset):
+    global test_file
+    dataset_probas = get_true_probas(dataset)
     network_variables = parse_variables(dataset)
     get_cpt(dataset, network_variables)
 
@@ -167,6 +188,7 @@ def pcnf_encoding(dataset):
                         if i != j:
                             f.write(f'-{network_variables[nvar]["deterministic_variables"][network_variables[nvar]["domain"][j]]} 0\n')
                 
+                    test_file.write(f'{dataset}/{file_idx}.cnf,{dataset_probas[nvar][network_variables[nvar]["domain"][i]]}\n')
                 file_idx += 1
 
 instances = [f.split('.')[0] for f in os.listdir(bif_dir) if os.path.isfile(os.path.join(bif_dir, f))]
@@ -174,3 +196,5 @@ instances = [f.split('.')[0] for f in os.listdir(bif_dir) if os.path.isfile(os.p
 for instance in instances:
     print(instance)
     pcnf_encoding(instance)
+
+test_file.close()

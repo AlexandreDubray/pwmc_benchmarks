@@ -6,9 +6,10 @@ import re
 import subprocess
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
+uai_dir = os.path.join(script_dir, '..', '..', 'instances', 'bayesian_networks', 'uai')
 
 def get_network_data(dataset):
-    with open(os.path.join(script_dir, 'uai', dataset + '.uai')) as f:
+    with open(os.path.join(uai_dir, dataset + '.uai')) as f:
         
         lines = f.readlines()
         assert(lines[0].rstrip() == 'BAYES')
@@ -63,7 +64,7 @@ def make_enc_encoding(dataset, outdir):
         if network_data['leaf'][network_var]:
             dom_size = network_data['dom_size'][network_var]
             for variable_value in range(dom_size):
-                n_clause = output['nclauses'] + len(output['variable_map'][network_var])
+                n_clause = output['nclauses'] + len(output['variable_map'][network_var][variable_value])
                 with open(os.path.join(outdir, dataset, f'{file_idx}.cnf'), 'w') as f:
                     f.write(f'p cnf {output["nvars"]} {n_clause}\n')
                     for v in output['weights']:
@@ -75,22 +76,22 @@ def make_enc_encoding(dataset, outdir):
                 file_idx += 1
 
 def enc3(dataset):
-    bash_cmd = ['./bn2cnf_linux', '-i', f'uai/{dataset}.uai', '-o', 'tmp.cnf', '-w', 'tmp.weight', '-v', 'tmp.map']
+    bash_cmd = ['./bn2cnf_linux', '-i', f'{str(uai_dir)}/{dataset}.uai', '-o', 'tmp.cnf', '-w', 'tmp.weight', '-v', 'tmp.map']
     subprocess.run(bash_cmd, stdout=subprocess.DEVNULL)
     make_enc_encoding(dataset, os.path.join(script_dir, 'enc3'))
 
 def enc4(dataset):
-    bash_cmd = ['./bn2cnf_linux', '-i', f'uai/{dataset}.uai', '-o', 'tmp.cnf', '-w', 'tmp.weight', '-v', 'tmp.map', '-s', 'prime']
+    bash_cmd = ['./bn2cnf_linux', '-i', f'{str(uai_dir)}/{dataset}.uai', '-o', 'tmp.cnf', '-w', 'tmp.weight', '-v', 'tmp.map', '-s', 'prime']
     subprocess.run(bash_cmd, stdout=subprocess.DEVNULL)
     make_enc_encoding(dataset, os.path.join(script_dir, 'enc4'))
 
 def enc4linp(dataset):
-    bash_cmd = ['./bn2cnf_linux', '-i', f'uai/{dataset}.uai', '-o', 'tmp.cnf', '-w', 'tmp.weight', '-v', 'tmp.map', '-s', 'prime', '-e', 'LOG', '-implicit']
+    bash_cmd = ['./bn2cnf_linux', '-i', f'{str(uai_dir)}/{dataset}.uai', '-o', 'tmp.cnf', '-w', 'tmp.weight', '-v', 'tmp.map', '-s', 'prime', '-e', 'LOG', '-implicit']
     subprocess.run(bash_cmd, stdout=subprocess.DEVNULL)
     make_enc_encoding(dataset, os.path.join(script_dir, 'enc4linp'))
 
 
-instances = [f.split('.')[0] for f in os.listdir(os.path.join(script_dir, 'uai')) if os.path.isfile(os.path.join(script_dir, 'uai', f))]
+instances = [f.split('.')[0] for f in os.listdir(uai_dir) if os.path.isfile(os.path.join(uai_dir, f))]
 
 for instance in instances:
     print(instance)
