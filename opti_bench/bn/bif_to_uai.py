@@ -88,7 +88,7 @@ def write_uai(instance):
         f.write(f'{len(network_variables)}\n')
         # For each CPT, the number of variable included in it, ending with the variable id
         for v in network_variables:
-            parents = " ".join([str(network_variables[p]["id"]) for p in network_variables[v]['cpt']['parents_var']])
+            parents = " ".join(reversed([str(network_variables[p]["id"]) for p in network_variables[v]['cpt']['parents_var']]))
             if parents != "":
                 f.write(f'{len(network_variables[v]["cpt"]["parents_var"]) + 1} {parents} {network_variables[v]["id"]}\n')
             else:
