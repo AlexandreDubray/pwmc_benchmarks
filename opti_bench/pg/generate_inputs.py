@@ -6,13 +6,17 @@ import queue
 random.seed(52696698)
 
 _script_dir = os.path.dirname(os.path.realpath(__file__))
+_instance_dir = os.path.join(_script_dir, '..', '..', 'instances', 'power_transmission_grid')
+
+means = [0.25, 0.5, 0.75]
+std=0.1
 
 def safe_str_bash(s):
     return re.sub('[\s $\#=!<>|;{}~&]', '_', s)
 
 def parse_dataset(dataset):
     nodes = []
-    with open(os.path.join(_script_dir, f'{dataset}/gridkit_{dataset.split("/")[1]}-highvoltage-vertices.csv')) as f:
+    with open(os.path.join(_instance_dir, f'{dataset}/gridkit_{dataset.split("/")[1]}-highvoltage-vertices.csv')) as f:
         first = True
         for line in f:
             if first:
@@ -23,7 +27,7 @@ def parse_dataset(dataset):
             nodes.append(node_id)
 
     edges = {node: [] for node in nodes}
-    with open(os.path.join(_script_dir, f'{dataset}/gridkit_{dataset.split("/")[1]}-highvoltage-links.csv')) as f:
+    with open(os.path.join(_instance_dir, f'{dataset}/gridkit_{dataset.split("/")[1]}-highvoltage-links.csv')) as f:
         first = True
         for line in f:
             if first:
@@ -33,7 +37,8 @@ def parse_dataset(dataset):
             edge_id = int(s[0])
             n1 = int(s[1])
             n2 = int(s[2])
-            proba_up = random.random()
+            mean = means[random.randint(0, 2)]
+            proba_up = min(1.0, max(0.0, random.gauss(mu=mean, sigma=std)))
             proba_learning = random.random()
             edges[n1].append((n2, proba_up, proba_learning))
             edges[n2].append((n1, proba_up, proba_learning))
@@ -45,7 +50,7 @@ def sch_encoding(nodes, edges, queries, dataset):
     current_id = 1
     map_edge_id = {}
     for node in edges:
-        for (to, proba) in edges[node]:
+        for (to, proba, _) in edges[node]:
             if node < to:
                 if (to, node) not in map_edge_id:
                     distributions.append(f'c p distribution {proba} {1.0 - proba}')
@@ -82,14 +87,14 @@ def pcnf_encoding(nodes, edges, queries, dataset):
     for node in edges:
         for (to, proba, _) in edges[node]:
             if (to, node) not in map_edge_id:
-                weights.append(f'c p weight {current_id} {proba} 0')
-                weights.append(f'c p weight -{current_id} {1.0 - proba} 0')
+                weights.append(f'w {current_id} {proba} 0')
+                weights.append(f'w -{current_id} {1.0 - proba} 0')
                 map_edge_id[(node, to)] = current_id
                 current_id += 1
             else:
                 map_edge_id[(node, to)] = map_edge_id[(to, node)]
 
-    projected_header = f'c p show {" ".join([str(x) for x in range(1, current_id)])} 0'
+    projected_header = f'c ind {" ".join([str(x) for x in range(1, current_id)])} 0'
 
     map_node_id = {}
     for node in nodes:
@@ -117,7 +122,7 @@ def pl_encoding(nodes, edges, queries, dataset):
     clauses = []
     clauses_learn = []
     for node in edges:
-        for (to, proba) in edges[node]:
+        for (to, proba, _) in edges[node]:
             if node < to:
                 edge = (node, to)
                 if edge not in seen_edges:
